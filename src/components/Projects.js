@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: 'LegalEase - AI Legal Document Simplifier',
       description: 'An AI-powered web application that simplifies legal documents in 75+ languages, increasing comprehension speed by 3x for 100+ users.',
-      image: '/api/placeholder/600/400',
+      image: '/legalease.png',
       technologies: ['React 18', 'Node.js', 'Express', 'Groq AI', 'Tesseract.js', 'Tailwind CSS'],
       features: [
         'Document intake system supporting PDF, DOCX, and image formats',
@@ -28,7 +28,7 @@ const Projects = () => {
     {
       title: 'Smart Notes Organizer',
       description: 'A MERN-stack application that automates handwritten content extraction and provides AI-powered summaries with drag-and-drop organization.',
-      image: '/api/placeholder/600/400',
+      image: '/smartNotesOrganizer.png',
       technologies: ['React 18', 'Node.js', 'MongoDB', 'Groq AI', 'Tesseract.js', 'Tailwind CSS'],
       features: [
         'Automated handwritten content extraction using Tesseract.js',
@@ -107,10 +107,20 @@ const Projects = () => {
                 transition={{ duration: 0.3 }}
               >
                 <div className="glass-card p-4 group">
-                  <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-900 aspect-video flex items-center justify-center">
-                    <div className="text-6xl font-bold text-primary-300 dark:text-primary-700">
-                      {project.title.split(' ')[0].charAt(0)}
-                    </div>
+                  <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-900 aspect-video">
+                    {project.image.startsWith('/api/placeholder') ? (
+                      <div className="flex items-center justify-center h-full">
+                        <div className="text-6xl font-bold text-primary-300 dark:text-primary-700">
+                          {project.title.split(' ')[0].charAt(0)}
+                        </div>
+                      </div>
+                    ) : (
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>

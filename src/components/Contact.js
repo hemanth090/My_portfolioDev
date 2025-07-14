@@ -30,28 +30,43 @@ const Contact = () => {
       const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
+      console.log('EmailJS Config Check:', {
+        serviceId: serviceId ? 'Set' : 'Missing',
+        templateId: templateId ? 'Set' : 'Missing',
+        publicKey: publicKey ? 'Set' : 'Missing'
+      });
+
       // Check if credentials are available
       if (!serviceId || !templateId || !publicKey) {
-        throw new Error('EmailJS credentials not configured');
+        throw new Error('EmailJS credentials not configured properly. Please check your environment variables.');
+      }
+
+      // Validate form data
+      if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+        throw new Error('Please fill in all required fields.');
       }
 
       // Template parameters for EmailJS
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
+        from_name: formData.name.trim(),
+        from_email: formData.email.trim(),
+        subject: formData.subject.trim() || 'New Contact Form Message',
+        message: formData.message.trim(),
         to_name: 'Naveen Hemanth Kokkonda',
         to_email: 'naveenhemanth4@gmail.com',
-        reply_to: formData.email,
+        reply_to: formData.email.trim(),
       };
+
+      console.log('Sending email with params:', templateParams);
+
+      // Initialize EmailJS if not already done
+      emailjs.init(publicKey);
 
       // Send email using EmailJS
       const response = await emailjs.send(
         serviceId,
         templateId,
-        templateParams,
-        publicKey
+        templateParams
       );
 
       console.log('Email sent successfully:', response);
@@ -64,6 +79,12 @@ const Contact = () => {
       
     } catch (error) {
       console.error('Email sending failed:', error);
+      console.error('Error details:', {
+        message: error.message,
+        status: error.status,
+        text: error.text
+      });
+      
       setIsSubmitting(false);
       setSubmitStatus('error');
       
@@ -377,7 +398,30 @@ const Contact = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    ❌ Sorry, there was an error sending your message. Please try again or contact me directly at naveenhemanth4@gmail.com
+                    <div className="mb-3">
+                      ❌ Sorry, there was an error sending your message through the contact form.
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-sm">You can reach me directly via:</p>
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <a 
+                          href={`mailto:naveenhemanth4@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Hi Naveen,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`}
+                          className="inline-flex items-center gap-2 px-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 text-sm"
+                        >
+                          <FaEnvelope className="w-4 h-4" />
+                          Send via Email
+                        </a>
+                        <a 
+                          href="https://www.linkedin.com/in/hemanthkokkonda/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-sm"
+                        >
+                          <FaLinkedin className="w-4 h-4" />
+                          LinkedIn Message
+                        </a>
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </form>
