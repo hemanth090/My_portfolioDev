@@ -2,7 +2,7 @@
 
 > A stunning, modern portfolio showcasing my journey as a Full-Stack Developer & AI Enthusiast
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://your-portfolio-url.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=render)](https://your-portfolio-url.onrender.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/hemanth090/My_portfolioDev)
 [![React](https://img.shields.io/badge/React-18.2.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
@@ -134,55 +134,60 @@ theme: {
 1. Add your resume PDF to the `public` folder as `resume.pdf`
 2. The download functionality is already implemented in `Hero.js` and `Contact.js`
 
-## 🚀 Deployment
+## 🚀 Deployment on Render
 
-### Vercel (Recommended)
+This portfolio is optimized for deployment on **Render**, which provides free hosting for static sites with automatic deployments from GitHub.
 
-1. **Install Vercel CLI**
+### Step-by-Step Deployment
+
+1. **Go to [Render.com](https://render.com)** and sign up/sign in with your GitHub account
+
+2. **Create New Static Site**:
+   - Click "New +" → "Static Site"
+   - Connect your GitHub account if not already connected
+   - Select this repository: `hemanth090/My_portfolioDev`
+
+3. **Configure Deployment Settings**:
+   ```
+   Name: naveen-portfolio (or your preferred name)
+   Branch: main
+   Build Command: npm install && npm run build
+   Publish Directory: build
+   ```
+
+4. **Advanced Settings** (Optional but recommended):
+   - Add environment variable: `NODE_VERSION` = `18`
+   - Auto-Deploy: Yes (automatically redeploys when you push to GitHub)
+
+5. **Click "Create Static Site"**
+
+### What Happens Next
+
+- ⏱️ Render will automatically build your site (takes 2-5 minutes)
+- 🌐 You'll get a live URL like: `https://naveen-portfolio.onrender.com`
+- 🔄 Every time you push to GitHub, it will auto-deploy
+- 📊 Free tier includes: Custom domains, SSL certificates, and global CDN
+
+### Making Updates
+
+To update your live portfolio:
+
+1. Make changes to your code locally
+2. Commit and push to GitHub:
    ```bash
-   npm i -g vercel
+   git add .
+   git commit -m "Update portfolio content"
+   git push
    ```
+3. Render will automatically detect the changes and redeploy
 
-2. **Deploy**
-   ```bash
-   vercel
-   ```
+### Custom Domain (Optional)
 
-3. **Follow the prompts** and your site will be live!
-
-### Netlify
-
-1. **Build the project**
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy to Netlify**
-   - Drag and drop the `build` folder to [Netlify Drop](https://app.netlify.com/drop)
-   - Or connect your GitHub repository for automatic deployments
-
-### GitHub Pages
-
-1. **Install gh-pages**
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-2. **Add to package.json**
-   ```json
-   {
-     "homepage": "https://yourusername.github.io/portfolio",
-     "scripts": {
-       "predeploy": "npm run build",
-       "deploy": "gh-pages -d build"
-     }
-   }
-   ```
-
-3. **Deploy**
-   ```bash
-   npm run deploy
-   ```
+Once deployed, you can add a custom domain:
+1. Go to your Render dashboard
+2. Select your static site
+3. Navigate to "Settings" → "Custom Domains"
+4. Add your domain and follow the DNS configuration instructions
 
 ## 🔧 Environment Variables
 
