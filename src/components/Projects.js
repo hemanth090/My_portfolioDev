@@ -49,7 +49,7 @@ const Projects = () => {
     {
       title: 'ATS Resume Analyzer',
       description: 'An academic project that benchmarks resumes using skill-to-job-description matching with D3.js visualization dashboard.',
-      image: '/api/placeholder/600/400',
+      image: '/ATSV3.png',
       technologies: ['Python', 'Flask', 'MongoDB', 'Groq AI', 'Docker', 'REST APIs'],
       features: [
         'Resume analysis with 85% accuracy in relevance scoring',
