@@ -49,7 +49,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="text-gray-800 dark:text-white">Hi, I'm </span>
-            <span className="text-gradient">Naveen</span>
+            <span className="text-gradient">Hemanth</span>
           </motion.h1>
 
           {/* Subtitle */}
