@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: FaCode,
       title: '3+ Projects',
-      description: 'Production applications with 100+ users',
+      description: 'Web applications with 100+ users',
       color: 'text-blue-500'
     },
     {

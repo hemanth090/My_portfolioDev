@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             Final year Computer Science student specializing in AI-integrated full-stack development. 
-            Built 3 production applications reaching 100+ users with 85% accuracy rates.
+            Built 3 web applications reaching 100+ users with 85% accuracy rates.
           </motion.p>
 
           {/* CTA Buttons */}

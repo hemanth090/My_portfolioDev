@@ -63,7 +63,7 @@ const Achievements = () => {
     },
     {
       number: '3',
-      label: 'Production Apps',
+      label: 'Web Apps',
       description: 'Successfully deployed and maintained',
       icon: FaRocket,
       color: 'text-purple-500'

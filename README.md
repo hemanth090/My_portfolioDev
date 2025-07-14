@@ -9,7 +9,7 @@
 
 ## ✨ About This Portfolio
 
-This portfolio represents my journey from a Computer Science student to a passionate developer who builds real-world applications that impact users' lives. With **3 production applications serving 100+ users** and **85% AI accuracy rates**, this showcase demonstrates both technical excellence and practical problem-solving skills.
+This portfolio represents my journey from a Computer Science student to a passionate developer who builds real-world applications that impact users' lives. With **3 web applications serving 100+ users** and **85% AI accuracy rates**, this showcase demonstrates both technical excellence and practical problem-solving skills.
 
 ## 🌟 Key Highlights
 

@@ -12,7 +12,7 @@ const Experience = () => {
       type: 'Self-Directed Learning',
       description: 'Developing production-ready applications with focus on AI integration and user experience.',
       achievements: [
-        'Built and deployed 3 production applications serving 100+ active users',
+        'Built and deployed 3 web applications serving 100+ active users',
         'Achieved 85% accuracy in AI-powered resume analysis and document processing',
         'Implemented scalable architectures using MERN stack and Python Flask',
         'Integrated multiple AI APIs (OpenAI, Groq) for enhanced functionality',
@@ -192,7 +192,7 @@ const Experience = () => {
           viewport={{ once: true }}
         >
           {[
-            { number: '3+', label: 'Production Apps', description: 'Built and deployed' },
+            { number: '3+', label: 'Web Apps', description: 'Built and deployed' },
             { number: '100+', label: 'Active Users', description: 'Across all projects' },
             { number: '85%', label: 'AI Accuracy', description: 'Average model performance' }
           ].map((stat, index) => (
