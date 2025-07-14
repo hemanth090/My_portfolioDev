@@ -63,11 +63,8 @@ const Certifications = () => {
 
   const additionalSkills = [
     'RESTful API Development',
-    'Database Optimization',
     'Version Control (Git)',
     'Agile Development',
-    'Code Review Practices',
-    'Testing Methodologies',
     'DevOps Basics',
     'Cloud Deployment'
   ];

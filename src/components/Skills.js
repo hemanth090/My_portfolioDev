@@ -44,7 +44,6 @@ const Skills = () => {
         { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500', level: 80 },
         { name: 'Express.js', icon: SiExpress, color: 'text-gray-600', level: 80 },
         { name: 'Flask', icon: SiFlask, color: 'text-gray-800', level: 75 },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-teal-500', level: 90 },
         { name: 'Bootstrap', icon: SiBootstrap, color: 'text-purple-600', level: 85 }
       ]
     },
@@ -53,9 +52,7 @@ const Skills = () => {
       skills: [
         { name: 'NumPy', icon: SiNumpy, color: 'text-blue-600', level: 80 },
         { name: 'Pandas', icon: SiPandas, color: 'text-purple-600', level: 80 },
-        { name: 'OpenAI API', icon: SiOpenai, color: 'text-green-600', level: 85 },
-        { name: 'Groq API', icon: SiOpenai, color: 'text-orange-500', level: 85 },
-        { name: 'Tesseract.js', icon: FaJs, color: 'text-red-500', level: 75 }
+        { name: 'OpenAI API', icon: SiOpenai, color: 'text-green-600', level: 85 }
       ]
     },
     {
@@ -65,8 +62,7 @@ const Skills = () => {
         { name: 'SupaBase', icon: SiSupabase, color: 'text-green-400', level: 75 },
         { name: 'Git', icon: FaGitAlt, color: 'text-orange-600', level: 85 },
         { name: 'Docker', icon: FaDocker, color: 'text-blue-500', level: 70 },
-        { name: 'AWS', icon: FaAws, color: 'text-orange-400', level: 60 },
-        { name: 'Render', icon: SiRender, color: 'text-purple-500', level: 80 }
+        { name: 'AWS', icon: FaAws, color: 'text-orange-400', level: 60 }
       ]
     }
   ];
@@ -153,9 +149,9 @@ const Skills = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              'RESTful APIs', 'Streamlit', 'OCR', 'Machine Learning', 
+              'RESTful APIs', 'Streamlit', 'Machine Learning', 
               'Responsive Design', 'Agile Development', 'Version Control',
-              'API Integration', 'Database Design', 'Cloud Deployment'
+              'API Integration', 'Cloud Deployment'
             ].map((tech, index) => (
               <motion.span
                 key={tech}
