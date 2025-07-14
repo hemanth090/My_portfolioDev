@@ -13,9 +13,12 @@ const Hero = () => {
   const downloadResume = () => {
     // Create a link to download resume
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // You'll need to add the PDF to public folder
+    link.href = `${process.env.PUBLIC_URL}/resume.pdf`;
     link.download = 'Naveen_Hemanth_Kokkonda_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   return (
