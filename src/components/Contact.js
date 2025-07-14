@@ -26,9 +26,14 @@ const Contact = () => {
     
     try {
       // EmailJS service configuration
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_default';
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_default';
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'your_public_key';
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      // Check if credentials are available
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS credentials not configured');
+      }
 
       // Template parameters for EmailJS
       const templateParams = {
