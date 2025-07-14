@@ -189,16 +189,75 @@ Once deployed, you can add a custom domain:
 3. Navigate to "Settings" → "Custom Domains"
 4. Add your domain and follow the DNS configuration instructions
 
-## 🔧 Environment Variables
+## 📧 Email Service Setup (EmailJS)
 
-Create a `.env` file in the root directory for any environment-specific configurations:
+The contact form uses EmailJS to send emails directly from the frontend. Follow these steps to set it up:
 
-```env
-REACT_APP_SITE_URL=https://yoursite.com
-REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-REACT_APP_EMAILJS_USER_ID=your_user_id
-```
+### 1. Create EmailJS Account
+
+1. Go to [EmailJS.com](https://www.emailjs.com/) and create a free account
+2. You get 200 free emails per month
+
+### 2. Set Up Email Service
+
+1. **Add Email Service**:
+   - Go to "Email Services" in your EmailJS dashboard
+   - Click "Add New Service"
+   - Choose your email provider (Gmail, Outlook, etc.)
+   - Follow the setup instructions
+
+2. **Create Email Template**:
+   - Go to "Email Templates"
+   - Click "Create New Template"
+   - Use this template structure:
+   ```
+   Subject: New Contact Form Message: {{subject}}
+   
+   From: {{from_name}} ({{from_email}})
+   
+   Message:
+   {{message}}
+   
+   ---
+   This message was sent from your portfolio contact form.
+   Reply to: {{reply_to}}
+   ```
+
+3. **Get Your Credentials**:
+   - Service ID: Found in "Email Services"
+   - Template ID: Found in "Email Templates"
+   - Public Key: Found in "Account" → "General"
+
+### 3. Configure Environment Variables
+
+1. **Copy the example file**:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Update `.env` with your EmailJS credentials**:
+   ```env
+   REACT_APP_EMAILJS_SERVICE_ID=your_service_id_here
+   REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id_here
+   REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key_here
+   REACT_APP_SITE_URL=https://your-portfolio-url.onrender.com
+   ```
+
+### 4. Deploy with Environment Variables
+
+When deploying on Render, add these environment variables in your service settings:
+- Go to your Render dashboard
+- Select your static site
+- Navigate to "Environment"
+- Add each variable from your `.env` file
+
+### 5. Test the Contact Form
+
+- The form will show success/error messages
+- Check your email for test messages
+- Verify the reply-to address works correctly
+
+**Note**: The contact form will work locally and in production once EmailJS is configured. Without configuration, it will show an error message with your direct email contact.
 
 ## 📱 Browser Support
 
