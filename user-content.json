@@ -1,0 +1,627 @@
+{
+  "personalInfo": {
+    "name": "Naveen Hemanth Kokkonda",
+    "displayName": "Hemanth",
+    "initials": "NH",
+    "title": "Full-Stack Developer & AI Enthusiast",
+    "subtitle": "CSE student specializing in Data Science with a passion for AI",
+    "description": "CSE student specializing in Data Science with a passion for AI. Building innovative AI-powered solutions that solve real-world problems.",
+    "philosophy": "Good code solves problems. Great code solves problems people didn't even know they had. Every project I build aims to make someone's day a little bit easier.",
+    "learningPhilosophy": "Education is not just about acquiring knowledge—it's about developing the ability to think critically, solve complex problems, and adapt to an ever-changing technological landscape. My academic journey has been complemented by hands-on projects and real-world applications, ensuring that theoretical knowledge translates into practical skills.",
+    "location": "Hyderabad, India",
+    "availability": [
+      "Available for Freelance",
+      "Open to Full-time Opportunities",
+      "Remote Friendly"
+    ]
+  },
+  "contact": {
+    "email": "naveenhemanth4@gmail.com",
+    "phone": "+91 6300296968",
+    "location": "Hyderabad, India",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/hemanthkokkonda/",
+      "github": "https://github.com/hemanth090"
+    },
+    "resume": "resume.pdf"
+  },
+  "about": {
+    "description": "I'm a CSE student specializing in Data Science with a deep passion for AI. Currently building AI-powered applications that turn complex problems into simple, elegant solutions.",
+    "experience": "My journey started with curiosity about how data and AI can transform lives. Now I'm creating tools that simplify legal documents, organize notes, and help job seekers—combining my data science expertise with AI enthusiasm to build meaningful technology.",
+    "interests": "When I'm not coding, I'm probably exploring the latest AI models, experimenting with new data science techniques, or contributing to open-source projects. I'm always excited about the next breakthrough in AI!",
+    "highlights": [
+      {
+        "title": "3+ Projects",
+        "description": "Production web applications deployed",
+        "icon": "FaCode",
+        "color": "text-blue-500"
+      },
+      {
+        "title": "Full-Stack",
+        "description": "MERN & Python development expertise",
+        "icon": "FaRocket",
+        "color": "text-green-500"
+      },
+      {
+        "title": "AI Enthusiast",
+        "description": "Data Science & AI-powered solutions",
+        "icon": "FaBrain",
+        "color": "text-purple-500"
+      },
+      {
+        "title": "Open Source",
+        "description": "Contributing to developer community",
+        "icon": "FaGithub",
+        "color": "text-gray-600"
+      }
+    ]
+  },
+  "skills": {
+    "categories": [
+      {
+        "title": "Languages",
+        "skills": [
+          {
+            "name": "Python",
+            "level": 90,
+            "icon": "FaPython",
+            "color": "text-yellow-500"
+          },
+          {
+            "name": "JavaScript",
+            "level": 85,
+            "icon": "FaJs",
+            "color": "text-yellow-400"
+          },
+          {
+            "name": "HTML5",
+            "level": 95,
+            "icon": "FaHtml5",
+            "color": "text-orange-500"
+          },
+          {
+            "name": "CSS3",
+            "level": 90,
+            "icon": "FaCss3Alt",
+            "color": "text-blue-500"
+          },
+          {
+            "name": "SQL",
+            "level": 80,
+            "icon": "FaDatabase",
+            "color": "text-blue-600"
+          }
+        ]
+      },
+      {
+        "title": "Web Development",
+        "skills": [
+          {
+            "name": "React",
+            "level": 85,
+            "icon": "FaReact",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "Node.js",
+            "level": 80,
+            "icon": "FaNodeJs",
+            "color": "text-green-500"
+          },
+          {
+            "name": "Express.js",
+            "level": 80,
+            "icon": "SiExpress",
+            "color": "text-gray-600"
+          },
+          {
+            "name": "Flask",
+            "level": 75,
+            "icon": "SiFlask",
+            "color": "text-gray-800"
+          },
+          {
+            "name": "Bootstrap",
+            "level": 85,
+            "icon": "SiBootstrap",
+            "color": "text-purple-600"
+          }
+        ]
+      },
+      {
+        "title": "Data & AI",
+        "skills": [
+          {
+            "name": "NumPy",
+            "level": 80,
+            "icon": "SiNumpy",
+            "color": "text-blue-600"
+          },
+          {
+            "name": "Pandas",
+            "level": 80,
+            "icon": "SiPandas",
+            "color": "text-purple-600"
+          },
+          {
+            "name": "OpenAI API",
+            "level": 85,
+            "icon": "SiOpenai",
+            "color": "text-green-600"
+          }
+        ]
+      },
+      {
+        "title": "Database & DevOps",
+        "skills": [
+          {
+            "name": "MongoDB",
+            "level": 80,
+            "icon": "SiMongodb",
+            "color": "text-green-500"
+          },
+          {
+            "name": "SupaBase",
+            "level": 75,
+            "icon": "SiSupabase",
+            "color": "text-green-400"
+          },
+          {
+            "name": "Git",
+            "level": 85,
+            "icon": "FaGitAlt",
+            "color": "text-orange-600"
+          },
+          {
+            "name": "Docker",
+            "level": 70,
+            "icon": "FaDocker",
+            "color": "text-blue-500"
+          },
+          {
+            "name": "AWS",
+            "level": 60,
+            "icon": "FaAws",
+            "color": "text-orange-400"
+          }
+        ]
+      }
+    ],
+    "additionalTechnologies": [
+      "RESTful APIs",
+      "Streamlit",
+      "Machine Learning",
+      "Responsive Design",
+      "Agile Development",
+      "Version Control",
+      "API Integration",
+      "Cloud Deployment"
+    ]
+  },
+  "projects": [
+    {
+      "title": "LegalEase - AI Legal Document Simplifier",
+      "description": "An AI-powered web application that simplifies legal documents in 75+ languages, increasing comprehension speed by 3x for 100+ users.",
+      "image": "/legalease.png",
+      "technologies": [
+        "React 18",
+        "Node.js",
+        "Express",
+        "Groq AI",
+        "Tesseract.js",
+        "Tailwind CSS"
+      ],
+      "features": [
+        "Document intake system supporting PDF, DOCX, and image formats",
+        "Groq API integration with streaming summaries",
+        "Zero-retention file parsing via RAM-based buffers",
+        "Multi-language support for 75+ languages"
+      ],
+      "metrics": [
+        {
+          "label": "Users",
+          "value": "100+",
+          "icon": "FaUsers"
+        },
+        {
+          "label": "Response Time",
+          "value": "1.8s",
+          "icon": "FaClock"
+        },
+        {
+          "label": "Upload Success",
+          "value": "90%",
+          "icon": "FaChartLine"
+        }
+      ],
+      "githubUrl": "https://github.com/hemanth090/LegalEase",
+      "liveUrl": "https://legalease-frontend-ihrt.onrender.com/",
+      "date": "Jul 2025",
+      "category": "Full-Stack AI Project"
+    },
+    {
+      "title": "Smart Notes Organizer",
+      "description": "A MERN-stack application that automates handwritten content extraction and provides AI-powered summaries with drag-and-drop organization.",
+      "image": "/smartNotesOrganizer.png",
+      "technologies": [
+        "React 18",
+        "Node.js",
+        "MongoDB",
+        "Groq AI",
+        "Tesseract.js",
+        "Tailwind CSS"
+      ],
+      "features": [
+        "Automated handwritten content extraction using Tesseract.js",
+        "Groq-powered LLaMA3-70B summaries with 95% accuracy",
+        "Canvas-based drag-and-drop editor",
+        "Optimized API endpoints and database queries"
+      ],
+      "metrics": [
+        {
+          "label": "Accuracy",
+          "value": "95%",
+          "icon": "FaChartLine"
+        },
+        {
+          "label": "Time Saved",
+          "value": "60%",
+          "icon": "FaClock"
+        },
+        {
+          "label": "Performance",
+          "value": "38%",
+          "icon": "FaUsers"
+        }
+      ],
+      "githubUrl": "https://github.com/hemanth090/Smart_Note_Organizer",
+      "liveUrl": "https://smart-note-organizer-1.onrender.com/",
+      "date": "Jun 2025",
+      "category": "MERN-Stack AI Project"
+    },
+    {
+      "title": "ATS Resume Analyzer",
+      "description": "An academic project that benchmarks resumes using skill-to-job-description matching with D3.js visualization dashboard.",
+      "image": "/ATSV3.png",
+      "technologies": [
+        "Python",
+        "Flask",
+        "MongoDB",
+        "Groq AI",
+        "Docker",
+        "REST APIs"
+      ],
+      "features": [
+        "Resume analysis with 85% accuracy in relevance scoring",
+        "Asynchronous Flask workers for improved performance",
+        "D3.js-based dashboard for skill gap heatmaps",
+        "Docker containerization with 99.9% uptime"
+      ],
+      "metrics": [
+        {
+          "label": "Accuracy",
+          "value": "85%",
+          "icon": "FaChartLine"
+        },
+        {
+          "label": "Users Helped",
+          "value": "70+",
+          "icon": "FaUsers"
+        },
+        {
+          "label": "Processing Speed",
+          "value": "60%",
+          "icon": "FaClock"
+        }
+      ],
+      "githubUrl": "https://github.com/hemanth090/ATS-V3",
+      "liveUrl": "https://ats-v3.onrender.com/",
+      "date": "Mar 2025",
+      "category": "Academic Project"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Full-Stack Developer",
+      "company": "Personal Projects",
+      "location": "Remote",
+      "duration": "Jan 2024 - Present",
+      "type": "Self-Directed Learning",
+      "description": "Developing production-ready applications with focus on AI integration and user experience.",
+      "achievements": [
+        "Built and deployed 3 web applications serving 100+ active users",
+        "Achieved 85% accuracy in AI-powered resume analysis and document processing",
+        "Implemented scalable architectures using MERN stack and Python Flask",
+        "Integrated multiple AI APIs (OpenAI, Groq) for enhanced functionality",
+        "Optimized application performance reducing load times by 38%"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "Python",
+        "MongoDB",
+        "AI APIs",
+        "Docker"
+      ],
+      "color": "from-blue-500 to-purple-600"
+    },
+    {
+      "role": "Open Source Contributor",
+      "company": "GitHub Community",
+      "location": "Remote",
+      "duration": "2024 - Present",
+      "type": "Community Contribution",
+      "description": "Contributing to open-source projects and building tools for the developer community.",
+      "achievements": [
+        "Developed and maintained multiple open-source projects",
+        "Created comprehensive documentation and tutorials",
+        "Collaborated with developers worldwide on various initiatives",
+        "Implemented modern development practices and code standards",
+        "Shared knowledge through detailed project repositories"
+      ],
+      "technologies": [
+        "React",
+        "Python",
+        "Flask",
+        "APIs",
+        "Documentation"
+      ],
+      "color": "from-green-500 to-teal-600"
+    },
+    {
+      "role": "Computer Science Student",
+      "company": "Sreyas Institute of Engineering and Technology",
+      "location": "Hyderabad, India",
+      "duration": "Oct 2022 - Jun 2026",
+      "type": "Academic",
+      "description": "Pursuing Bachelor of Technology in Computer Science and Engineering with specialization in Data Science.",
+      "achievements": [
+        "Specialized in Data Science and AI applications",
+        "Completed multiple certifications in Python, MongoDB, and Frontend Development",
+        "Maintained strong academic performance while building practical projects",
+        "Active participation in coding competitions and technical events",
+        "Developed strong foundation in algorithms, data structures, and system design"
+      ],
+      "technologies": [
+        "Python",
+        "Data Science",
+        "Machine Learning",
+        "Algorithms",
+        "System Design"
+      ],
+      "color": "from-orange-500 to-red-600"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science and Engineering",
+      "specialization": "Data Science",
+      "institution": "Sreyas Institute of Engineering and Technology",
+      "location": "Hyderabad, India",
+      "duration": "Oct 2022 - Jun 2026",
+      "status": "Currently Pursuing",
+      "description": "Comprehensive program focusing on computer science fundamentals with specialized coursework in data science, machine learning, and AI applications.",
+      "highlights": [
+        "Specialized track in Data Science and AI",
+        "Strong foundation in algorithms and data structures",
+        "Hands-on experience with modern development frameworks",
+        "Active participation in coding communities and projects",
+        "Project-based learning with real-world applications"
+      ],
+      "relevantCourses": [
+        "Data Structures & Algorithms",
+        "Machine Learning",
+        "Database Management Systems",
+        "Web Development",
+        "Software Engineering",
+        "Artificial Intelligence",
+        "Data Mining",
+        "Computer Networks"
+      ],
+      "color": "from-blue-500 to-indigo-600"
+    },
+    {
+      "degree": "Intermediate (MPC)",
+      "specialization": "Mathematics, Physics, Chemistry",
+      "institution": "Sri Chaitanya Jr. College",
+      "location": "Khammam, Telangana",
+      "duration": "Sep 2020 - Mar 2022",
+      "status": "Completed",
+      "description": "Pre-university education with focus on Mathematics, Physics, and Chemistry, building strong analytical and problem-solving foundations.",
+      "highlights": [
+        "Strong mathematical foundation",
+        "Analytical thinking and problem-solving skills",
+        "Scientific methodology and research approach",
+        "Preparation for engineering entrance examinations"
+      ],
+      "relevantCourses": [
+        "Advanced Mathematics",
+        "Physics",
+        "Chemistry",
+        "English",
+        "Computer Science Basics"
+      ],
+      "color": "from-green-500 to-teal-600"
+    },
+    {
+      "degree": "Matriculation (SSC)",
+      "specialization": "Secondary School Certificate",
+      "institution": "New Vision School",
+      "location": "Khammam, Telangana",
+      "duration": "Jun 2019 - Mar 2020",
+      "status": "Completed",
+      "description": "Secondary education providing comprehensive knowledge across multiple subjects and developing fundamental academic skills.",
+      "highlights": [
+        "Well-rounded education across multiple disciplines",
+        "Development of communication and presentation skills",
+        "Foundation in mathematics and sciences",
+        "Introduction to computer applications"
+      ],
+      "relevantCourses": [
+        "Mathematics",
+        "Science",
+        "English",
+        "Social Studies",
+        "Computer Applications"
+      ],
+      "color": "from-purple-500 to-pink-600"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Introduction to Front End Development",
+      "provider": "Simplilearn",
+      "date": "Jun 2025",
+      "description": "Comprehensive certification covering modern frontend development practices, responsive design, and user experience principles.",
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive Design",
+        "UI/UX Principles"
+      ],
+      "certificateUrl": "https://simpli-web.app.link/e/ZJlHPvGvzUb",
+      "highlights": [
+        "Modern frontend development techniques",
+        "Responsive web design principles",
+        "JavaScript ES6+ features",
+        "Cross-browser compatibility",
+        "Performance optimization strategies"
+      ],
+      "color": "from-blue-500 to-cyan-600"
+    },
+    {
+      "title": "Python Programming",
+      "provider": "Infosys Springboard",
+      "date": "Sep 2024",
+      "description": "Advanced Python programming certification covering core concepts, data structures, algorithms, and practical applications.",
+      "skills": [
+        "Python",
+        "Data Structures",
+        "Algorithms",
+        "OOP",
+        "File Handling"
+      ],
+      "certificateUrl": "https://drive.google.com/file/d/1__zeHC_absJ7RJwqqvlKouD0E-UlJduV/view",
+      "highlights": [
+        "Advanced Python programming concepts",
+        "Object-oriented programming principles",
+        "Data structures and algorithms",
+        "Error handling and debugging",
+        "Real-world application development"
+      ],
+      "color": "from-yellow-500 to-orange-600"
+    },
+    {
+      "title": "MongoDB Python Developer Path",
+      "provider": "MongoDB University",
+      "date": "Jan 2024",
+      "description": "Specialized certification in MongoDB database development using Python, covering database design, queries, and optimization.",
+      "skills": [
+        "MongoDB",
+        "PyMongo",
+        "Database Design",
+        "Aggregation",
+        "Indexing"
+      ],
+      "certificateUrl": "https://learn.mongodb.com/c/dm_xOHgKTn2gz-vzhzB0UA",
+      "highlights": [
+        "MongoDB database fundamentals",
+        "Python integration with PyMongo",
+        "Advanced querying and aggregation",
+        "Database performance optimization",
+        "Schema design best practices"
+      ],
+      "color": "from-green-500 to-emerald-600"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Full-Stack Development Excellence",
+      "description": "Built and deployed production-ready applications using modern technologies and best practices",
+      "stats": [
+        {
+          "label": "Technologies",
+          "value": "10+",
+          "icon": "FaCode"
+        },
+        {
+          "label": "Projects",
+          "value": "3",
+          "icon": "FaRocket"
+        },
+        {
+          "label": "Deployment",
+          "value": "100%",
+          "icon": "FaCloud"
+        }
+      ],
+      "highlights": [
+        "Modern React and Node.js development",
+        "AI integration with multiple APIs",
+        "Responsive design and user experience",
+        "Database design and optimization",
+        "Cloud deployment and DevOps practices"
+      ],
+      "color": "from-blue-400 to-purple-500"
+    },
+    {
+      "title": "Technical Innovation",
+      "description": "Specialized in AI-powered applications with focus on practical problem-solving solutions",
+      "stats": [
+        {
+          "label": "AI APIs",
+          "value": "3+",
+          "icon": "FaBrain"
+        },
+        {
+          "label": "Tech Stack",
+          "value": "10+",
+          "icon": "FaCode"
+        },
+        {
+          "label": "Accuracy",
+          "value": "85%",
+          "icon": "FaChartLine"
+        }
+      ],
+      "highlights": [
+        "Multi-language document processing",
+        "Advanced OCR and text extraction",
+        "Real-time AI-powered summaries",
+        "Performance optimization techniques",
+        "Scalable architecture implementation"
+      ],
+      "color": "from-green-400 to-emerald-500"
+    }
+  ],
+  "metrics": [
+    {
+      "number": "3+",
+      "label": "Projects",
+      "description": "Production applications deployed"
+    },
+    {
+      "number": "10+",
+      "label": "Technologies",
+      "description": "Modern development stack"
+    },
+    {
+      "number": "10+",
+      "label": "Technologies",
+      "description": "Modern development stack"
+    },
+    {
+      "number": "100%",
+      "label": "Deployment",
+      "description": "Successful project delivery"
+    }
+  ],
+  "additionalSkills": [
+    "RESTful API Development",
+    "Version Control (Git)",
+    "Agile Development",
+    "DevOps Basics",
+    "Cloud Deployment"
+  ]
+}
