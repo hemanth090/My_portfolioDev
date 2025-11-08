@@ -1,0 +1,673 @@
+{
+  "personalInfo": {
+    "name": "Naveen Hemanth Kokkonda",
+    "displayName": "Hemanth",
+    "initials": "NH",
+    "title": "Full-Stack Developer & AI Enthusiast",
+    "subtitle": "Final-year Computer Science student specializing in Data Science",
+    "description": "Final-year Computer Science student with a specialization in Data Science, experienced in building AI-integrated full-stack web applications. Proficient in Python, JavaScript, React, Flask, and cloud technologies. Proven ability to develop scalable tools for legal analysis, intelligent document search, and resume screening using advanced LLMs (Groq, OpenAI). Strong foundation in data structures, API design, and deploying applications to production. Recognized in inter-college hackathons and certified in Generative AI by Oracle.",
+    "philosophy": "Good code solves problems. Great code solves problems people didn't even know they had.",
+    "location": "Hyderabad, India",
+    "availability": [
+      "Available for Freelance",
+      "Open to Full-time Opportunities",
+      "Remote Friendly"
+    ]
+  },
+  "contact": {
+    "email": "naveenhemanth4@gmail.com",
+    "phone": "+91 6300296968",
+    "location": "Hyderabad, India",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/hemanthkokkonda/",
+      "github": "https://github.com/hemanth090"
+    },
+    "resume": "resume.pdf"
+  },
+  "about": {
+    "description": "I'm a CSE student specializing in Data Science with a deep passion for AI. Currently building AI-powered applications that turn complex problems into simple, elegant solutions.",
+    "experience": "Proficient in Python, JavaScript, React, Flask, and cloud technologies. Proven ability to develop scalable tools for legal analysis, intelligent document search, and resume screening using advanced LLMs (Groq, OpenAI). Strong foundation in data structures, API design, and deploying applications to production. Recognized in inter-college hackathons and certified in Generative AI by Oracle.",
+    "highlights": [
+      {
+        "title": "3+ Projects",
+        "description": "Web applications deployed",
+        "icon": "FaCode",
+        "color": "text-blue-500"
+      },
+      {
+        "title": "Full-Stack",
+        "description": "MERN & Python development",
+        "icon": "FaRocket",
+        "color": "text-green-500"
+      },
+      {
+        "title": "AI Enthusiast",
+        "description": "Data Science & AI-powered solutions",
+        "icon": "FaBrain",
+        "color": "text-purple-500"
+      },
+      {
+        "title": "Open Source",
+        "description": "Contributing to projects",
+        "icon": "FaGithub",
+        "color": "text-gray-600"
+      }
+    ]
+  },
+  "skills": {
+    "categories": [
+      {
+        "title": "Languages",
+        "skills": [
+          {
+            "name": "Python",
+            "level": 90,
+            "icon": "FaPython",
+            "color": "text-yellow-500"
+          },
+          {
+            "name": "JavaScript",
+            "level": 85,
+            "icon": "FaJs",
+            "color": "text-yellow-400"
+          },
+          {
+            "name": "HTML5",
+            "level": 95,
+            "icon": "FaHtml5",
+            "color": "text-orange-500"
+          },
+          {
+            "name": "CSS3",
+            "level": 90,
+            "icon": "FaCss3Alt",
+            "color": "text-blue-500"
+          },
+          {
+            "name": "SQL",
+            "level": 80,
+            "icon": "FaDatabase",
+            "color": "text-blue-600"
+          }
+        ]
+      },
+      {
+        "title": "Web Development",
+        "skills": [
+          {
+            "name": "React",
+            "level": 85,
+            "icon": "FaReact",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "Node.js",
+            "level": 80,
+            "icon": "FaNodeJs",
+            "color": "text-green-500"
+          },
+          {
+            "name": "Express.js",
+            "level": 80,
+            "icon": "SiExpress",
+            "color": "text-gray-600"
+          },
+          {
+            "name": "Flask",
+            "level": 75,
+            "icon": "SiFlask",
+            "color": "text-gray-800"
+          },
+          {
+            "name": "Streamlit",
+            "level": 80,
+            "icon": "FaChartLine",
+            "color": "text-red-500"
+          },
+          {
+            "name": "LangChain",
+            "level": 75,
+            "icon": "FaLink",
+            "color": "text-blue-500"
+          }
+        ]
+      },
+      {
+        "title": "Data & AI",
+        "skills": [
+          {
+            "name": "NumPy",
+            "level": 80,
+            "icon": "SiNumpy",
+            "color": "text-blue-600"
+          },
+          {
+            "name": "Pandas",
+            "level": 80,
+            "icon": "SiPandas",
+            "color": "text-purple-600"
+          },
+          {
+            "name": "OpenAI API",
+            "level": 85,
+            "icon": "SiOpenai",
+            "color": "text-green-600"
+          },
+          {
+            "name": "Groq APIs",
+            "level": 88,
+            "icon": "FaBrain",
+            "color": "text-purple-500"
+          }
+        ]
+      },
+      {
+        "title": "Database & DevOps",
+        "skills": [
+          {
+            "name": "MongoDB",
+            "level": 80,
+            "icon": "SiMongodb",
+            "color": "text-green-500"
+          },
+          {
+            "name": "SupaBase",
+            "level": 75,
+            "icon": "SiSupabase",
+            "color": "text-green-400"
+          },
+          {
+            "name": "Git",
+            "level": 85,
+            "icon": "FaGitAlt",
+            "color": "text-orange-600"
+          },
+          {
+            "name": "Docker",
+            "level": 70,
+            "icon": "FaDocker",
+            "color": "text-blue-500"
+          },
+          {
+            "name": "AWS",
+            "level": 60,
+            "icon": "FaCloud",
+            "color": "text-orange-400"
+          }
+        ]
+      }
+    ],
+    "additionalTechnologies": [
+      "RESTful APIs",
+      "Streamlit",
+      "LangChain",
+      "Machine Learning",
+      "Responsive Design",
+      "Agile Development",
+      "Version Control",
+      "API Integration",
+      "Cloud Deployment",
+      "Data Structures",
+      "API Design",
+      "Production Deployment"
+    ]
+  },
+  "projects": [
+    {
+      "title": "LegalEase - AI Legal Document Simplifier",
+      "description": "Architected a full-stack platform that simplifies complex legal documents with over 95% accuracy, supporting translation and analysis across 75+ languages.",
+      "image": "/legalease.png",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "TailwindCSS",
+        "Groq AI",
+        "Tesseract.js"
+      ],
+      "features": [
+        "Comprehensive document pipeline handling PDF, DOCX, and image formats",
+        "Privacy-first architecture processing files in-memory without persistent storage",
+        "Structured prompt engineering for markdown-formatted legal analysis",
+        "Support for 75+ languages including Hindi, Arabic, and Chinese"
+      ],
+      "metrics": [
+        {
+          "label": "Accuracy",
+          "value": "95%",
+          "icon": "FaChartLine"
+        },
+        {
+          "label": "Languages",
+          "value": "75+",
+          "icon": "FaGlobe"
+        },
+        {
+          "label": "Formats",
+          "value": "3",
+          "icon": "FaFile"
+        }
+      ],
+      "githubUrl": "https://github.com/hemanth090/LegalEase",
+      "liveUrl": "https://legalease-frontend-ihrt.onrender.com/",
+      "date": "Jul 2025",
+      "category": "Full-Stack AI Project"
+    },
+    {
+      "title": "Knora AI - RAG Knowledge Assistant",
+      "description": "Engineered a Retrieval-Augmented Generation (RAG) system enabling intelligent querying across 9 document types through a FAISS vector database, achieving a 90% relevance score.",
+      "image": "/image.png",
+      "technologies": [
+        "Python",
+        "Streamlit",
+        "FAISS",
+        "Groq LLMs",
+        "Sentence Transformers",
+        "PyPDF2"
+      ],
+      "features": [
+        "RAG system supporting 9 document types (PDF, DOCX, Excel)",
+        "FAISS vector database for intelligent querying",
+        "Sophisticated chunking algorithm with 200-character overlap",
+        "Integration with multiple Groq AI models (LLaMA 3.1 70B, Mixtral 8x7B)"
+      ],
+      "metrics": [
+        {
+          "label": "Relevance Score",
+          "value": "90%",
+          "icon": "FaChartLine"
+        },
+        {
+          "label": "Document Types",
+          "value": "9",
+          "icon": "FaFile"
+        },
+        {
+          "label": "Models",
+          "value": "2",
+          "icon": "FaBrain"
+        }
+      ],
+      "githubUrl": "https://github.com/hemanth090/knora_ai",
+      "liveUrl": "https://knora-ai.streamlit.app/",
+      "date": "Aug 2025",
+      "category": "AI/ML Project"
+    },
+    {
+      "title": "ATS-V3 - AI-Powered Resume Analyzer",
+      "description": "Developed a Flask-based resume analysis application that automates candidate screening, reducing initial review time by an estimated 70%.",
+      "image": "/ATSV3.png",
+      "technologies": [
+        "Python",
+        "Flask",
+        "Groq AI",
+        "PyPDF2",
+        "MongoDB",
+        "Bootstrap 5",
+        "Gunicorn"
+      ],
+      "features": [
+        "Complete RESTful API for PDF text extraction and AI compatibility scoring",
+        "Responsive Bootstrap 5 frontend for user interface",
+        "Production-ready deployment with 4-worker Gunicorn configuration",
+        "Historical analysis retrieval and scoring system"
+      ],
+      "metrics": [
+        {
+          "label": "Time Reduction",
+          "value": "70%",
+          "icon": "FaClock"
+        },
+        {
+          "label": "Workers",
+          "value": "4",
+          "icon": "FaServer"
+        },
+        {
+          "label": "Deployment",
+          "value": "Production",
+          "icon": "FaCloud"
+        }
+      ],
+      "githubUrl": "https://github.com/hemanth090/ATS-V3",
+      "liveUrl": "https://ats-v3.onrender.com/",
+      "date": "Mar 2025",
+      "category": "Academic Project"
+    },
+    {
+      "title": "Smart Notes Organizer",
+      "description": "A full-stack MERN application that uses OCR (Optical Character Recognition) and AI to extract text from images and generate organized, intelligent notes.",
+      "image": "/smartNotesOrganizer.png",
+      "technologies": [
+        "React 18",
+        "Vite",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Tesseract.js",
+        "Groq SDK",
+        "Tailwind CSS",
+        "Axios",
+        "Multer"
+      ],
+      "features": [
+        "Image Upload & OCR: Upload images and extract text using Tesseract.js",
+        "AI-Powered Note Generation: Transform extracted text into organized notes using AI",
+        "Note Management: Create, read, update, and delete notes",
+        "Modern UI: Clean, responsive interface built with React and Tailwind CSS",
+        "Secure: Environment-based configuration and secure file handling"
+      ],
+      "metrics": [
+        {
+          "label": "OCR Accuracy",
+          "value": "95%",
+          "icon": "FaChartLine"
+        },
+        {
+          "label": "Tech Stack",
+          "value": "11",
+          "icon": "FaCode"
+        },
+        {
+          "label": "API Endpoints",
+          "value": "7",
+          "icon": "FaServer"
+        }
+      ],
+      "githubUrl": "https://github.com/hemanth090/Smart_Note_Organizer",
+      "liveUrl": "https://smart-note-organizer-1.onrender.com/",
+      "date": "Dec 2024",
+      "category": "Full-Stack MERN Project"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Full-Stack Developer",
+      "company": "Personal Projects",
+      "location": "Remote",
+      "duration": "Jan 2024 - Present",
+      "type": "Self-Directed Learning",
+      "description": "Developing production-ready applications with focus on AI integration and user experience.",
+      "achievements": [
+        "Built and deployed 3 web applications serving 100+ active users",
+        "Achieved 85% accuracy in AI-powered resume analysis and document processing",
+        "Implemented scalable architectures using MERN stack and Python Flask",
+        "Integrated multiple AI APIs (OpenAI, Groq) for enhanced functionality",
+        "Optimized application performance reducing load times by 38%"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "Python",
+        "MongoDB",
+        "AI APIs",
+        "Docker"
+      ],
+      "color": "from-blue-500 to-purple-600"
+    },
+    {
+      "role": "Open Source Contributor",
+      "company": "GitHub Community",
+      "location": "Remote",
+      "duration": "2024 - Present",
+      "type": "Community Contribution",
+      "description": "Contributing to open-source projects and building tools for the developer community.",
+      "achievements": [
+        "Developed and maintained multiple open-source projects",
+        "Created comprehensive documentation and tutorials",
+        "Collaborated with developers worldwide on various initiatives",
+        "Implemented modern development practices and code standards",
+        "Shared knowledge through detailed project repositories"
+      ],
+      "technologies": [
+        "React",
+        "Python",
+        "Flask",
+        "APIs",
+        "Documentation"
+      ],
+      "color": "from-green-500 to-teal-600"
+    },
+    {
+      "role": "Computer Science Student",
+      "company": "Sreyas Institute of Engineering and Technology",
+      "location": "Hyderabad, India",
+      "duration": "Oct 2022 - Jun 2026",
+      "type": "Academic",
+      "description": "Pursuing Bachelor of Technology in Computer Science and Engineering with specialization in Data Science.",
+      "achievements": [
+        "Specialized in Data Science and AI applications",
+        "Completed multiple certifications in Python, MongoDB, and Frontend Development",
+        "Maintained strong academic performance while building practical projects",
+        "Active participation in coding competitions and technical events",
+        "Developed strong foundation in algorithms, data structures, and system design"
+      ],
+      "technologies": [
+        "Python",
+        "Data Science",
+        "Machine Learning",
+        "Algorithms",
+        "System Design"
+      ],
+      "color": "from-orange-500 to-red-600"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science and Engineering",
+      "specialization": "Data Science",
+      "institution": "Sreyas Institute of Engineering and Technology",
+      "location": "Hyderabad, India",
+      "duration": "Oct 2022 - Jun 2026",
+      "status": "Currently Pursuing",
+      "description": "B.Tech, Computer Science and Engineering (Data Science) - CGPA: 7.46/10",
+      "highlights": [
+        "Specialized track in Data Science and AI",
+        "Strong foundation in algorithms and data structures",
+        "Hands-on experience with modern development frameworks",
+        "Active participation in coding communities and projects",
+        "Project-based learning with real-world applications"
+      ],
+      "relevantCourses": [
+        "Data Structures & Algorithms",
+        "Machine Learning",
+        "Database Management Systems",
+        "Web Development",
+        "Software Engineering",
+        "Artificial Intelligence",
+        "Data Mining",
+        "Computer Networks"
+      ],
+      "color": "from-blue-500 to-indigo-600"
+    },
+    {
+      "degree": "Intermediate (MPC)",
+      "specialization": "Mathematics, Physics, Chemistry",
+      "institution": "Sri Chaitanya Jr. College",
+      "location": "Khammam, India",
+      "duration": "Jun 2020 - Mar 2022",
+      "status": "Completed",
+      "description": "Intermediate (MPC) - Percentage: 85.9",
+      "highlights": [
+        "Strong mathematical foundation",
+        "Analytical thinking and problem-solving skills",
+        "Scientific methodology and research approach",
+        "Preparation for engineering entrance examinations"
+      ],
+      "relevantCourses": [
+        "Advanced Mathematics",
+        "Physics",
+        "Chemistry",
+        "English",
+        "Computer Science Basics"
+      ],
+      "color": "from-green-500 to-teal-600"
+    },
+    {
+      "degree": "Matriculation (SSC)",
+      "specialization": "Secondary School Certificate",
+      "institution": "New Vision School",
+      "location": "Khammam, India",
+      "duration": "Jun 2019 - Mar 2020",
+      "status": "Completed",
+      "description": "Secondary education providing comprehensive knowledge across multiple subjects and developing fundamental academic skills.",
+      "highlights": [
+        "Well-rounded education across multiple disciplines",
+        "Development of communication and presentation skills",
+        "Foundation in mathematics and sciences",
+        "Introduction to computer applications"
+      ],
+      "relevantCourses": [
+        "Mathematics",
+        "Science",
+        "English",
+        "Social Studies",
+        "Computer Applications"
+      ],
+      "color": "from-purple-500 to-pink-600"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+      "provider": "Oracle",
+      "date": "Aug 2025",
+      "description": "Professional certification in Generative AI covering Oracle Cloud Infrastructure and AI technologies.",
+      "skills": [
+        "Generative AI",
+        "Oracle Cloud Infrastructure",
+        "AI Technologies",
+        "Cloud Computing",
+        "Machine Learning"
+      ],
+      "certificateUrl": "#",
+      "highlights": [
+        "Generative AI fundamentals",
+        "Oracle Cloud Infrastructure",
+        "AI model deployment"
+      ],
+      "color": "from-red-500 to-orange-600"
+    },
+    {
+      "title": "Simplilearn Front End Development",
+      "provider": "Simplilearn",
+      "date": "Jun 2025",
+      "description": "Comprehensive certification covering modern frontend development practices, responsive design, and user experience principles.",
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive Design",
+        "UI/UX Principles"
+      ],
+      "certificateUrl": "https://simpli-web.app.link/e/ZJlHPvGvzUb",
+      "highlights": [
+        "Modern frontend development techniques",
+        "Responsive web design principles",
+        "JavaScript ES6+ features"
+      ],
+      "color": "from-yellow-500 to-orange-600"
+    },
+    {
+      "title": "MongoDB Python Developer Path",
+      "provider": "MongoDB University",
+      "date": "Jan 2024",
+      "description": "Specialized certification in MongoDB database development using Python, covering database design, queries, and optimization.",
+      "skills": [
+        "MongoDB",
+        "PyMongo",
+        "Database Design",
+        "Aggregation",
+        "Indexing"
+      ],
+      "certificateUrl": "https://learn.mongodb.com/c/dm_xOHgKTn2gz-vzhzB0UA",
+      "highlights": [
+        "MongoDB database fundamentals",
+        "Python integration with PyMongo",
+        "Advanced querying and aggregation",
+        "Database performance optimization",
+        "Schema design best practices"
+      ],
+      "color": "from-green-500 to-emerald-600"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Hackathon Excellence",
+      "description": "Secured Top 5 rank in two inter-college hackathons by building real-time tools under 48 hours",
+      "stats": [
+        {
+          "label": "Rank",
+          "value": "Top 5",
+          "icon": "FaTrophy"
+        },
+        {
+          "label": "Hackathons",
+          "value": "2",
+          "icon": "FaRocket"
+        },
+        {
+          "label": "Time Limit",
+          "value": "48h",
+          "icon": "FaClock"
+        }
+      ],
+      "highlights": [
+        "Real-time tool development",
+        "Inter-college competition success",
+        "48-hour development challenges"
+      ],
+      "color": "from-blue-400 to-purple-500"
+    },
+    {
+      "title": "AI Application Success",
+      "description": "Delivered scalable AI applications achieving 85% accuracy in resume scoring and feedback",
+      "stats": [
+        {
+          "label": "Accuracy",
+          "value": "85%",
+          "icon": "FaChartLine"
+        },
+        {
+          "label": "Applications",
+          "value": "3+",
+          "icon": "FaCode"
+        },
+        {
+          "label": "Scalability",
+          "value": "High",
+          "icon": "FaServer"
+        }
+      ],
+      "highlights": [
+        "Resume scoring automation",
+        "Scalable AI architecture",
+        "Production deployment"
+      ],
+      "color": "from-green-400 to-emerald-500"
+    }
+  ],
+  "metrics": [
+    {
+      "number": "3+",
+      "label": "Projects",
+      "description": "Production applications deployed"
+    },
+    {
+      "number": "10+",
+      "label": "Technologies",
+      "description": "Modern development stack"
+    },
+    {
+      "number": "100%",
+      "label": "Deployment",
+      "description": "Successful project delivery"
+    }
+  ],
+  "additionalSkills": [
+    "RESTful API Development",
+    "Version Control (Git)",
+    "Cloud Deployment"
+  ]
+}

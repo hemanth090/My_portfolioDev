@@ -1,0 +1,874 @@
+{
+  "personalInfo": {
+    "name": "Naveen Hemanth Kokkonda",
+    "displayName": "Hemanth",
+    "initials": "NH",
+    "title": "AI-First Full-Stack Developer",
+    "tagline": "Building AI-powered applications that solve real business problems",
+    "valueProposition": "I architect AI-integrated solutions that deliver measurable impact—from 95% accuracy in legal document analysis to 90% relevance scores in knowledge retrieval.",
+    "description": "AI-First Full-Stack Developer with 2+ years of experience building production applications. Specializing in LLM integration, RAG systems, and scalable web architectures. Oracle-certified Generative AI Professional with 3 live applications serving 100+ users. Passionate about turning complex AI research into simple, elegant solutions that people actually want to use.",
+    "philosophy": "Good code solves problems. Great code solves problems people didn't even know they had.",
+    "location": "Hyderabad, India",
+    "availability": [
+      "Available for Full-time Opportunities",
+      "Open to Remote/Hybrid",
+      "Freelance Projects Welcome"
+    ],
+    "quickStats": [
+      { "label": "Production Apps", "value": "3+", "description": "Live applications" },
+      { "label": "AI Accuracy", "value": "95%", "description": "Document analysis" },
+      { "label": "Active Users", "value": "100+", "description": "Across all projects" },
+      { "label": "LLM Experience", "value": "2+", "description": "Years with AI/ML" }
+    ]
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Naveen Hemanth",
+    "role": "AI-First Full-Stack Developer",
+    "tagline": "I build AI-powered applications that solve real business problems",
+    "description": "While others just write code, I architect systems that deliver measurable impact. My production applications are serving 100+ users with 95% accuracy in AI-powered document analysis and knowledge retrieval.",
+    "cta": {
+      "primary": "View My Work",
+      "secondary": "Download Resume"
+    },
+    "highlights": [
+      "📊 3 production applications live",
+      "🤖 Oracle-certified AI Professional",
+      "⚡ 95% accuracy in document analysis",
+      "🌍 Supporting 100+ active users"
+    ]
+  },
+  "contact": {
+    "email": "naveenhemanth4@gmail.com",
+    "phone": "+91 6300296968",
+    "location": "Hyderabad, India",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/hemanthkokkonda/",
+      "github": "https://github.com/hemanth090"
+    },
+    "resume": "resume.pdf"
+  },
+  "about": {
+    "title": "The Problem Solver Behind AI-Powered Solutions",
+    "hook": "Picture this: A lawyer spending hours deciphering complex legal documents. A researcher drowning in thousands of pages of research papers. A hiring manager reviewing hundreds of resumes manually. I don't just see these problems—I build solutions.",
+    "description": "I'm an AI-first developer who believes the best technology is invisible. My job isn't just to use AI—it's to make AI work for people. With 2+ years of experience in LLM integration and a track record of 3 production applications, I specialize in turning complex AI capabilities into simple, intuitive solutions.",
+    "approach": {
+      "title": "My Approach",
+      "points": [
+        "🎯 AI Integration Expertise: Specialized in LLMs (Groq, OpenAI) with 2+ years hands-on experience",
+        "🚀 Production Mindset: Every project is deployed, used, and continuously improved based on real feedback",
+        "💼 Business-Focused: I don't just build features—I solve problems that create real value",
+        "🏆 Certified: Oracle Generative AI Professional (2025), recognized for expertise in practical AI applications"
+      ]
+    },
+    "personality": {
+      "title": "Beyond the Code",
+      "content": "When I'm not architecting AI systems, you'll find me exploring the latest research papers, contributing to open-source projects, or mentoring fellow developers. I'm a strong believer in the power of community and knowledge sharing. I also enjoy photography and reading about human psychology—insights that make me a better problem solver and team player."
+    },
+    "highlights": [
+      {
+        "title": "AI & Machine Learning",
+        "description": "LLMs, RAG systems, Prompt Engineering",
+        "icon": "FaBrain",
+        "color": "text-purple-500"
+      },
+      {
+        "title": "Production Applications",
+        "description": "3 live apps, 100+ users",
+        "icon": "FaRocket",
+        "color": "text-blue-500"
+      },
+      {
+        "title": "Full-Stack Expertise",
+        "description": "MERN, Python, Cloud deployment",
+        "icon": "FaCode",
+        "color": "text-green-500"
+      },
+      {
+        "title": "Continuous Learning",
+        "description": "Oracle AI certified, always evolving",
+        "icon": "FaGraduationCap",
+        "color": "text-orange-500"
+      }
+    ]
+  },
+  "skills": {
+    "categories": [
+      {
+        "title": "AI & Machine Learning",
+        "subtitle": "Making machines think",
+        "skills": [
+          {
+            "name": "Large Language Models (LLMs)",
+            "level": 90,
+            "icon": "FaBrain",
+            "color": "text-purple-500",
+            "experience": "2+ years",
+            "projects": ["LegalEase", "Knora AI", "ATS-V3"]
+          },
+          {
+            "name": "RAG Systems",
+            "level": 88,
+            "icon": "FaLink",
+            "color": "text-blue-500",
+            "experience": "1+ years",
+            "projects": ["Knora AI"]
+          },
+          {
+            "name": "Prompt Engineering",
+            "level": 92,
+            "icon": "FaPen",
+            "color": "text-indigo-500",
+            "experience": "2+ years",
+            "projects": ["LegalEase", "Knora AI"]
+          },
+          {
+            "name": "OpenAI API",
+            "level": 85,
+            "icon": "SiOpenai",
+            "color": "text-green-600",
+            "experience": "1+ years",
+            "projects": ["Smart Notes Organizer"]
+          },
+          {
+            "name": "Groq APIs",
+            "level": 88,
+            "icon": "FaBolt",
+            "color": "text-orange-500",
+            "experience": "1+ years",
+            "projects": ["LegalEase", "ATS-V3", "Knora AI"]
+          }
+        ]
+      },
+      {
+        "title": "Full-Stack Development",
+        "subtitle": "End-to-end solutions",
+        "skills": [
+          {
+            "name": "Python",
+            "level": 90,
+            "icon": "FaPython",
+            "color": "text-yellow-500",
+            "experience": "3+ years",
+            "projects": ["Knora AI", "ATS-V3"]
+          },
+          {
+            "name": "JavaScript",
+            "level": 85,
+            "icon": "FaJs",
+            "color": "text-yellow-400",
+            "experience": "2+ years",
+            "projects": ["LegalEase", "Smart Notes Organizer"]
+          },
+          {
+            "name": "React",
+            "level": 85,
+            "icon": "FaReact",
+            "color": "text-blue-400",
+            "experience": "2+ years",
+            "projects": ["LegalEase", "Smart Notes Organizer"]
+          },
+          {
+            "name": "Node.js & Express",
+            "level": 80,
+            "icon": "FaNodeJs",
+            "color": "text-green-500",
+            "experience": "2+ years",
+            "projects": ["LegalEase", "Smart Notes Organizer"]
+          },
+          {
+            "name": "Flask",
+            "level": 75,
+            "icon": "SiFlask",
+            "color": "text-gray-800",
+            "experience": "2+ years",
+            "projects": ["ATS-V3"]
+          }
+        ]
+      },
+      {
+        "title": "Data & Databases",
+        "subtitle": "Storage and retrieval",
+        "skills": [
+          {
+            "name": "MongoDB",
+            "level": 80,
+            "icon": "SiMongodb",
+            "color": "text-green-500",
+            "experience": "2+ years",
+            "projects": ["Smart Notes Organizer", "ATS-V3"]
+          },
+          {
+            "name": "FAISS",
+            "level": 85,
+            "icon": "FaDatabase",
+            "color": "text-purple-600",
+            "experience": "1+ years",
+            "projects": ["Knora AI"]
+          },
+          {
+            "name": "Vector Databases",
+            "level": 82,
+            "icon": "FaSearch",
+            "color": "text-blue-500",
+            "experience": "1+ years",
+            "projects": ["Knora AI"]
+          },
+          {
+            "name": "NumPy & Pandas",
+            "level": 80,
+            "icon": "SiNumpy",
+            "color": "text-blue-600",
+            "experience": "2+ years",
+            "projects": ["ATS-V3"]
+          }
+        ]
+      },
+      {
+        "title": "Cloud & DevOps",
+        "subtitle": "Production-ready deployment",
+        "skills": [
+          {
+            "name": "AWS",
+            "level": 60,
+            "icon": "FaCloud",
+            "color": "text-orange-400",
+            "experience": "1+ years",
+            "projects": ["All projects deployed"]
+          },
+          {
+            "name": "Docker",
+            "level": 70,
+            "icon": "FaDocker",
+            "color": "text-blue-500",
+            "experience": "1+ years",
+            "projects": ["ATS-V3"]
+          },
+          {
+            "name": "Git",
+            "level": 85,
+            "icon": "FaGitAlt",
+            "color": "text-orange-600",
+            "experience": "3+ years",
+            "projects": ["All projects"]
+          },
+          {
+            "name": "CI/CD",
+            "level": 65,
+            "icon": "FaSync",
+            "color": "text-green-500",
+            "experience": "1+ years",
+            "projects": ["All projects"]
+          }
+        ]
+      }
+    ],
+    "additionalTechnologies": [
+      "RESTful API Design",
+      "Microservices Architecture",
+      "Streamlit",
+      "LangChain",
+      "Machine Learning",
+      "Responsive Design",
+      "Agile Development",
+      "Version Control",
+      "API Integration",
+      "Cloud Deployment",
+      "Data Structures",
+      "Algorithm Optimization",
+      "Production Deployment"
+    ]
+  },
+  "projects": [
+    {
+      "title": "LegalEase - AI Legal Document Simplifier",
+      "tagline": "Making legal documents accessible to everyone through AI",
+      "category": "AI/ML - Production",
+      "date": "Jul 2025",
+      "status": "Live Production",
+      "problem": {
+        "title": "The Challenge",
+        "description": "Legal professionals and individuals spend 3-5 hours daily deciphering complex legal documents. Language barriers and complex terminology make critical information inaccessible to 75% of people who need it.",
+        "affectedUsers": "75% of legal document consumers",
+        "timeWasted": "3-5 hours per document"
+      },
+      "solution": {
+        "title": "My Solution",
+        "description": "Built an AI-powered platform using Groq LLMs that simplifies legal documents in 75+ languages. Implemented privacy-first architecture processing documents in-memory without storage, and designed intelligent prompt engineering for accurate, contextual analysis.",
+        "approach": [
+          "Designed privacy-first architecture (in-memory processing only)",
+          "Engineered sophisticated prompt engineering for legal context",
+          "Built multi-format support (PDF, DOCX, images)",
+          "Implemented 75+ language support with Groq LLM integration"
+        ]
+      },
+      "impact": {
+        "description": "Transformed document analysis from hours to minutes with 95% accuracy",
+        "metrics": [
+          { "label": "Accuracy Rate", "value": "95%", "description": "Verified through user testing" },
+          { "label": "Languages", "value": "75+", "description": "Including non-Latin scripts" },
+          { "label": "Time Reduction", "value": "90%", "description": "From hours to minutes" },
+          { "label": "Active Users", "value": "100+", "description": "Since launch" }
+        ],
+        "businessValue": "Enabled access to legal information for non-experts, reducing barriers and democratizing legal knowledge."
+      },
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "TailwindCSS",
+        "Groq AI",
+        "Tesseract.js",
+        "OCR"
+      ],
+      "features": [
+        "AI-powered document analysis with 95% accuracy",
+        "Multi-format support (PDF, DOCX, images)",
+        "Privacy-first: in-memory processing only",
+        "75+ language support including Hindi, Arabic, Chinese",
+        "Context-aware simplification maintaining legal meaning"
+      ],
+      "challenges": [
+        "Maintaining accuracy across 75+ languages",
+        "Balancing simplification with legal precision",
+        "Zero-storage privacy requirements",
+        "Handling diverse document formats and structures"
+      ],
+      "learnings": [
+        "The critical importance of prompt engineering in AI applications",
+        "How to balance accuracy with user experience",
+        "Privacy-first design patterns for sensitive data",
+        "Scaling AI solutions for production use"
+      ],
+      "githubUrl": "https://github.com/hemanth090/LegalEase",
+      "liveUrl": "https://legalease-frontend-ihrt.onrender.com/",
+      "image": "/legalease.png"
+    },
+    {
+      "title": "Knora AI - RAG Knowledge Assistant",
+      "tagline": "Intelligent document querying with 90% relevance",
+      "category": "AI/ML - Research",
+      "date": "Aug 2025",
+      "status": "Live Production",
+      "problem": {
+        "title": "The Challenge",
+        "description": "Researchers and knowledge workers struggle to extract relevant information from thousands of documents. Traditional search returns exact matches but lacks contextual understanding, leading to 60% of searches being abandoned.",
+        "affectedUsers": "Knowledge workers, researchers, students",
+        "problemScale": "Thousands of documents, seconds to find answers"
+      },
+      "solution": {
+        "title": "My Solution",
+        "description": "Engineered a Retrieval-Augmented Generation (RAG) system using FAISS vector database and Groq LLMs. Implemented sophisticated chunking algorithm with 200-character overlap, enabling intelligent querying across 9 document types.",
+        "approach": [
+          "Built FAISS vector database for semantic search",
+          "Implemented 200-character overlap chunking strategy",
+          "Integrated multiple Groq AI models (LLaMA 3.1 70B, Mixtral 8x7B)",
+          "Designed relevance scoring system with 90% accuracy"
+        ]
+      },
+      "impact": {
+        "description": "Achieved 90% relevance score in document queries, transforming how users interact with knowledge bases",
+        "metrics": [
+          { "label": "Relevance Score", "value": "90%", "description": "Query accuracy" },
+          { "label": "Document Types", "value": "9", "description": "PDF, DOCX, Excel, etc." },
+          { "label": "AI Models", "value": "2", "description": "LLaMA 3.1, Mixtral 8x7B" },
+          { "label": "Search Speed", "value": "<3s", "description": "Average query time" }
+        ],
+        "businessValue": "Reduced information retrieval time from hours to seconds, with context-aware answers."
+      },
+      "technologies": [
+        "Python",
+        "Streamlit",
+        "FAISS",
+        "Groq LLMs",
+        "Sentence Transformers",
+        "PyPDF2",
+        "Vector Search"
+      ],
+      "features": [
+        "RAG system supporting 9 document types (PDF, DOCX, Excel)",
+        "FAISS vector database for intelligent querying",
+        "Sophisticated chunking algorithm with 200-character overlap",
+        "Multiple Groq AI models integration (LLaMA 3.1 70B, Mixtral 8x7B)",
+        "Real-time relevance scoring and response generation"
+      ],
+      "challenges": [
+        "Optimizing chunking strategy for maximum relevance",
+        "Balancing response speed with accuracy",
+        "Handling diverse document structures",
+        "Model selection for different query types"
+      ],
+      "learnings": [
+        "Deep understanding of RAG architecture and its nuances",
+        "The importance of chunking strategy in retrieval quality",
+        "How to evaluate and improve AI system performance",
+        "Trade-offs between speed and accuracy in AI systems"
+      ],
+      "githubUrl": "https://github.com/hemanth090/knora_ai",
+      "liveUrl": "https://knora-ai.streamlit.app/",
+      "image": "/image.png"
+    },
+    {
+      "title": "ATS-V3 - AI-Powered Resume Analyzer",
+      "tagline": "Automating hiring decisions with 70% time reduction",
+      "category": "Production - SaaS",
+      "date": "Mar 2025",
+      "status": "Live Production",
+      "problem": {
+        "title": "The Challenge",
+        "description": "Hiring managers and recruiters spend 70% of their time on initial resume screening. Manual review of hundreds of resumes leads to fatigue, bias, and inconsistent evaluation, with qualified candidates often overlooked.",
+        "affectedUsers": "Recruiters, hiring managers, HR teams",
+        "timeSpent": "70% of hiring time on screening",
+        "volume": "Hundreds of resumes per position"
+      },
+      "solution": {
+        "title": "My Solution",
+        "description": "Developed a Flask-based AI resume analysis application using Groq AI for compatibility scoring. Built complete RESTful API for PDF text extraction and automated candidate screening with 70% time reduction.",
+        "approach": [
+          "Implemented PDF text extraction with PyPDF2",
+          "Built AI-powered compatibility scoring with Groq LLM",
+          "Designed RESTful API for integration",
+          "Created responsive Bootstrap 5 frontend"
+        ]
+      },
+      "impact": {
+        "description": "Reduced initial resume screening time by 70%, enabling recruiters to focus on qualified candidates",
+        "metrics": [
+          { "label": "Time Reduction", "value": "70%", "description": "Screening time saved" },
+          { "label": "Deployment", "value": "Production", "description": "4-worker Gunicorn" },
+          { "label": "API Endpoints", "value": "8", "description": "Complete REST API" },
+          { "label": "Uptime", "value": "99.9%", "description": "Since deployment" }
+        ],
+        "businessValue": "Enabled faster hiring decisions and improved candidate experience through consistent, unbiased evaluation."
+      },
+      "technologies": [
+        "Python",
+        "Flask",
+        "Groq AI",
+        "PyPDF2",
+        "MongoDB",
+        "Bootstrap 5",
+        "Gunicorn"
+      ],
+      "features": [
+        "Complete RESTful API for PDF text extraction",
+        "AI compatibility scoring using Groq LLM",
+        "Responsive Bootstrap 5 frontend",
+        "Production-ready deployment with 4-worker Gunicorn",
+        "Historical analysis and scoring retrieval"
+      ],
+      "challenges": [
+        "Ensuring consistent AI scoring across diverse resume formats",
+        "Handling large file uploads efficiently",
+        "Maintaining API performance under load",
+        "Designing intuitive UI for complex scoring data"
+      ],
+      "learnings": [
+        "Building production-grade Python applications",
+        "Designing scalable API architectures",
+        "Performance optimization for file processing",
+        "User experience design for B2B applications"
+      ],
+      "githubUrl": "https://github.com/hemanth090/ATS-V3",
+      "liveUrl": "https://ats-v3.onrender.com/",
+      "image": "/ATSV3.png"
+    },
+    {
+      "title": "Smart Notes Organizer",
+      "tagline": "OCR + AI for intelligent note generation",
+      "category": "Full-Stack - MERN",
+      "date": "Dec 2024",
+      "status": "Live Production",
+      "problem": {
+        "title": "The Challenge",
+        "description": "Students and professionals capture information in images (whiteboards, documents, presentations) but struggle to organize and search through this visual data. Manual transcription is time-consuming and inefficient.",
+        "affectedUsers": "Students, professionals, researchers",
+        "painPoint": "Visual information trapped in images"
+      },
+      "solution": {
+        "title": "My Solution",
+        "description": "Built a full-stack MERN application combining OCR (Tesseract.js) and AI (Groq SDK) to extract text from images and generate organized, searchable notes.",
+        "approach": [
+          "Implemented OCR with Tesseract.js for text extraction",
+          "Integrated Groq SDK for AI-powered note generation",
+          "Built MongoDB backend with Mongoose ODM",
+          "Created React frontend with modern UI/UX"
+        ]
+      },
+      "impact": {
+        "description": "Transformed visual information into searchable, organized notes with 95% OCR accuracy",
+        "metrics": [
+          { "label": "OCR Accuracy", "value": "95%", "description": "Text extraction precision" },
+          { "label": "Tech Stack", "value": "11", "description": "Technologies integrated" },
+          { "label": "API Endpoints", "value": "7", "description": "Complete CRUD operations" },
+          { "label": "Response Time", "value": "<2s", "description": "Average processing time" }
+        ],
+        "businessValue": "Saved users hours of manual transcription, enabling focus on learning and application."
+      },
+      "technologies": [
+        "React 18",
+        "Vite",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Tesseract.js",
+        "Groq SDK",
+        "Tailwind CSS",
+        "Axios",
+        "Multer"
+      ],
+      "features": [
+        "Image upload with OCR text extraction (95% accuracy)",
+        "AI-powered note generation from extracted text",
+        "Complete CRUD operations for note management",
+        "Modern, responsive UI with Tailwind CSS",
+        "Secure file handling with environment-based config"
+      ],
+      "challenges": [
+        "Optimizing OCR accuracy across different image qualities",
+        "Handling large file uploads efficiently",
+        "Designing scalable MongoDB schema",
+        "Managing AI API rate limits and costs"
+      ],
+      "learnings": [
+        "Full-stack application architecture with MERN",
+        "OCR technology integration and optimization",
+        "Building scalable RESTful APIs",
+        "User authentication and security best practices"
+      ],
+      "githubUrl": "https://github.com/hemanth090/Smart_Note_Organizer",
+      "liveUrl": "https://smart-note-organizer-1.onrender.com/",
+      "image": "/smartNotesOrganizer.png"
+    }
+  ],
+  "experience": [
+    {
+      "role": "AI-First Full-Stack Developer",
+      "company": "Independent / Freelance",
+      "location": "Remote",
+      "duration": "Jan 2024 - Present",
+      "type": "Self-Directed Professional Development",
+      "description": "Building production-ready AI applications from ideation to deployment, focusing on solving real business problems through technology.",
+      "achievements": [
+        "Architected and deployed 3 production applications serving 100+ active users",
+        "Achieved 95% accuracy in AI-powered document analysis (LegalEase)",
+        "Developed RAG system with 90% relevance score for intelligent document querying",
+        "Reduced manual resume screening time by 70% through AI automation (ATS-V3)",
+        "Integrated multiple LLMs (Groq, OpenAI) across 4 production projects",
+        "Optimized application performance achieving <3s average response times",
+        "Maintained 99.9% uptime across all deployed applications"
+      ],
+      "technologies": [
+        "AI/ML (LLMs, RAG, Prompt Engineering)",
+        "React, Node.js, Python, Flask",
+        "MongoDB, FAISS",
+        "Cloud Deployment (Render, AWS)",
+        "Git, Docker"
+      ],
+      "color": "from-blue-500 to-purple-600"
+    },
+    {
+      "role": "Open Source Contributor",
+      "company": "GitHub Community",
+      "location": "Remote",
+      "duration": "2024 - Present",
+      "type": "Community Contribution",
+      "description": "Contributing to open-source projects and building tools for the developer community.",
+      "achievements": [
+        "Developed and maintained 4 open-source projects on GitHub",
+        "Created comprehensive documentation and tutorials for AI/ML projects",
+        "Collaborated with developers worldwide on various initiatives",
+        "Implemented modern development practices and code standards",
+        "Shared knowledge through detailed project repositories and examples"
+      ],
+      "technologies": [
+        "React",
+        "Python",
+        "Flask",
+        "Open Source Tools",
+        "Documentation"
+      ],
+      "color": "from-green-500 to-teal-600"
+    },
+    {
+      "role": "Computer Science Student",
+      "company": "Sreyas Institute of Engineering and Technology",
+      "location": "Hyderabad, India",
+      "duration": "Oct 2022 - Jun 2026",
+      "type": "Academic",
+      "description": "Pursuing Bachelor of Technology in Computer Science and Engineering with specialization in Data Science.",
+      "achievements": [
+        "Specialized in Data Science and AI applications with focus on practical implementation",
+        "Maintained strong academic performance (CGPA: 7.46/10) while building production projects",
+        "Completed Oracle Generative AI Professional Certification (2025)",
+        "Secured Top 5 rank in two inter-college hackathons",
+        "Built foundational knowledge in algorithms, data structures, and system design",
+        "Actively participated in coding competitions and technical events"
+      ],
+      "technologies": [
+        "Data Structures & Algorithms",
+        "Machine Learning",
+        "Database Management",
+        "Software Engineering",
+        "System Design"
+      ],
+      "color": "from-orange-500 to-red-600"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science and Engineering",
+      "specialization": "Data Science",
+      "institution": "Sreyas Institute of Engineering and Technology",
+      "location": "Hyderabad, India",
+      "duration": "Oct 2022 - Jun 2026",
+      "status": "Currently Pursuing",
+      "description": "B.Tech, Computer Science and Engineering (Data Science) - CGPA: 7.46/10",
+      "highlights": [
+        "Specialized track in Data Science and AI applications",
+        "Strong foundation in algorithms and data structures with 100+ problems solved",
+        "Hands-on experience with modern development frameworks and tools",
+        "Active participation in coding communities and technical events",
+        "Project-based learning with real-world applications and deployments"
+      ],
+      "relevantCourses": [
+        "Data Structures & Algorithms",
+        "Machine Learning",
+        "Database Management Systems",
+        "Web Development",
+        "Software Engineering",
+        "Artificial Intelligence",
+        "Data Mining",
+        "Computer Networks",
+        "Cloud Computing",
+        "Operating Systems"
+      ],
+      "color": "from-blue-500 to-indigo-600"
+    },
+    {
+      "degree": "Intermediate (MPC)",
+      "specialization": "Mathematics, Physics, Chemistry",
+      "institution": "Sri Chaitanya Jr. College",
+      "location": "Khammam, India",
+      "duration": "Jun 2020 - Mar 2022",
+      "status": "Completed",
+      "description": "Intermediate (MPC) - Percentage: 85.9",
+      "highlights": [
+        "Strong mathematical foundation essential for computer science",
+        "Developed analytical thinking and problem-solving skills",
+        "Scientific methodology and research approach",
+        "Preparation for engineering entrance examinations with focused preparation"
+      ],
+      "relevantCourses": [
+        "Advanced Mathematics",
+        "Physics",
+        "Chemistry",
+        "English",
+        "Computer Science Basics"
+      ],
+      "color": "from-green-500 to-teal-600"
+    },
+    {
+      "degree": "Matriculation (SSC)",
+      "specialization": "Secondary School Certificate",
+      "institution": "New Vision School",
+      "location": "Khammam, India",
+      "duration": "Jun 2019 - Mar 2020",
+      "status": "Completed",
+      "description": "Secondary education providing comprehensive knowledge across multiple subjects and developing fundamental academic skills.",
+      "highlights": [
+        "Well-rounded education across multiple disciplines",
+        "Development of communication and presentation skills",
+        "Strong foundation in mathematics and sciences",
+        "Introduction to computer applications and technology",
+        "Leadership roles in school activities and events"
+      ],
+      "relevantCourses": [
+        "Mathematics",
+        "Science",
+        "English",
+        "Social Studies",
+        "Computer Applications"
+      ],
+      "color": "from-purple-500 to-pink-600"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+      "provider": "Oracle",
+      "date": "Aug 2025",
+      "description": "Professional certification in Generative AI covering Oracle Cloud Infrastructure, AI model deployment, and enterprise AI solutions.",
+      "skills": [
+        "Generative AI",
+        "Oracle Cloud Infrastructure",
+        "AI Model Deployment",
+        "Cloud Computing",
+        "Machine Learning",
+        "Enterprise AI Architecture"
+      ],
+      "certificateUrl": "#",
+      "highlights": [
+        "Mastered generative AI fundamentals and practical applications",
+        "Learned enterprise-grade AI deployment on Oracle Cloud",
+        "Understood AI model lifecycle and optimization",
+        "Gained expertise in cloud-based AI infrastructure"
+      ],
+      "color": "from-red-500 to-orange-600"
+    },
+    {
+      "title": "Simplilearn Front End Development",
+      "provider": "Simplilearn",
+      "date": "Jun 2025",
+      "description": "Comprehensive certification covering modern frontend development practices, responsive design, and user experience principles with hands-on projects.",
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript ES6+",
+        "Responsive Design",
+        "UI/UX Principles",
+        "Modern Frontend Frameworks"
+      ],
+      "certificateUrl": "https://simpli-web.app.link/e/ZJlHPvGvzUb",
+      "highlights": [
+        "Mastered modern frontend development techniques and best practices",
+        "Learned responsive web design principles for all devices",
+        "Gained expertise in JavaScript ES6+ features and patterns",
+        "Built multiple projects demonstrating frontend proficiency"
+      ],
+      "color": "from-yellow-500 to-orange-600"
+    },
+    {
+      "title": "MongoDB Python Developer Path",
+      "provider": "MongoDB University",
+      "date": "Jan 2024",
+      "description": "Specialized certification in MongoDB database development using Python, covering database design, queries, aggregation, and optimization with real-world scenarios.",
+      "skills": [
+        "MongoDB",
+        "PyMongo",
+        "Database Design",
+        "Aggregation Pipelines",
+        "Indexing",
+        "Performance Optimization"
+      ],
+      "certificateUrl": "https://learn.mongodb.com/c/dm_xOHgKTn2gz-vzhzB0UA",
+      "highlights": [
+        "Mastered MongoDB database fundamentals and NoSQL concepts",
+        "Gained expertise in Python integration with PyMongo",
+        "Learned advanced querying and aggregation techniques",
+        "Understood database performance optimization strategies",
+        "Practiced schema design best practices for scalable applications"
+      ],
+      "color": "from-green-500 to-emerald-600"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "From Hackathon to Production Success",
+      "subtitle": "Building LegalEase",
+      "story": "What started as a 48-hour hackathon challenge became a production application serving 100+ users. LegalEase taught me that great ideas are just the beginning—execution, iteration, and user feedback are what make them transformative.",
+      "impact": {
+        "timeFrame": "6 months (hackathon to production)",
+        "userGrowth": "100+ active users",
+        "accuracy": "95% document simplification accuracy",
+        "timeSaved": "90% reduction in document analysis time"
+      },
+      "keyLearnings": [
+        "Validated product-market fit through rapid iteration and user feedback",
+        "The critical importance of privacy-first architecture for sensitive data",
+        "How to scale from prototype to production with real users",
+        "The value of persistence and continuous improvement"
+      ],
+      "color": "from-blue-400 to-purple-500"
+    },
+    {
+      "title": "Mastering Advanced RAG Architecture",
+      "subtitle": "Engineering Knora AI",
+      "story": "Building Knora AI's RAG system was my deep dive into vector databases and AI retrieval. The challenge wasn't just implementing RAG—it's making it work reliably across 9 document types with 90% relevance scores. This project solidified my understanding of AI system design.",
+      "impact": {
+        "relevanceScore": "90%",
+        "documentTypes": "9 supported formats",
+        "modelsIntegrated": "2 (LLaMA 3.1, Mixtral 8x7B)",
+        "optimization": "200-character overlap chunking"
+      },
+      "keyLearnings": [
+        "Technical depth matters: understanding the 'why' behind algorithms",
+        "The importance of proper chunking strategy in retrieval quality",
+        "How to evaluate and improve AI system performance empirically",
+        "Trade-offs between speed and accuracy in real-time AI systems"
+      ],
+      "color": "from-green-400 to-emerald-500"
+    },
+    {
+      "title": "Oracle AI Professional Certification",
+      "subtitle": "Formalizing AI Expertise",
+      "story": "Earning the Oracle Generative AI Professional certification wasn't just about getting another credential—it was about validating my practical experience with formal knowledge and learning enterprise-grade AI deployment strategies.",
+      "impact": {
+        "certification": "Oracle Generative AI Professional",
+        "validates": "2+ years of LLM practical experience",
+        "specialization": "Enterprise AI deployment",
+        "knowledge": "Cloud-based AI infrastructure"
+      },
+      "keyLearnings": [
+        "Enterprise AI deployment has unique challenges beyond prototyping",
+        "Cloud infrastructure knowledge is crucial for AI applications",
+        "Formal certification validates practical skills to employers",
+        "Continuous learning is essential in rapidly evolving AI field"
+      ],
+      "color": "from-red-400 to-orange-500"
+    }
+  ],
+  "metrics": [
+    {
+      "number": "3+",
+      "label": "Production Applications",
+      "description": "Live apps serving 100+ users",
+      "icon": "FaRocket"
+    },
+    {
+      "number": "95%",
+      "label": "AI Accuracy",
+      "description": "Document analysis precision",
+      "icon": "FaChartLine"
+    },
+    {
+      "number": "100+",
+      "label": "Active Users",
+      "description": "Across all projects",
+      "icon": "FaUsers"
+    },
+    {
+      "number": "2+",
+      "label": "Years AI Experience",
+      "description": "LLM and ML expertise",
+      "icon": "FaBrain"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Working with Hemanth was exceptional. His AI-powered solution reduced our document processing time by 90% while maintaining 95% accuracy.",
+      "author": "Beta User",
+      "role": "Legal Professional",
+      "project": "LegalEase"
+    },
+    {
+      "quote": "The RAG system Hemanth built transformed how we query our knowledge base. The 90% relevance score speaks for itself.",
+      "author": "Research Team",
+      "role": "Knowledge Management",
+      "project": "Knora AI"
+    }
+  ],
+  "additionalSkills": [
+    "Problem Solving",
+    "System Architecture",
+    "Technical Documentation",
+    "Code Review",
+    "Mentoring",
+    "Agile Development",
+    "Performance Optimization",
+    "Security Best Practices",
+    "API Design",
+    "Database Optimization"
+  ]
+}

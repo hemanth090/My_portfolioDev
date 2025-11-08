@@ -1,0 +1,22 @@
+{
+  "short_name": "Naveen Portfolio",
+  "name": "Naveen Hemanth Kokkonda - Full-Stack Developer Portfolio",
+  "description": "Portfolio of Naveen Hemanth Kokkonda - Full-Stack Developer & AI Enthusiast",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
