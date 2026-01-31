@@ -44,7 +44,7 @@ const DATA = {
   },
   skills: [
     { category: "Programming", items: ["Python", "FastAPI", "React", "REST APIs"] },
-    { category: "AI & Data", items: ["LLMs", "RAG Systems", "LangChain", "LangSmith"] },
+    { category: "AI & Data", items: ["LLMs", "RAG Systems", "LangChain", "LangSmith", "LangGraph"] },
     { category: "Databases", items: ["MongoDB", "SQL"] }
   ],
   projects: [
