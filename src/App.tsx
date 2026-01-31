@@ -54,7 +54,8 @@ const DATA = {
       description: "A professional LLM token visualization and counting tool supporting various model encodings. Developed for AI engineers to audit prompt costs and model limits.",
       tech: ["React", "FastAPI", "Tiktoken", "LLM"],
       link: "https://tokenizer-omega.vercel.app/",
-      github: "https://github.com/hemanth090/Tokenizer"
+      github: "https://github.com/hemanth090/Tokenizer",
+      image: "/projects/tokenizer.png"
     },
     {
       title: "TOON Studio",
@@ -62,7 +63,8 @@ const DATA = {
       description: "Token efficiency toolkit reducing LLM costs by 30-70% via Gemini AI integration and real-time analytics.",
       tech: ["Python", "FastAPI", "React", "Gemini AI"],
       link: "https://toon-optimizer.vercel.app/",
-      github: "https://github.com/hemanth090/Toon-optimizer"
+      github: "https://github.com/hemanth090/Toon-optimizer",
+      image: "/projects/toon-studio.png"
     },
     {
       title: "KnoRa AI",
@@ -70,7 +72,8 @@ const DATA = {
       description: "RAG knowledge assistant supporting 7+ document formats utilizing FAISS vector stores and multiple LLM options.",
       tech: ["Python", "Streamlit", "FAISS", "Groq API"],
       link: "http://knora-ai.streamlit.app/",
-      github: "https://github.com/hemanth090/knora_ai"
+      github: "https://github.com/hemanth090/knora_ai",
+      image: "/projects/knora.png"
     }
   ],
   education: [
@@ -108,50 +111,61 @@ const ProjectCard = memo(({ project, index }: { project: any; index: number }) =
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.1 }}
-    className="group relative p-6 rounded-2xl bg-neutral-950 border border-neutral-900 hover:border-neutral-800 transition-all duration-300"
+    className="group relative rounded-2xl bg-neutral-950 border border-neutral-900 hover:border-neutral-800 transition-all duration-300 overflow-hidden"
   >
-    <div className="flex justify-between items-start mb-4">
-      <h3 className="text-lg font-medium text-white group-hover:text-neutral-200">{project.title}</h3>
-      <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
-        {project.status || (project.date && dateFormatting.format(project.date))}
-      </span>
-    </div>
-    <p className="text-sm text-neutral-400 leading-relaxed mb-6 h-12 overflow-hidden line-clamp-2">
-      {project.description}
-    </p>
-    <div className="flex flex-wrap gap-2 mb-6">
-      {project.tech.map((t: string) => (
-        <span key={t} className="px-2 py-1 text-[10px] font-mono bg-neutral-900 text-neutral-500 rounded border border-neutral-800">
-          {t}
+    {project.image && (
+      <div className="relative aspect-video overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-all duration-500 scale-105 group-hover:scale-100"
+        />
+      </div>
+    )}
+    <div className="p-6">
+      <div className="flex justify-between items-start mb-4">
+        <h3 className="text-lg font-medium text-white group-hover:text-neutral-200">{project.title}</h3>
+        <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
+          {project.status || (project.date && dateFormatting.format(project.date))}
         </span>
-      ))}
-    </div>
-    <div className="flex items-center gap-4">
-      {project.link && (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-xs font-medium text-neutral-400 hover:text-white transition-colors"
-        >
-          Live Demo <ExternalLink className="w-3 h-3 ml-1" />
-        </a>
-      )}
-      {project.github && (
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-xs font-medium text-neutral-400 hover:text-white transition-colors"
-        >
-          Source <Github className="w-3 h-3 ml-1" />
-        </a>
-      )}
-      {!project.link && !project.github && (
-        <div className="flex items-center text-xs font-medium text-neutral-400 group-hover:text-white transition-colors">
-          View Details <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-        </div>
-      )}
+      </div>
+      <p className="text-sm text-neutral-400 leading-relaxed mb-6 h-12 overflow-hidden line-clamp-2">
+        {project.description}
+      </p>
+      <div className="flex flex-wrap gap-2 mb-6">
+        {project.tech.map((t: string) => (
+          <span key={t} className="px-2 py-1 text-[10px] font-mono bg-neutral-900 text-neutral-500 rounded border border-neutral-800">
+            {t}
+          </span>
+        ))}
+      </div>
+      <div className="flex items-center gap-4">
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-xs font-medium text-neutral-400 hover:text-white transition-colors"
+          >
+            Live Demo <ExternalLink className="w-3 h-3 ml-1" />
+          </a>
+        )}
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-xs font-medium text-neutral-400 hover:text-white transition-colors"
+          >
+            Source <Github className="w-3 h-3 ml-1" />
+          </a>
+        )}
+        {!project.link && !project.github && (
+          <div className="flex items-center text-xs font-medium text-neutral-400 group-hover:text-white transition-colors">
+            View Details <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+          </div>
+        )}
+      </div>
     </div>
   </motion.div>
 ));
