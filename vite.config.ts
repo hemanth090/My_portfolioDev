@@ -6,5 +6,14 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'build',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          framer: ['framer-motion'],
+          icons: ['lucide-react'],
+        },
+      },
+    },
   },
 })
