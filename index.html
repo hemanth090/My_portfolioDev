@@ -1,19 +1,94 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer</title>
+  <meta name="title" content="Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer" />
+  <meta name="description"
+    content="Portfolio of Naveen Hemanth Kokkonda - Final-year CS student specializing in AI-powered tools, LLM applications, and modern web development with React and Python." />
+  <meta name="keywords" content="AI Engineer, Frontend Developer, React, Python, LLM, RAG, Portfolio, Hyderabad" />
+  <meta name="author" content="Naveen Hemanth Kokkonda" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hemanthkokkonda.dev/" />
+  <meta property="og:title" content="Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer" />
+  <meta property="og:description"
+    content="Portfolio of Naveen Hemanth Kokkonda - Building AI-powered tools and modern web applications with Python and React." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://hemanthkokkonda.dev/" />
+  <meta name="twitter:title" content="Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer" />
+  <meta name="twitter:description"
+    content="Portfolio of Naveen Hemanth Kokkonda - Building AI-powered tools and modern web applications." />
+  <meta name="twitter:image" content="/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://hemanthkokkonda.dev/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/code.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Optimized Font Loading -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="/code.svg" />
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=optional"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+  </noscript>
+
+  <!-- Preload Critical Assets -->
   <link rel="preload" as="image" href="/profile.webp" fetchpriority="high" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <meta name="description"
-    content="Portfolio of Naveen Hemanth Kokkonda, a CS student specializing in AI-powered tools and modern web development." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Naveen Hemanth Kokkonda",
+    "url": "https://hemanthkokkonda.dev",
+    "image": "/profile.webp",
+    "jobTitle": "AI Engineer & Frontend Developer",
+    "description": "Final-year Computer Science student specializing in AI-powered tools and modern web development",
+    "email": "naveenhemanth4@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://github.com/hemanth090",
+      "https://www.linkedin.com/in/hemanthkokkonda"
+    ],
+    "knowsAbout": ["Python", "React", "FastAPI", "LLMs", "RAG Systems", "LangChain"]
+  }
+  </script>
+
+  <!-- Theme initialization - runs before React to prevent flash -->
+  <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(theme);
+      document.documentElement.style.colorScheme = theme;
+    })();
+  </script>
 </head>
 
 <body>
