@@ -116,15 +116,15 @@ export default function App() {
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-[var(--color-border)] bg-[var(--color-bg-nav)] backdrop-blur-md" role="navigation" aria-label="Main Navigation">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between">
           <a href="#about" aria-label="Go to top">
             <PixelLogo />
           </a>
-          <div className="flex items-center gap-4 sm:gap-8">
-            <a href="#projects" className="text-[11px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-widest">PROJECTS</a>
-            <a href="#skills" className="text-[11px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-widest">SKILLS</a>
-            <a href="#experience" className="text-[11px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-widest">EXPERIENCE</a>
-            <a href="#about-section" className="text-[11px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-widest">ABOUT</a>
+          <div className="flex items-center gap-3 sm:gap-8">
+            <a href="#projects" className="text-[10px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-tight sm:tracking-widest">PROJECTS</a>
+            <a href="#skills" className="text-[10px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-tight sm:tracking-widest">SKILLS</a>
+            <a href="#experience" className="text-[10px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-tight sm:tracking-widest">EXPERIENCE</a>
+            <a href="#about-section" className="text-[10px] sm:text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors tracking-tight sm:tracking-widest">ABOUT</a>
             <ThemeToggle />
           </div>
         </div>
