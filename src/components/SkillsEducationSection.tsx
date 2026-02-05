@@ -74,10 +74,10 @@ const SkillsEducationSection = memo(() => (
                 <SectionTitle icon={Cpu}>Education</SectionTitle>
                 {DATA.education.map(edu => (
                     <article key={edu.degree} className="group cursor-default">
-                        <h3 className="text-sm font-bold text-[var(--color-text-primary)] mb-1">{edu.degree}</h3>
+                        <h3 className="text-lg font-bold text-[var(--color-text-primary)] mb-1">{edu.degree}</h3>
                         <div className="flex flex-col mb-4">
-                            <p className="text-xs text-[var(--color-text-secondary)]">{edu.school}</p>
-                            <p className="text-[10px] text-[var(--color-text-muted)] mt-0.5">{edu.location}</p>
+                            <p className="text-sm font-medium text-[var(--color-text-secondary)]">{edu.school}</p>
+                            <p className="text-[11px] text-[var(--color-text-muted)] mt-1">{edu.location}</p>
                         </div>
                         <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-[var(--color-text-muted)] border-t border-[var(--color-border)] pt-3">
                             <span>CGPA: {numberFormatting.format(edu.score)}/10</span>
