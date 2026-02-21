@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* ===== CSS VARIABLES FOR THEME SWITCHING ===== */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Light mode - Default */
   --color-bg-primary: #ffffff;
@@ -36,19 +40,19 @@
 /* Dark mode */
 :root.dark {
   --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #0c0a09;
-  --color-bg-tertiary: #171717;
+  --color-bg-secondary: #121212;
+  --color-bg-tertiary: #1a1a1a;
   --color-bg-nav: rgba(10, 10, 10, 0.75);
 
   /* WCAG AA compliant contrast ratios */
   --color-text-primary: #f5f5f5;
   /* Lightened for better contrast */
-  --color-text-secondary: #d4d4d4;
+  --color-text-secondary: #a3a3a3;
   /* Lightened from #a3a3a3 for better contrast */
-  --color-text-muted: #a3a3a3;
+  --color-text-muted: #737373;
   /* Lightened from #737373 for better contrast */
 
-  --color-border: #404040;
+  --color-border: #262626;
   /* Lightened for visibility */
   --color-border-hover: #525252;
 
@@ -66,7 +70,7 @@
 
 /* ===== CLAUDE AI-INSPIRED BACKGROUND ===== */
 body {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: "Space Grotesk", system-ui, sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -75,45 +79,15 @@ body {
   /* Base background color with smooth transition */
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Rich gradient background overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  /* Subtle radial gradient for depth */
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, var(--gradient-radial), transparent),
-    linear-gradient(to bottom, var(--color-bg-secondary) 0%, var(--color-bg-primary) 50%, var(--color-bg-secondary) 100%);
-
-  transition: background 0.3s ease;
-}
-
-/* Subtle ambient glow effect at top */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1200px;
-  height: 600px;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(ellipse at center top, var(--gradient-glow) 0%, transparent 70%);
-  transition: background 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Ensure content stays above background effects */
 #root {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -121,7 +95,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 /* ===== PERFORMANCE OPTIMIZATION ===== */
@@ -148,16 +122,8 @@ section {
   background: var(--scrollbar-thumb-hover);
 }
 
-/* ===== UTILITIES ===== */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 /* ===== ACCESSIBILITY: Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -174,14 +140,95 @@ section {
   will-change: transform, opacity;
 }
 
-/* ===== CUSTOM ANIMATIONS ===== */
-@keyframes fadeInUp {
+@layer base {
+  body {
+    @apply antialiased text-[var(--color-text-primary)] bg-[var(--color-bg-primary)] selection:bg-[var(--color-text-primary)] selection:text-[var(--color-bg-primary)];
+    font-family: "Space Grotesk", system-ui, sans-serif;
+  }
+
+  h1 {
+    @apply text-[clamp(2.5rem,10vw,5rem)] leading-none font-extrabold tracking-[-0.04em];
+    font-family: "Outfit", sans-serif;
+  }
+  
+  h2 {
+    @apply text-[clamp(1.5rem,5vw,2.5rem)] font-bold tracking-tight;
+    font-family: "Outfit", sans-serif;
+  }
+
+  h3 {
+    @apply text-[clamp(1.125rem,3vw,1.5rem)] font-bold;
+    font-family: "Outfit", sans-serif;
+  }
+
+  p {
+    @apply text-[clamp(0.95rem,2vw,1.125rem)] leading-relaxed;
+  }
+
+  /* 2026 Noise Texture Overlay */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* Dynamic Aura */
+  .cursor-aura {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(120, 120, 120, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+    mix-blend-mode: screen;
+  }
+
+  /* Smooth Theme Transition - Safe Properties Only */
+  html, body, div, p, h1, h2, h3, h4, span, a, button, nav, article, section, footer, svg, path {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .custom-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Elastic Micro-interactions */
+  .hover-elastic {
+    @apply transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)];
+  }
+  .hover-elastic:hover {
+    @apply scale-[1.05];
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
   from {
     opacity: 0;
     transform: translateY(2rem);
-    /* 32px/4 units roughly matching slide-in-from-bottom-4 */
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -189,7 +236,5 @@ section {
 }
 
 .animate-fade-in-up {
-  opacity: 0;
-  /* Star invisible */
-  animation: fadeInUp 0.7s ease-out forwards;
+  animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
