@@ -1,7 +1,7 @@
 import { memo, lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import { m, useMotionValue, useSpring } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Home, FolderGit2, Briefcase, Terminal, User } from 'lucide-react';
 import ThemeToggle from './components/ThemeToggle';
 import PixelLogo from './components/PixelLogo';
 import AboutSection from './components/AboutSection';
@@ -72,9 +72,9 @@ const SectionSkeleton = memo(() => (
 SectionSkeleton.displayName = 'SectionSkeleton';
 
 const HeroSection = memo(() => (
-  <section className="mb-20 sm:mb-32" aria-label="About Me">
-    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 opacity-100">
-      <div className="order-2 lg:order-1 flex-1 animate-fade-in-up text-balance">
+  <section className="mb-20 sm:mb-32 mt-0 xl:-mt-8" aria-label="About Me">
+    <div className="flex flex-col xl:flex-row items-center gap-12 lg:gap-20 opacity-100">
+      <div className="order-2 xl:order-1 flex-1 animate-fade-in-up text-balance">
         <div className="mb-4">
           <span className="text-xs sm:text-sm font-bold text-[var(--color-text-muted)] uppercase tracking-[0.2em] opacity-80">
             {DATA.title}
@@ -120,8 +120,8 @@ const HeroSection = memo(() => (
         </div>
       </div>
 
-      <div className="space-y-6 lg:pt-0 order-1 lg:order-2 w-full max-w-[400px] shrink-0">
-        <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden bg-[var(--color-bg-tertiary)] group">
+      <div className="space-y-6 lg:pt-0 order-1 xl:order-2 w-full max-w-[400px] shrink-0 xl:mt-4">
+        <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden group bg-[var(--color-bg-tertiary)]">
           <img
             src={DATA.profileImage}
             alt={`Portrait of ${DATA.name}`}
@@ -129,11 +129,11 @@ const HeroSection = memo(() => (
             fetchPriority="high"
             width={500}
             height={667}
-            className="object-cover w-full h-full grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100"
+            className="object-cover w-full h-full grayscale group-hover:grayscale-0 scale-100 group-hover:scale-[1.02] transition-transform duration-500 will-change-transform"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true" />
         </div>
-        <address className="hidden lg:flex flex-col gap-4 p-6 sm:p-7 rounded-[24px] bg-[var(--color-bg-secondary)] border-none shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.2)] not-italic">
+        <address className="hidden lg:flex flex-col gap-4 p-6 sm:p-7 rounded-[32px] bg-[var(--color-bg-secondary)] border border-[var(--color-border)] not-italic relative z-10">
           <div className="flex items-center gap-4 text-[var(--color-text-secondary)] font-semibold">
             <MapPin className="w-[1.125rem] h-[1.125rem]" aria-hidden="true" />
             <span className="text-[15px]">{DATA.contact.location}</span>
@@ -151,8 +151,10 @@ HeroSection.displayName = 'HeroSection';
 
 export default function App() {
   const linkStyles = ({ isActive }: { isActive: boolean }) =>
-    `text-[10px] sm:text-[11px] font-semibold tracking-wider whitespace-nowrap hover-elastic ${
-      isActive ? 'text-[var(--color-text-primary)]' : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
+    `relative flex items-center justify-center w-11 h-11 rounded-full hover-elastic transition-colors duration-300 ${
+      isActive 
+        ? 'bg-[var(--color-text-primary)] text-[var(--color-bg-primary)] shadow-md' 
+        : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-tertiary)] hover:text-[var(--color-text-primary)]'
     }`;
 
   return (
@@ -177,22 +179,35 @@ export default function App() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-3 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95%] overflow-x-auto sm:overflow-visible custom-scrollbar" role="navigation" aria-label="Main Navigation">
-        <div className="flex items-center justify-center gap-3.5 sm:gap-6 px-6 sm:px-8 py-2 sm:py-2.5 bg-[var(--color-bg-nav)] backdrop-blur-lg border border-[var(--color-border)] rounded-full shadow-sm dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
-            <NavLink to="/" className={linkStyles}>HOME</NavLink>
-            <NavLink to="/projects" className={linkStyles}>PROJECTS</NavLink>
-            <NavLink to="/experience" className={linkStyles}>EXPERIENCE</NavLink>
-            <NavLink to="/skills" className={linkStyles}>SKILLS</NavLink>
-            <NavLink to="/about" className={linkStyles}>ABOUT</NavLink>
-            <div className="pl-1.5 sm:pl-3 flex items-center shrink-0">
-                <div className="opacity-90 hover:opacity-100 hover-elastic">
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:left-6 lg:translate-x-0 lg:bottom-auto z-50 max-w-[95%]" role="navigation" aria-label="Main Navigation">
+        <div className="flex lg:flex-col items-center justify-center gap-2 sm:gap-4 px-4 sm:px-6 py-3 lg:px-3 lg:py-6 bg-[var(--color-bg-nav)] backdrop-blur-xl border border-[var(--color-border)] rounded-full shadow-lg dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)]">
+            <NavLink to="/" className={linkStyles} aria-label="Home" title="Home">
+                <Home className="w-5 h-5" />
+            </NavLink>
+            <NavLink to="/projects" className={linkStyles} aria-label="Projects" title="Projects">
+                <FolderGit2 className="w-5 h-5" />
+            </NavLink>
+            <NavLink to="/experience" className={linkStyles} aria-label="Experience" title="Work Experience">
+                <Briefcase className="w-5 h-5" />
+            </NavLink>
+            <NavLink to="/skills" className={linkStyles} aria-label="Skills" title="Technical Skills">
+                <Terminal className="w-5 h-5" />
+            </NavLink>
+            <NavLink to="/about" className={linkStyles} aria-label="About" title="About Me">
+                <User className="w-5 h-5" />
+            </NavLink>
+            
+            <div className="w-[1px] h-6 lg:w-6 lg:h-[1px] bg-[var(--color-border)] mx-1 lg:my-1" aria-hidden="true" />
+            
+            <div className="flex items-center justify-center rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-300">
+                <div className="hover-elastic">
                     <ThemeToggle />
                 </div>
             </div>
         </div>
       </nav>
 
-      <main id="main-content" className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 pt-20 pb-24 sm:pt-24 w-full">
+      <main id="main-content" className="flex-grow max-w-[1200px] mx-auto px-4 sm:px-8 xl:min-w-[1100px] pt-8 pb-32 lg:pt-16 lg:pb-24 lg:pl-32 xl:pl-40 w-full">
         <Routes>
           <Route path="/" element={<HeroSection />} />
           <Route path="/about" element={<AboutSection />} />

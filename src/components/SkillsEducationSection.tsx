@@ -20,9 +20,12 @@ const SkillsEducationSection = memo(() => (
                             <h3 className="text-xs font-bold text-[var(--color-text-primary)] uppercase tracking-widest mb-4 border-b border-[var(--color-border)] pb-2">
                                 {skill.category}
                             </h3>
-                            <ul className="flex flex-wrap gap-x-6 gap-y-3" role="list">
+                            <ul className="flex flex-wrap gap-3" role="list">
                                 {skill.items.map(item => (
-                                    <li key={item} className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] text-sm cursor-default">
+                                    <li 
+                                        key={item} 
+                                        className="px-4 py-2 bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full text-[var(--color-text-secondary)] hover:border-[var(--color-text-primary)] hover:text-[var(--color-text-primary)] text-sm cursor-default transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+                                    >
                                         {item}
                                     </li>
                                 ))}
@@ -44,9 +47,9 @@ const SkillsEducationSection = memo(() => (
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative border-l-2 border-[var(--color-border)] pl-6 ml-2"
+                            className="group relative border-l-2 border-[var(--color-border)] hover:border-[var(--color-text-primary)] pl-6 ml-2 transition-colors duration-300"
                         >
-                            <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-[var(--color-text-secondary)] group-hover:bg-[var(--color-text-primary)]" />
+                            <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-[var(--color-text-secondary)] group-hover:bg-[var(--color-text-primary)] group-hover:scale-125 transition-transform duration-300" />
                             <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
                                 <h3 className="text-lg font-bold text-[var(--color-text-primary)]">
                                     <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-[var(--color-border-hover)] underline-offset-4">
