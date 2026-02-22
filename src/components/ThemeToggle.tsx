@@ -9,7 +9,7 @@ const ThemeToggle = memo(() => {
         <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="relative p-1.5 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-150 overflow-hidden"
+            className="relative p-1.5 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] overflow-hidden"
         >
             {/* Icon container with smooth rotation transition */}
             <div className="relative w-[18px] h-[18px]">

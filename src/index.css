@@ -191,14 +191,8 @@ section {
     will-change: transform;
     mix-blend-mode: screen;
   }
-
-  /* Smooth Theme Transition - Safe Properties Only */
-  html, body, div, p, h1, h2, h3, h4, span, a, button, nav, article, section, footer, svg, path {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-  }
 }
+
 
 /* Custom Utilities */
 @layer utilities {

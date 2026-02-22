@@ -92,7 +92,7 @@ const HeroSection = memo(() => (
         <div className="flex flex-wrap gap-4 items-center">
           <a
             href={`mailto:${DATA.contact.email}`}
-            className="px-8 py-3.5 rounded-full bg-[var(--color-text-primary)] text-[var(--color-bg-primary)] text-sm sm:text-base font-semibold hover:opacity-90 transition-opacity"
+            className="px-8 py-3.5 rounded-full bg-[var(--color-text-primary)] text-[var(--color-bg-primary)] text-sm sm:text-base font-semibold hover:opacity-90"
             aria-label="Send email to contact"
           >
             Contact
@@ -103,7 +103,7 @@ const HeroSection = memo(() => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit GitHub Profile"
-              className="p-3.5 rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-all bg-[var(--color-bg-secondary)] sm:bg-transparent"
+              className="p-3.5 rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] bg-[var(--color-bg-secondary)] sm:bg-transparent"
             >
               <Github className="w-[1.125rem] h-[1.125rem] sm:w-5 sm:h-5" aria-hidden="true" />
             </a>
@@ -112,7 +112,7 @@ const HeroSection = memo(() => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit LinkedIn Profile"
-              className="p-3.5 rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-all bg-[var(--color-bg-secondary)] sm:bg-transparent"
+              className="p-3.5 rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] bg-[var(--color-bg-secondary)] sm:bg-transparent"
             >
               <Linkedin className="w-[1.125rem] h-[1.125rem] sm:w-5 sm:h-5" aria-hidden="true" />
             </a>
@@ -129,9 +129,9 @@ const HeroSection = memo(() => (
             fetchPriority="high"
             width={500}
             height={667}
-            className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+            className="object-cover w-full h-full grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100" aria-hidden="true" />
         </div>
         <address className="hidden lg:flex flex-col gap-4 p-6 sm:p-7 rounded-[24px] bg-[var(--color-bg-secondary)] border-none shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.2)] not-italic">
           <div className="flex items-center gap-4 text-[var(--color-text-secondary)] font-semibold">
@@ -151,7 +151,7 @@ HeroSection.displayName = 'HeroSection';
 
 export default function App() {
   const linkStyles = ({ isActive }: { isActive: boolean }) =>
-    `text-[10px] sm:text-[11px] font-semibold transition-colors tracking-wider whitespace-nowrap hover-elastic ${
+    `text-[10px] sm:text-[11px] font-semibold tracking-wider whitespace-nowrap hover-elastic ${
       isActive ? 'text-[var(--color-text-primary)]' : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
     }`;
 
@@ -171,7 +171,7 @@ export default function App() {
 
       {/* Floating Logo (Desktop only) */}
       <div className="fixed top-6 left-6 z-50 hidden md:block">
-        <NavLink to="/" aria-label="Go to top" className="hover:opacity-80 transition-opacity hover-elastic inline-block">
+        <NavLink to="/" aria-label="Go to top" className="hover:opacity-80 hover-elastic inline-block">
           <PixelLogo />
         </NavLink>
       </div>
@@ -185,7 +185,7 @@ export default function App() {
             <NavLink to="/skills" className={linkStyles}>SKILLS</NavLink>
             <NavLink to="/about" className={linkStyles}>ABOUT</NavLink>
             <div className="pl-1.5 sm:pl-3 flex items-center shrink-0">
-                <div className="opacity-90 hover:opacity-100 transition-opacity hover-elastic">
+                <div className="opacity-90 hover:opacity-100 hover-elastic">
                     <ThemeToggle />
                 </div>
             </div>
@@ -224,7 +224,7 @@ export default function App() {
               href={DATA.contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] uppercase tracking-[0.2em] transition-colors"
+              className="text-[10px] font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] uppercase tracking-[0.2em]"
             >
               GitHub
             </a>
@@ -232,13 +232,13 @@ export default function App() {
               href="https://drive.google.com/file/d/1XyZ5Y..."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] uppercase tracking-[0.2em] transition-colors"
+              className="text-[10px] font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] uppercase tracking-[0.2em]"
             >
               Resume
             </a>
             <NavLink
               to="/about"
-              className="text-[10px] font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] uppercase tracking-[0.2em] transition-colors"
+              className="text-[10px] font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] uppercase tracking-[0.2em]"
             >
               Contact
             </NavLink>

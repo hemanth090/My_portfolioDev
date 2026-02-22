@@ -65,14 +65,14 @@ const ProjectCard = memo(({ project, index }: { project: any; index: number }) =
                                 href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center text-sm font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+                                className="flex items-center text-sm font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                                 aria-label={`View source code of ${project.title} on GitHub`}
                             >
                                 Source <Github className="w-4 h-4 ml-1.5" aria-hidden="true" />
                             </a>
                         )}
                         {!project.link && !project.github && (
-                            <div className="flex items-center text-sm font-bold text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors">
+                            <div className="flex items-center text-sm font-bold text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]">
                                 View Details <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                             </div>
                         )}

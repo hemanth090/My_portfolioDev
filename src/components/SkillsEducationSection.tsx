@@ -22,7 +22,7 @@ const SkillsEducationSection = memo(() => (
                             </h3>
                             <ul className="flex flex-wrap gap-x-6 gap-y-3" role="list">
                                 {skill.items.map(item => (
-                                    <li key={item} className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors text-sm cursor-default">
+                                    <li key={item} className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] text-sm cursor-default">
                                         {item}
                                     </li>
                                 ))}
@@ -46,7 +46,7 @@ const SkillsEducationSection = memo(() => (
                             transition={{ delay: index * 0.1 }}
                             className="group relative border-l-2 border-[var(--color-border)] pl-6 ml-2"
                         >
-                            <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-[var(--color-text-secondary)] group-hover:bg-[var(--color-text-primary)] transition-colors" />
+                            <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-[var(--color-text-secondary)] group-hover:bg-[var(--color-text-primary)]" />
                             <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
                                 <h3 className="text-lg font-bold text-[var(--color-text-primary)]">
                                     <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:underline decoration-[var(--color-border-hover)] underline-offset-4">
