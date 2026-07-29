@@ -1,10 +1,11 @@
 import { memo } from 'react';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { Github, ChevronRight, ExternalLink, Code2 } from 'lucide-react';
-import { DATA, dateFormatting } from '../data';
+import { DATA } from '../data';
+import type { Project } from '../types';
 import SectionTitle from './SectionTitle';
 
-const ProjectCard = memo(({ project, index }: { project: any; index: number }) => {
+const ProjectCard = memo(({ project, index }: { project: Project; index: number }) => {
     // Bento grid logic: The first project spans 2 columns on medium+ screens
     const isFeatured = index === 0;
 
@@ -35,14 +36,14 @@ const ProjectCard = memo(({ project, index }: { project: any; index: number }) =
                     <div className="flex justify-between items-start mb-4">
                         <h3 className="text-xl font-bold text-[var(--color-text-primary)]">{project.title}</h3>
                         <span className="text-xs font-mono text-[var(--color-text-muted)] uppercase tracking-widest shrink-0 ml-4">
-                            {project.status || (project.date && dateFormatting.format(project.date))}
+                            {project.date}
                         </span>
                     </div>
                     <p className={`text-[var(--color-text-secondary)] leading-relaxed mb-8 flex-grow ${isFeatured ? 'text-base sm:max-w-2xl' : 'text-sm'}`}>
                         {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-8" role="list" aria-label="Technologies used">
-                        {project.tech.map((t: string) => (
+                        {project.technologies.map((t: string) => (
                             <span key={t} role="listitem" className="px-3 py-1.5 text-[10px] font-mono font-medium bg-[var(--color-bg-secondary)] text-[var(--color-text-secondary)] rounded border border-[var(--color-border)]">
                                 {t}
                             </span>

@@ -40,7 +40,7 @@ const SkillsEducationSection = memo(() => (
         <section id="experience" aria-label="Work Experience">
             <SectionTitle icon={Briefcase}>Work Experience</SectionTitle>
             <div className="space-y-8">
-                {DATA.experience?.map((exp, index) => (
+                {DATA.experience.map((exp, index) => (
                     <LazyMotion features={domAnimation} key={exp.company}>
                         <m.article
                             initial={{ opacity: 0, y: 10 }}
@@ -58,11 +58,13 @@ const SkillsEducationSection = memo(() => (
                                 </h3>
                                 <span className="text-sm font-medium text-[var(--color-text-secondary)]">{exp.role}</span>
                                 <span className="text-xs text-[var(--color-text-muted)] sm:mx-2">• {exp.location}</span>
-                                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-text-muted)] sm:ml-auto">{exp.period}</span>
+                                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-text-muted)] sm:ml-auto">{exp.start} &ndash; {exp.end}</span>
                             </div>
-                            <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed max-w-2xl">
-                                {exp.description}
-                            </p>
+                            <ul className="space-y-2 text-sm text-[var(--color-text-secondary)] leading-relaxed max-w-2xl list-disc pl-4">
+                                {exp.highlights.map(highlight => (
+                                    <li key={highlight}>{highlight}</li>
+                                ))}
+                            </ul>
                         </m.article>
                     </LazyMotion>
                 ))}
