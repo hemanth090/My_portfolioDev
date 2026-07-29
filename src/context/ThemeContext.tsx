@@ -1,22 +1,13 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
+import { ThemeContext, type Theme } from './theme-context';
 
-type Theme = 'light' | 'dark';
-
-interface ThemeContextType {
-    theme: Theme;
-    toggleTheme: () => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-// Get initial theme synchronously (matches the inline script in index.html)
+/** Matches the anti-FOUC inline script in index.html, which runs before React mounts. */
 function getInitialTheme(): Theme {
     if (typeof window !== 'undefined') {
-        // Check what class is already on the document (set by inline script)
+        // Trust the class the inline script already put on <html>.
         if (document.documentElement.classList.contains('light')) return 'light';
         if (document.documentElement.classList.contains('dark')) return 'dark';
 
-        // Fallback to localStorage/system preference
         const stored = localStorage.getItem('theme') as Theme;
         if (stored) return stored;
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -29,21 +20,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     useEffect(() => {
         const root = document.documentElement;
-
-        // Remove both classes first
         root.classList.remove('light', 'dark');
-        // Add current theme
         root.classList.add(theme);
-
-        // Store preference
         localStorage.setItem('theme', theme);
-
-        // Update color-scheme for native elements
+        // Keeps native controls (scrollbars, form widgets) in the right scheme.
         root.style.colorScheme = theme;
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+        setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
     };
 
     return (
@@ -51,12 +36,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
             {children}
         </ThemeContext.Provider>
     );
-}
-
-export function useTheme() {
-    const context = useContext(ThemeContext);
-    if (context === undefined) {
-        throw new Error('useTheme must be used within a ThemeProvider');
-    }
-    return context;
 }
