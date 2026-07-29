@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '../../hooks/useTheme';
 
 const ThemeToggle = memo(() => {
     const { theme, toggleTheme } = useTheme();
@@ -9,23 +9,23 @@ const ThemeToggle = memo(() => {
         <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="relative p-1.5 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] overflow-hidden"
+            className="relative p-1.5 rounded-full text-fg-secondary hover:text-fg overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg"
         >
-            {/* Icon container with smooth rotation transition */}
-            <div className="relative w-[18px] h-[18px]">
-                {/* Sun icon */}
+            {/* Both icons are always mounted; they cross-fade and counter-rotate. */}
+            <span className="relative block w-5 h-5">
                 <Sun
-                    className={`absolute inset-0 w-[18px] h-[18px] transition-all duration-200 ease-out ${
+                    aria-hidden="true"
+                    className={`absolute inset-0 w-5 h-5 transition-all duration-base ease-brand ${
                         theme === 'dark' ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-75'
                     }`}
                 />
-                {/* Moon icon */}
                 <Moon
-                    className={`absolute inset-0 w-[18px] h-[18px] transition-all duration-200 ease-out ${
+                    aria-hidden="true"
+                    className={`absolute inset-0 w-5 h-5 transition-all duration-base ease-brand ${
                         theme === 'light' ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-75'
                     }`}
                 />
-            </div>
+            </span>
         </button>
     );
 });

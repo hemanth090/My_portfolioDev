@@ -2,8 +2,8 @@ import { memo, lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import { m, useMotionValue, useSpring } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Home, FolderGit2, Briefcase, Terminal, User } from 'lucide-react';
-import ThemeToggle from './components/ThemeToggle';
-import PixelLogo from './components/PixelLogo';
+import ThemeToggle from './components/ui/ThemeToggle';
+import PixelLogo from './components/ui/PixelLogo';
 import AboutSection from './components/AboutSection';
 import { DATA } from './data';
 
