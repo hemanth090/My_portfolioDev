@@ -25,7 +25,7 @@ export const numberFormatting = new Intl.NumberFormat('en-US', {
 export const DATA: PortfolioData = {
     name: "Naveen Hemanth Kokkonda",
     title: "Full Stack AI Engineer (Product)",
-    headline: "I build the AI and the interfaces behind Tradl AI's stock research platform: citation-backed RAG over financial filings, and real-time frontends handling 1,000+ stock tickers.",
+    headline: "I ship production AI for stock research: citation-backed answers over financial filings and live market data streamed onto TradingView charts.",
     bio: "Final-year Computer Science student specializing in Data Science, currently shipping production RAG systems and trading interfaces at Tradl AI.",
     about: "I'm a Full Stack AI Engineer and a final-year Computer Science (Data Science) student. At Tradl AI I ship production frontends for stock research, from high-performance data tables to real-time WebSocket streams on TradingView charts, and build the AI behind them: a financial RAG system with hybrid retrieval, reranking, and agent-based workflows over PDF filings. I work across React, TypeScript, and Python, turning complex financial data into fast, usable interfaces.",
     profileImage: "/profile.webp",
