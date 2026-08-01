@@ -5,7 +5,7 @@ import Chip from '../ui/Chip';
 import Meta from '../ui/Meta';
 
 const LINK_CLASS =
-    'inline-flex items-center gap-1 text-xs font-semibold transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm';
+    'inline-flex items-center gap-1 text-sm lg:text-xs font-semibold py-2 lg:py-0 transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm';
 
 /** Three compact tiles: shipped work with live proof one click away. */
 export default function ProjectsPanel() {
@@ -15,11 +15,11 @@ export default function ProjectsPanel() {
                 Projects
             </Meta>
 
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-4">
                 {DATA.projects.map((project) => (
                     <article key={project.title} className="flex flex-col min-w-0">
-                        <div className="flex items-baseline justify-between gap-2">
-                            <h3 className="text-sm font-bold tracking-[-0.01em] text-fg truncate">
+                        <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-0.5">
+                            <h3 className="text-base lg:text-sm font-bold tracking-[-0.01em] text-fg [overflow-wrap:anywhere]">
                                 {project.title}
                             </h3>
                             <Meta as="time" className="shrink-0">
@@ -27,10 +27,10 @@ export default function ProjectsPanel() {
                             </Meta>
                         </div>
                         {project.subtitle && (
-                            <p className="text-[11px] text-fg-muted truncate">{project.subtitle}</p>
+                            <p className="text-xs lg:text-[11px] text-fg-muted [overflow-wrap:anywhere]">{project.subtitle}</p>
                         )}
 
-                        <p className="text-xs leading-[1.5] text-fg-secondary mt-1.5 line-clamp-2">
+                        <p className="text-sm lg:text-xs leading-[1.5] text-fg-secondary mt-1.5 line-clamp-3 lg:line-clamp-2">
                             {project.description}
                         </p>
 
@@ -42,7 +42,7 @@ export default function ProjectsPanel() {
                             ))}
                         </ul>
 
-                        <div className="flex items-center gap-3.5 mt-auto pt-2.5">
+                        <div className="flex items-center gap-4 mt-auto pt-2.5">
                             {project.link && (
                                 <a
                                     href={project.link}

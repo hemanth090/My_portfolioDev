@@ -14,8 +14,8 @@ export default function Chip({ children, as: Tag = 'span', size = 'sm', classNam
     return (
         <Tag
             className={cn(
-                'inline-flex items-center rounded-md border border-line bg-bg-muted text-fg-secondary font-medium',
-                size === 'sm' ? 'px-1.5 py-0.5 text-[11px]' : 'px-2.5 py-1 text-xs',
+                'inline-flex items-center rounded-md border border-line bg-bg-muted text-fg-secondary font-medium min-w-0 [overflow-wrap:anywhere]',
+                size === 'sm' ? 'px-2 py-1 text-xs lg:px-1.5 lg:py-0.5 lg:text-[11px]' : 'px-2.5 py-1 text-xs',
                 className,
             )}
         >

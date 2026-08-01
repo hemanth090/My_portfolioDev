@@ -8,21 +8,21 @@ import Meta from '../ui/Meta';
  */
 export default function ExperiencePanel() {
     return (
-        <Card as="section" aria-labelledby="experience-heading" className="flex flex-col min-h-0 lg:overflow-y-auto">
+        <Card as="section" aria-labelledby="experience-heading" className="flex flex-col min-h-0 lg:overflow-y-auto lg:[scrollbar-gutter:stable]">
             <Meta as="h2" id="experience-heading" tone="accent" className="mb-2">
                 Experience
             </Meta>
 
             {DATA.experience.map((exp) => (
-                <article key={`${exp.company}-${exp.role}`} className="flex flex-col min-h-0">
+                <article key={`${exp.company}-${exp.role}`} className="flex flex-col min-h-0 min-w-0">
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
-                        <h3 className="text-base font-bold tracking-[-0.01em] text-fg">{exp.role}</h3>
+                        <h3 className="text-lg lg:text-base font-bold tracking-[-0.01em] text-fg [overflow-wrap:anywhere]">{exp.role}</h3>
                         <Meta as="time">
                             {exp.start} &ndash; {exp.end}
                         </Meta>
                     </div>
 
-                    <p className="text-[13px] text-fg-secondary mt-0.5">
+                    <p className="text-sm lg:text-[13px] text-fg-secondary mt-0.5 [overflow-wrap:anywhere]">
                         <a
                             href={exp.link}
                             target="_blank"
@@ -34,11 +34,11 @@ export default function ExperiencePanel() {
                         <span className="text-fg-muted"> &middot; {exp.context} &middot; {exp.location}</span>
                     </p>
 
-                    <ul className="mt-2.5 space-y-1.5">
+                    <ul className="mt-3 lg:mt-2.5 space-y-2.5 lg:space-y-1.5">
                         {exp.highlights.map((highlight) => (
                             <li
                                 key={highlight}
-                                className="relative pl-3.5 text-[13px] leading-[1.45] text-fg-secondary before:absolute before:left-0 before:top-[0.62em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
+                                className="relative pl-3.5 text-sm leading-relaxed lg:text-[13px] lg:leading-[1.45] text-fg-secondary [overflow-wrap:anywhere] before:absolute before:left-0 before:top-[0.62em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
                             >
                                 {highlight}
                             </li>

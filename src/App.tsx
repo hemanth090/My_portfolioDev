@@ -17,14 +17,17 @@ import ResumeDocument from './components/resume/ResumeDocument';
 export default function App() {
     return (
         <>
-            <div className="app-shell min-h-dvh lg:h-dvh lg:overflow-hidden flex flex-col gap-3 p-3 lg:p-4">
+            {/* overflow-x-clip: the root-cause fixes are min-w-0 + overflow-wrap
+                in the panels; this is the guarantee that no future long string
+                reintroduces horizontal scroll on a phone. */}
+            <div className="app-shell min-h-dvh lg:h-dvh lg:overflow-hidden overflow-x-clip flex flex-col gap-4 p-4 sm:p-6 lg:gap-3 lg:p-4">
                 <SkipLink />
                 <IdentityPanel />
 
                 <main
                     id="main-content"
                     tabIndex={-1}
-                    className="flex-1 min-h-0 grid gap-3 lg:grid-cols-12 lg:grid-rows-[auto_minmax(0,1fr)] outline-none"
+                    className="flex-1 min-h-0 grid grid-cols-1 gap-4 lg:gap-3 lg:grid-cols-12 lg:grid-rows-[auto_minmax(0,1fr)] outline-none"
                 >
                     {/* Dominant cell: full-height left column. */}
                     <div className="lg:col-span-5 lg:row-span-2 min-h-0 grid panel-in [animation-delay:60ms]">

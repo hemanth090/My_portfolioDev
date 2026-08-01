@@ -70,6 +70,9 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  /* clip, not hidden: kills horizontal scroll without creating a scroll
+     container that would break position:sticky descendants. */
+  overflow-x: clip;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   transition:
@@ -78,6 +81,12 @@ body {
 }
 
 /* ===== CUSTOM SCROLLBAR (mobile / short viewports still scroll) ===== */
+/* Firefox: the -webkit rules below don't apply there. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
