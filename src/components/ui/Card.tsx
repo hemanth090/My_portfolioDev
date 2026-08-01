@@ -4,16 +4,15 @@ import { cn } from '../../lib/cn';
 interface CardProps {
     children: ReactNode;
     as?: ElementType;
-    /** Adds hover lift and border shift. Omit for static content. */
+    /** Adds hover border shift + shadow. Omit for static panels. */
     interactive?: boolean;
     padding?: 'none' | 'sm' | 'md';
     className?: string;
 }
 
 /**
- * The single card recipe: square corners and a crisp 3px double border - the
- * retro register's signature frame. (border-double needs >=3px to actually
- * draw two lines.)
+ * The single panel recipe: a white surface on the tinted page (inverted in
+ * dark), 1px border, 12px radius. Panels never nest.
  */
 export default function Card({
     children,
@@ -25,11 +24,11 @@ export default function Card({
     return (
         <Tag
             className={cn(
-                'rounded-none border-[3px] border-double border-line bg-bg-subtle',
-                padding === 'md' && 'p-6',
+                'rounded-card border border-line bg-surface',
+                padding === 'md' && 'p-5',
                 padding === 'sm' && 'p-4',
                 interactive &&
-                    'transition-all duration-base ease-brand hover:border-line-hover hover:-translate-y-0.5 hover:shadow-soft',
+                    'transition-all duration-base ease-brand hover:border-line-hover hover:shadow-soft',
                 className,
             )}
         >

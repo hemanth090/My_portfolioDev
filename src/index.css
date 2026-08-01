@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== THEME TOKENS ===== */
-html {
-  scroll-behavior: smooth;
-}
+/* ===== THEME TOKENS =====
+   Blue-on-white identity. The page is tinted blue paper; panels are white
+   surfaces sitting on it (inverted in dark: navy page, lighter navy panels).
+   WCAG AA computed against the WORST surface each text token renders on
+   (light #e6eeff: 12.6 / 7.5 / 5.5; dark #13234a: 13.2 / 8.1 / 5.3). */
 
 :root {
-  /* Light mode - default. Blue-on-white identity: white paper, navy ink.
-     WCAG AA computed against the WORST surface each token renders on
-     (#e6eeff): primary 12.6:1, secondary 7.5:1, muted 5.5:1. */
-  --color-bg-primary: #ffffff;
+  --color-bg-primary: #f2f6ff;
+  --color-surface: #ffffff;
   --color-bg-secondary: #f2f6ff;
   --color-bg-tertiary: #e6eeff;
   --color-bg-nav: rgba(255, 255, 255, 0.8);
@@ -20,11 +19,11 @@ html {
   --color-text-secondary: #1e40af;
   --color-text-muted: #4a5f8a;
 
-  --color-border: #b7c9ec;
+  --color-border: #c9d7f2;
   --color-border-hover: #7d99d6;
 
-  /* Hard offset shadow for the crisp retro register - no blur. */
-  --shadow-hard: rgba(23, 37, 84, 0.18);
+  --shadow-1: rgba(23, 37, 84, 0.05);
+  --shadow-2: rgba(23, 37, 84, 0.08);
 
   --scrollbar-track: #e6eeff;
   --scrollbar-thumb: #b7c9ec;
@@ -34,9 +33,8 @@ html {
 }
 
 :root.dark {
-  /* Deep navy, same blue identity. WCAG AA against the worst surface
-     (#13234a): primary 13.2:1, secondary 8.1:1, muted 5.3:1. */
   --color-bg-primary: #071022;
+  --color-surface: #0c1830;
   --color-bg-secondary: #0c1830;
   --color-bg-tertiary: #13234a;
   --color-bg-nav: rgba(7, 16, 34, 0.8);
@@ -48,7 +46,8 @@ html {
   --color-border: #22386b;
   --color-border-hover: #3d5da8;
 
-  --shadow-hard: rgba(0, 0, 0, 0.5);
+  --shadow-1: rgba(0, 0, 0, 0.3);
+  --shadow-2: rgba(0, 0, 0, 0.45);
 
   --scrollbar-track: #071022;
   --scrollbar-thumb: #22386b;
@@ -61,7 +60,6 @@ body {
   font-family: "Space Grotesk", system-ui, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   min-height: 100vh;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
@@ -70,13 +68,7 @@ body {
     color 0.3s ease;
 }
 
-/* Content sits above the decorative background layers. */
-#root {
-  position: relative;
-  z-index: 10;
-}
-
-/* ===== CUSTOM SCROLLBAR ===== */
+/* ===== CUSTOM SCROLLBAR (mobile / short viewports still scroll) ===== */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -87,8 +79,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  /* Square thumb - the retro register has no pill shapes anywhere. */
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -109,14 +100,9 @@ body {
 
 @layer base {
   body {
-    @apply antialiased text-fg bg-bg selection:bg-fg selection:text-bg;
-    font-family: "Space Grotesk", system-ui, sans-serif;
+    @apply antialiased text-fg selection:bg-fg selection:text-surface;
   }
 
-  /* Headings carry the display family only. Size, weight, tracking, and
-     leading are set per-role at the call site — the previous global clamp()
-     rules leaked four properties into every heading on the page, which a
-     dense resume section cannot absorb. */
   h1,
   h2,
   h3,
@@ -124,83 +110,20 @@ body {
     font-family: "Outfit", sans-serif;
   }
 
-  /* Body role from the type scale: 15px / 1.6. */
-  p {
-    @apply text-[0.9375rem] leading-[1.6];
-  }
-
-  /* Opt-in display role, used by the hero only. */
-  .type-display {
-    @apply text-[clamp(2.5rem,8vw,4.5rem)] leading-none font-extrabold tracking-[-0.04em];
-    font-family: "Outfit", sans-serif;
-  }
-
-  /* Light-on-dark renders optically heavier; compensate with tracking rather
-     than by changing size. */
+  /* Light-on-dark renders optically heavier; compensate with tracking. */
   .dark body {
     letter-spacing: 0.01em;
   }
-
-  /* Fixed grain overlay. */
-  .noise-overlay {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    pointer-events: none;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
-  }
-
-  /* Pointer glow. Positioned at the origin and driven entirely by transform
-     from CursorAura's rAF loop. */
-  .cursor-aura {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(80, 118, 220, 0.09) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-    will-change: transform;
-    mix-blend-mode: screen;
-  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .custom-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Hover feedback. Exponential decel, not the previous bounce easing —
-     real objects decelerate smoothly, and elastic overshoot reads as dated. */
-  .hover-elastic {
-    @apply transition-all duration-base ease-brand;
-  }
-  .hover-elastic:hover {
-    @apply -translate-y-0.5;
-  }
-}
-
-/* ===== ANIMATIONS ===== */
-/* The single authored motion moment: section entrance. */
-@keyframes fade-in-up {
+/* ===== MOTION =====
+   The single authored moment: the board composes itself on load. Panels rise
+   4px and fade in with a small per-panel delay set inline. Nothing else on the
+   page animates positionally - there is no scroll to react to. */
+@keyframes panel-in {
   from {
     opacity: 0;
-    transform: translateY(0.5rem);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
@@ -208,8 +131,9 @@ body {
   }
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+.panel-in {
+  opacity: 0;
+  animation: panel-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 /* ===== PRINT: A4 RESUME ===== */

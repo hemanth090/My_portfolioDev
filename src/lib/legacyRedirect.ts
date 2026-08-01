@@ -1,32 +1,16 @@
-const LEGACY_ROUTES: Readonly<Record<string, string>> = {
-    '/about': 'about',
-    '/projects': 'projects',
-    '/skills': 'skills',
-    '/experience': 'experience',
-};
-
 /**
- * Collapses pre-one-page deep links onto the single document.
+ * Collapses pre-board deep links onto the single screen.
  *
- * Must run BEFORE createRoot().render() so the hash is already correct when
- * the deep-link hook reads it on mount. replaceState neither scrolls nor fires
- * hashchange, so this is invisible.
- *
- * This is also the 404 answer: no 404 route, no 404 component. Every unknown
- * path canonicalises to `/` and renders the page — on a one-page portfolio,
- * showing the portfolio beats showing a 404.
+ * Both the old routes (/projects, /skills, ...) and the old scroll anchors
+ * (#experience, #contact, ...) are gone - everything is visible on one
+ * viewport, so every legacy URL folds to `/`. Runs before createRoot();
+ * replaceState neither scrolls nor fires events, so this is invisible.
+ * This is also the 404 story: unknown paths show the board, not an error.
  */
 export function normalizeLegacyPath(): void {
     const { pathname, search, hash } = window.location;
     const path = pathname.replace(/\/+$/, '') || '/';
-
-    const sectionId = LEGACY_ROUTES[path];
-    if (sectionId) {
-        window.history.replaceState(null, '', `/${search}#${sectionId}`);
-        return;
-    }
-
-    if (path !== '/') {
-        window.history.replaceState(null, '', `/${search}${hash}`);
+    if (path !== '/' || hash) {
+        window.history.replaceState(null, '', `/${search}`);
     }
 }
