@@ -25,8 +25,8 @@ export default function Card({
         <Tag
             className={cn(
                 'rounded-card border border-line bg-surface',
-                padding === 'md' && 'p-5',
-                padding === 'sm' && 'p-4',
+                padding === 'md' && 'p-4',
+                padding === 'sm' && 'p-3',
                 interactive &&
                     'transition-all duration-base ease-brand hover:border-line-hover hover:shadow-soft',
                 className,

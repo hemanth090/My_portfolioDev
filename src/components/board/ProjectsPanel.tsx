@@ -11,7 +11,7 @@ const LINK_CLASS =
 export default function ProjectsPanel() {
     return (
         <Card as="section" aria-labelledby="projects-heading" className="min-h-0">
-            <Meta as="h2" id="projects-heading" className="mb-3">
+            <Meta as="h2" id="projects-heading" className="mb-2">
                 Projects
             </Meta>
 
@@ -30,7 +30,7 @@ export default function ProjectsPanel() {
                             <p className="text-[11px] text-fg-muted truncate">{project.subtitle}</p>
                         )}
 
-                        <p className="text-xs leading-[1.5] text-fg-secondary mt-1.5 line-clamp-3">
+                        <p className="text-xs leading-[1.5] text-fg-secondary mt-1.5 line-clamp-2">
                             {project.description}
                         </p>
 

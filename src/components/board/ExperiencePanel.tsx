@@ -8,8 +8,8 @@ import Meta from '../ui/Meta';
  */
 export default function ExperiencePanel() {
     return (
-        <Card as="section" aria-labelledby="experience-heading" className="flex flex-col min-h-0">
-            <Meta as="h2" id="experience-heading" className="mb-3">
+        <Card as="section" aria-labelledby="experience-heading" className="flex flex-col min-h-0 lg:overflow-y-auto">
+            <Meta as="h2" id="experience-heading" className="mb-2">
                 Experience
             </Meta>
 
@@ -34,11 +34,11 @@ export default function ExperiencePanel() {
                         <span className="text-fg-muted"> &middot; {exp.context} &middot; {exp.location}</span>
                     </p>
 
-                    <ul className="mt-3 space-y-2">
+                    <ul className="mt-2.5 space-y-1.5">
                         {exp.highlights.map((highlight) => (
                             <li
                                 key={highlight}
-                                className="relative pl-3.5 text-[13px] leading-[1.5] text-fg-secondary before:absolute before:left-0 before:top-[0.62em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
+                                className="relative pl-3.5 text-[13px] leading-[1.45] text-fg-secondary before:absolute before:left-0 before:top-[0.62em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
                             >
                                 {highlight}
                             </li>

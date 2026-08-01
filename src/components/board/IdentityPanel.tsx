@@ -15,15 +15,15 @@ export default function IdentityPanel() {
     const { contact } = DATA;
 
     return (
-        <Card as="header" padding="none" className="panel-in px-5 py-4">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <Card as="header" padding="none" className="panel-in px-4 py-3">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                 <img
                     src={DATA.profileImage}
                     alt={`Portrait of ${DATA.name}`}
-                    width={56}
-                    height={56}
+                    width={48}
+                    height={48}
                     fetchPriority="high"
-                    className="w-14 h-14 rounded-control object-cover border border-line"
+                    className="w-12 h-12 rounded-control object-cover border border-line"
                 />
 
                 <div className="min-w-0 flex-1">
