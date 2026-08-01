@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- impeccable-disable overused-font -- owner decision (plan.md Part A §9): Space Grotesk is the kept brand face -->
 <html lang="en" class="dark">
 
 <head>
@@ -6,48 +7,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary Meta Tags -->
-  <title>Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer</title>
-  <meta name="title" content="Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer" />
+  <title>Naveen Hemanth Kokkonda | Full Stack AI Engineer</title>
+  <meta name="title" content="Naveen Hemanth Kokkonda | Full Stack AI Engineer" />
   <meta name="description"
     content="Portfolio of Naveen Hemanth Kokkonda - Final-year CS student specializing in AI-powered tools, LLM applications, and modern web development with React and Python." />
-  <meta name="keywords" content="AI Engineer, Frontend Developer, React, Python, LLM, RAG, Portfolio, Hyderabad" />
+  <meta name="keywords" content="AI Engineer, Full Stack, React, Python, LLM, RAG, Portfolio, Hyderabad" />
   <meta name="author" content="Naveen Hemanth Kokkonda" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hemanthkokkonda.dev/" />
-  <meta property="og:title" content="Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer" />
+  <meta property="og:url" content="https://hemanthk.dev/" />
+  <meta property="og:title" content="Naveen Hemanth Kokkonda | Full Stack AI Engineer" />
   <meta property="og:description"
     content="Portfolio of Naveen Hemanth Kokkonda - Building AI-powered tools and modern web applications with Python and React." />
-  <meta property="og:image" content="/og-image.png" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://hemanthkokkonda.dev/" />
-  <meta name="twitter:title" content="Naveen Hemanth Kokkonda | AI Engineer & Frontend Developer" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://hemanthk.dev/" />
+  <meta name="twitter:title" content="Naveen Hemanth Kokkonda | Full Stack AI Engineer" />
   <meta name="twitter:description"
     content="Portfolio of Naveen Hemanth Kokkonda - Building AI-powered tools and modern web applications." />
-  <meta name="twitter:image" content="/og-image.png" />
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://hemanthkokkonda.dev/" />
+  <link rel="canonical" href="https://hemanthk.dev/" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/code.svg" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Optimized Font Loading -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet" />
   </noscript>
 
@@ -60,9 +58,9 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Naveen Hemanth Kokkonda",
-    "url": "https://hemanthkokkonda.dev",
+    "url": "https://hemanthk.dev",
     "image": "/profile.webp",
-    "jobTitle": "AI Engineer & Frontend Developer",
+    "jobTitle": "Full Stack AI Engineer (Product)",
     "description": "Final-year Computer Science student specializing in AI-powered tools and modern web development",
     "email": "naveenhemanth4@gmail.com",
     "address": {
@@ -81,7 +79,10 @@
   <!-- Theme initialization - runs before React to prevent flash -->
   <script>
     (function () {
-      const stored = localStorage.getItem('theme');
+      // localStorage access throws when the browser blocks site data; the
+      // theme must still resolve from the media query in that case.
+      let stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) { }
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const theme = stored || (prefersDark ? 'dark' : 'light');
       document.documentElement.classList.remove('light', 'dark');

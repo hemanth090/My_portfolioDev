@@ -11,18 +11,13 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
-              return 'vendor-react';
-            }
-            if (id.includes('framer-motion')) {
-              return 'vendor-framer';
-            }
-            if (id.includes('lucide-react')) {
-              return 'vendor-icons';
-            }
-            return 'vendor-utils'; // other dependencies
+          if (!id.includes('node_modules')) return undefined;
+          // Path-anchored, not substring: a bare `id.includes('react')` also
+          // matches lucide-react and made later rules unreachable.
+          if (/[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/.test(id)) {
+            return 'vendor-react';
           }
+          return 'vendor-utils';
         },
       },
     },
