@@ -8,8 +8,15 @@ function getInitialTheme(): Theme {
         if (document.documentElement.classList.contains('light')) return 'light';
         if (document.documentElement.classList.contains('dark')) return 'dark';
 
-        const stored = localStorage.getItem('theme') as Theme;
-        if (stored) return stored;
+        // localStorage ACCESS throws SecurityError when the browser blocks
+        // site data ("Block all cookies" in Chromium, dom.storage off in
+        // Firefox) — an uncaught throw here would unmount the entire app.
+        try {
+            const stored = localStorage.getItem('theme') as Theme;
+            if (stored) return stored;
+        } catch {
+            /* storage blocked: fall through to the media query */
+        }
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     return 'dark';
@@ -22,7 +29,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         const root = document.documentElement;
         root.classList.remove('light', 'dark');
         root.classList.add(theme);
-        localStorage.setItem('theme', theme);
+        try {
+            localStorage.setItem('theme', theme);
+        } catch {
+            // Storage blocked: the theme still applies, it just won't persist.
+            // Without this guard the commit-phase throw unmounts the app.
+        }
         // Keeps native controls (scrollbars, form widgets) in the right scheme.
         root.style.colorScheme = theme;
     }, [theme]);

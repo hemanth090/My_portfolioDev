@@ -65,8 +65,32 @@
   color-scheme: dark;
 }
 
+/* ===== FONT FALLBACKS (CLS) =====
+   The Google Fonts CSS loads async and the app is client-rendered, so every
+   cold load paints in the fallback first and swaps ~100-400ms later. These
+   metric-adjusted local fallbacks (approximated from the webfonts' published
+   vertical metrics) keep line heights and widths close enough that the swap
+   reflow is minor instead of a full-page shift. */
+@font-face {
+  font-family: "Space Grotesk Fallback";
+  src: local("Arial");
+  size-adjust: 106%;
+  ascent-override: 98.4%;
+  descent-override: 29.2%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque Fallback";
+  src: local("Arial");
+  size-adjust: 102%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
 body {
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-family: "Space Grotesk", "Space Grotesk Fallback", system-ui, sans-serif;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -81,7 +105,9 @@ body {
 }
 
 /* ===== CUSTOM SCROLLBAR (mobile / short viewports still scroll) ===== */
-/* Firefox: the -webkit rules below don't apply there. */
+/* Standard properties cover Firefox AND Chromium 121+ (which ignores the
+   -webkit pseudo-elements once these apply); the -webkit rules below are
+   effectively the Safari path. */
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
@@ -125,7 +151,7 @@ html {
   h2,
   h3,
   h4 {
-    font-family: "Bricolage Grotesque", "Outfit", sans-serif;
+    font-family: "Bricolage Grotesque", "Bricolage Grotesque Fallback", sans-serif;
   }
 
   /* Light-on-dark renders optically heavier; compensate with tracking. */
@@ -152,6 +178,12 @@ html {
 .panel-in {
   opacity: 0;
   animation: panel-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  /* Declared AFTER the shorthand (which implicitly resets delay to 0s), fed
+     by a custom property: [animation-delay:60ms] utilities lost the cascade
+     to this rule because it is emitted after @tailwind utilities. Panels set
+     [--panel-delay:60ms] instead - custom properties can't be reset by the
+     shorthand, so the stagger actually runs. */
+  animation-delay: var(--panel-delay, 0ms);
 }
 
 /* ===== PRINT: A4 RESUME ===== */

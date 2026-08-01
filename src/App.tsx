@@ -30,19 +30,19 @@ export default function App() {
                     className="flex-1 min-h-0 grid grid-cols-1 gap-4 lg:gap-3 lg:grid-cols-12 lg:grid-rows-[auto_minmax(0,1fr)] outline-none"
                 >
                     {/* Dominant cell: full-height left column. */}
-                    <div className="lg:col-span-5 lg:row-span-2 min-h-0 grid panel-in [animation-delay:60ms]">
+                    <div className="lg:col-span-5 lg:row-span-2 min-h-0 grid panel-in [--panel-delay:60ms]">
                         <ExperiencePanel />
                     </div>
 
-                    <div className="lg:col-span-7 min-h-0 grid panel-in [animation-delay:120ms]">
+                    <div className="lg:col-span-7 min-h-0 grid panel-in [--panel-delay:120ms]">
                         <ProjectsPanel />
                     </div>
 
-                    <div className="lg:col-span-4 min-h-0 grid panel-in [animation-delay:180ms]">
+                    <div className="lg:col-span-4 min-h-0 grid panel-in [--panel-delay:180ms]">
                         <SkillsPanel />
                     </div>
 
-                    <div className="lg:col-span-3 min-h-0 grid panel-in [animation-delay:240ms]">
+                    <div className="lg:col-span-3 min-h-0 grid panel-in [--panel-delay:240ms]">
                         <CredentialsPanel />
                     </div>
                 </main>

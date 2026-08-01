@@ -31,8 +31,8 @@ export default {
                 },
             },
             fontFamily: {
-                sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
-                display: ['Bricolage Grotesque', 'Outfit', 'sans-serif'],
+                sans: ['Space Grotesk', 'Space Grotesk Fallback', 'system-ui', 'sans-serif'],
+                display: ['Bricolage Grotesque', 'Bricolage Grotesque Fallback', 'sans-serif'],
             },
             // Normal modern radii: panels 12px, controls 8px.
             borderRadius: {

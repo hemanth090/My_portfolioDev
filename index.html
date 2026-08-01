@@ -79,7 +79,10 @@
   <!-- Theme initialization - runs before React to prevent flash -->
   <script>
     (function () {
-      const stored = localStorage.getItem('theme');
+      // localStorage access throws when the browser blocks site data; the
+      // theme must still resolve from the media query in that case.
+      let stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) { }
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const theme = stored || (prefersDark ? 'dark' : 'light');
       document.documentElement.classList.remove('light', 'dark');
