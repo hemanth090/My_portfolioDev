@@ -16,8 +16,15 @@ export default function IdentityPanel() {
     const { contact } = DATA;
 
     return (
-        <Card as="header" padding="none" className="panel-in p-4 sm:p-5 lg:px-4 lg:py-3">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
+        <Card as="header" padding="none" className="panel-in relative p-4 sm:p-5 lg:px-4 lg:py-3">
+            {/* Page utility, not an identity action: it lives in the corner,
+                away from the Resume/GitHub/LinkedIn row where it read as a
+                mystery fourth profile link. */}
+            <div className="absolute right-2.5 top-2.5 lg:top-1/2 lg:-translate-y-1/2 lg:right-3">
+                <ThemeToggle />
+            </div>
+
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5 pr-10 sm:pr-12 lg:pr-14">
                 {/* Who */}
                 <div className="flex items-center gap-3.5 min-w-0">
                     <img
@@ -79,7 +86,6 @@ export default function IdentityPanel() {
                     <Button as="a" variant="icon" href={contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                         <Linkedin className="w-4 h-4" aria-hidden="true" />
                     </Button>
-                    <ThemeToggle />
                 </div>
             </div>
         </Card>
