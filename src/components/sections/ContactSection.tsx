@@ -49,7 +49,7 @@ export default function ContactSection() {
                                     <a
                                         href={href}
                                         {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                        className="text-sm text-fg hover:underline underline-offset-4 decoration-line-hover break-words rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-subtle"
+                                        className="text-sm text-fg hover:underline underline-offset-4 decoration-line-hover break-words focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-subtle"
                                     >
                                         {value}
                                     </a>

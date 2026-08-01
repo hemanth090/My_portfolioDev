@@ -26,7 +26,7 @@ export default function ExperienceSection() {
                         className="group relative border-l-2 border-line hover:border-fg pl-6 ml-1 transition-colors duration-base ease-brand"
                     >
                         <span
-                            className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-fg-secondary group-hover:bg-fg transition-colors duration-base"
+                            className="absolute -left-[5px] top-2 w-2 h-2 rounded-none bg-fg-secondary group-hover:bg-fg transition-colors duration-base"
                             aria-hidden="true"
                         />
 
@@ -45,7 +45,7 @@ export default function ExperienceSection() {
                                     href={exp.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="font-semibold text-fg hover:underline underline-offset-4 decoration-line-hover rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+                                    className="font-semibold text-fg hover:underline underline-offset-4 decoration-line-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                                 >
                                     {exp.company}
                                 </a>
@@ -58,7 +58,7 @@ export default function ExperienceSection() {
                             {exp.highlights.map((highlight) => (
                                 <li
                                     key={highlight}
-                                    className="relative pl-4 text-sm leading-[1.55] text-fg-secondary before:absolute before:left-0 before:top-[0.6em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
+                                    className="relative pl-4 text-sm leading-[1.55] text-fg-secondary before:absolute before:left-0 before:top-[0.6em] before:w-1 before:h-1 before:bg-line-hover"
                                 >
                                     {highlight}
                                 </li>

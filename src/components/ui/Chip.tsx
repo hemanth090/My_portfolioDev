@@ -22,7 +22,7 @@ export default function Chip({
     return (
         <Tag
             className={cn(
-                'inline-flex items-center rounded-full border border-line bg-bg-subtle text-fg-secondary',
+                'inline-flex items-center rounded-none border border-line bg-bg-subtle text-fg-secondary',
                 variant === 'mono' ? 'px-2.5 py-1 text-[11px] font-mono' : 'px-3 py-1.5 text-sm',
                 className,
             )}

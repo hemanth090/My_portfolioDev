@@ -56,7 +56,7 @@ export default function HeroSection() {
                 </div>
 
                 <div className="order-1 xl:order-2 w-full max-w-[380px] shrink-0">
-                    <div className="relative aspect-[4/5] rounded-card overflow-hidden group bg-bg-muted border border-line">
+                    <div className="relative aspect-[4/5] rounded-none overflow-hidden group bg-bg-muted border-[3px] border-double border-line shadow-soft">
                         <img
                             src={DATA.profileImage}
                             alt={`Portrait of ${DATA.name}`}

@@ -27,7 +27,7 @@ export default function NavItem({ id, label, icon: Icon, active }: NavItemProps)
                 goToSection(id);
             }}
             className={cn(
-                'relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full',
+                'relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-none',
                 'transition-colors duration-base ease-brand',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg',
                 active

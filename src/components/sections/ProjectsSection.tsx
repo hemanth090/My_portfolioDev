@@ -9,7 +9,7 @@ import Meta from '../ui/Meta';
 import Reveal from '../ui/Reveal';
 
 const LINK_CLASS =
-    'inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-fast rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-subtle';
+    'inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-subtle';
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
     const headingId = `project-${project.title.replace(/\s+/g, '-').toLowerCase()}`;
@@ -49,7 +49,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                             {project.highlights.map((highlight) => (
                                 <li
                                     key={highlight}
-                                    className="relative pl-4 text-[13px] leading-[1.5] text-fg-secondary before:absolute before:left-0 before:top-[0.6em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
+                                    className="relative pl-4 text-[13px] leading-[1.5] text-fg-secondary before:absolute before:left-0 before:top-[0.6em] before:w-1 before:h-1 before:bg-line-hover"
                                 >
                                     {highlight}
                                 </li>

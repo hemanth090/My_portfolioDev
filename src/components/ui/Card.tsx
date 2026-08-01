@@ -11,8 +11,9 @@ interface CardProps {
 }
 
 /**
- * The single card recipe. Replaces four divergent inline recipes that used
- * three different radii and three different transition durations.
+ * The single card recipe: square corners and a crisp 3px double border - the
+ * retro register's signature frame. (border-double needs >=3px to actually
+ * draw two lines.)
  */
 export default function Card({
     children,
@@ -24,7 +25,7 @@ export default function Card({
     return (
         <Tag
             className={cn(
-                'rounded-card border border-line bg-bg-subtle',
+                'rounded-none border-[3px] border-double border-line bg-bg-subtle',
                 padding === 'md' && 'p-6',
                 padding === 'sm' && 'p-4',
                 interactive &&

@@ -8,48 +8,51 @@ html {
 }
 
 :root {
-  /* Light mode - default */
+  /* Light mode - default. Blue-on-white identity: white paper, navy ink.
+     WCAG AA computed against the WORST surface each token renders on
+     (#e6eeff): primary 12.6:1, secondary 7.5:1, muted 5.5:1. */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #fafafa;
-  --color-bg-tertiary: #f5f5f5;
-  --color-bg-nav: rgba(255, 255, 255, 0.75);
+  --color-bg-secondary: #f2f6ff;
+  --color-bg-tertiary: #e6eeff;
+  --color-bg-nav: rgba(255, 255, 255, 0.8);
 
-  /* WCAG AA verified against #ffffff: 20.1:1 / 10.4:1 / 7.9:1 */
-  --color-text-primary: #0a0a0a;
-  --color-text-secondary: #404040;
-  --color-text-muted: #525252;
+  --color-text-primary: #172554;
+  --color-text-secondary: #1e40af;
+  --color-text-muted: #4a5f8a;
 
-  --color-border: #d4d4d4;
-  --color-border-hover: #a3a3a3;
+  --color-border: #b7c9ec;
+  --color-border-hover: #7d99d6;
 
-  --scrollbar-track: #f5f5f5;
-  --scrollbar-thumb: #d4d4d4;
-  --scrollbar-thumb-hover: #a3a3a3;
+  /* Hard offset shadow for the crisp retro register - no blur. */
+  --shadow-hard: rgba(23, 37, 84, 0.18);
+
+  --scrollbar-track: #e6eeff;
+  --scrollbar-thumb: #b7c9ec;
+  --scrollbar-thumb-hover: #7d99d6;
 
   color-scheme: light;
 }
 
 :root.dark {
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #121212;
-  --color-bg-tertiary: #1a1a1a;
-  --color-bg-nav: rgba(10, 10, 10, 0.75);
+  /* Deep navy, same blue identity. WCAG AA against the worst surface
+     (#13234a): primary 13.2:1, secondary 8.1:1, muted 5.3:1. */
+  --color-bg-primary: #071022;
+  --color-bg-secondary: #0c1830;
+  --color-bg-tertiary: #13234a;
+  --color-bg-nav: rgba(7, 16, 34, 0.8);
 
-  /* WCAG AA, computed with the relative-luminance formula against the WORST
-     surface each token renders on (#1a1a1a): 16.1:1 / 6.9:1 / 5.1:1.
-     Muted was #737373 (4.18:1 on #0a0a0a, 3.95:1 on cards — an AA failure
-     the original comment miscalculated as 4.9:1); #8a8a8a clears 4.5:1 on
-     every surface. Keep sub-14px text on --color-text-secondary regardless. */
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #a3a3a3;
-  --color-text-muted: #8a8a8a;
+  --color-text-primary: #e8eeff;
+  --color-text-secondary: #a9bde8;
+  --color-text-muted: #8398c9;
 
-  --color-border: #262626;
-  --color-border-hover: #525252;
+  --color-border: #22386b;
+  --color-border-hover: #3d5da8;
 
-  --scrollbar-track: #0a0a0a;
-  --scrollbar-thumb: #404040;
-  --scrollbar-thumb-hover: #525252;
+  --shadow-hard: rgba(0, 0, 0, 0.5);
+
+  --scrollbar-track: #071022;
+  --scrollbar-thumb: #22386b;
+  --scrollbar-thumb-hover: #3d5da8;
 
   color-scheme: dark;
 }
@@ -84,7 +87,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border-radius: 9999px;
+  /* Square thumb - the retro register has no pill shapes anywhere. */
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -158,7 +162,7 @@ body {
     top: 0;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(120, 120, 120, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(80, 118, 220, 0.09) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;

@@ -31,14 +31,16 @@ export default {
                 sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
                 display: ['Outfit', 'sans-serif'],
             },
-            // Three radii only. Replaces the previous 12px / 2rem / 32px spread.
+            // Retro register: square corners everywhere. The tokens stay so a
+            // future radius change is one line, but they resolve to 0.
             borderRadius: {
-                card: '16px',
-                control: '10px',
+                card: '0px',
+                control: '0px',
             },
-            // One shadow, with real offset and blur — never a decorative halo.
+            // One shadow: hard offset, zero blur - crisp, not soft. Color is a
+            // CSS var so each theme picks its own weight.
             boxShadow: {
-                soft: '0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04)',
+                soft: '3px 3px 0 0 var(--shadow-hard)',
             },
             transitionDuration: {
                 fast: '150ms',

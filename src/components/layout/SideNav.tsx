@@ -19,7 +19,7 @@ export default function SideNav({ activeId }: SideNavProps) {
             className="fixed bottom-6 left-1/2 -translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:left-6 lg:translate-x-0 lg:bottom-auto z-50 max-w-[95%] print:hidden"
             aria-label="Section navigation"
         >
-            <div className="flex lg:flex-col items-center justify-center gap-1.5 sm:gap-3 px-3 sm:px-5 py-2.5 lg:px-3 lg:py-6 bg-bg-nav backdrop-blur-xl border border-line rounded-full shadow-soft dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)]">
+            <div className="flex lg:flex-col items-center justify-center gap-1.5 sm:gap-3 px-3 sm:px-5 py-2.5 lg:px-3 lg:py-6 bg-bg-nav backdrop-blur-xl border-[3px] border-double border-line rounded-none shadow-soft">
                 {NAV_SECTIONS.map((section) => (
                     <NavItem
                         key={section.id}

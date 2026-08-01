@@ -13,7 +13,7 @@ const PixelLogo = memo(() => {
                 <div
                     key={i}
                     className={`w-[3px] h-[3px] transition-colors duration-fast ${
-                        pixel ? 'bg-fg group-hover:bg-orange-500' : 'bg-transparent'
+                        pixel ? 'bg-fg group-hover:bg-fg-secondary' : 'bg-transparent'
                     }`}
                 />
             ))}
@@ -24,7 +24,7 @@ const PixelLogo = memo(() => {
         <div className="group flex items-center gap-1 p-1" aria-label="NH.K Logo">
             {renderLetter(N)}
             {renderLetter(H)}
-            <div className="w-[3px] h-[3px] bg-fg group-hover:bg-orange-400 self-end mb-[2px] transition-colors duration-fast" />
+            <div className="w-[3px] h-[3px] bg-fg group-hover:bg-fg-secondary self-end mb-[2px] transition-colors duration-fast" />
             {renderLetter(K)}
         </div>
     );

@@ -13,9 +13,9 @@ export const numberFormatting = new Intl.NumberFormat('en-US', {
  *
  * Experience bullets, project highlights/technologies/dates, skills, education,
  * and certifications are transcribed verbatim from the owner's resume.
- * `about` is composed strictly from facts in that resume (role, employer,
- * responsibilities, stack — no claims beyond it). `headline`, `bio`, and the
- * project `description` paragraphs are pre-existing portfolio prose; all of
+ * `headline`, `bio`, and `about` are composed strictly from facts in that
+ * resume (role, employer, responsibilities, stack; no claims beyond it). The
+ * project `description` paragraphs are pre-existing portfolio prose. All of
  * these render on screen only, never in the printed resume.
  *
  * Annotated explicitly rather than with `satisfies` so optional fields are
@@ -25,8 +25,8 @@ export const numberFormatting = new Intl.NumberFormat('en-US', {
 export const DATA: PortfolioData = {
     name: "Naveen Hemanth Kokkonda",
     title: "Full Stack AI Engineer (Product)",
-    headline: "Building high-performance, interactive user interfaces for data-intensive applications.",
-    bio: "Final-year Computer Science student specializing in Data Science. Passionate about crafting intuitive, accessible, and responsive web experiences.",
+    headline: "Building AI systems and the interfaces that make them usable: RAG pipelines, agent workflows, and real-time financial frontends.",
+    bio: "Final-year Computer Science student specializing in Data Science, currently shipping production RAG systems and trading interfaces at Tradl AI.",
     about: "I'm a Full Stack AI Engineer and a final-year Computer Science (Data Science) student. At Tradl AI I ship production frontends for stock research, from high-performance data tables to real-time WebSocket streams on TradingView charts, and build the AI behind them: a financial RAG system with hybrid retrieval, reranking, and agent-based workflows over PDF filings. I work across React, TypeScript, and Python, turning complex financial data into fast, usable interfaces.",
     profileImage: "/profile.webp",
     contact: {

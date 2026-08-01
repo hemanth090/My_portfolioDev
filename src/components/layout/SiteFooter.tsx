@@ -4,7 +4,7 @@ import { HERO_ID, CONTACT_ID } from '../../config/sections';
 import { goToSection } from '../../lib/scroll';
 
 const LINK_CLASS =
-    'text-[11px] font-semibold uppercase tracking-[0.12em] text-fg-secondary hover:text-fg transition-colors duration-fast rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-muted';
+    'text-[11px] font-semibold uppercase tracking-[0.12em] text-fg-secondary hover:text-fg transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-muted';
 
 export default function SiteFooter() {
     // pb-28 below lg: the fixed bottom nav pill occupies the viewport-bottom
@@ -19,7 +19,7 @@ export default function SiteFooter() {
                         event.preventDefault();
                         goToSection(HERO_ID);
                     }}
-                    className="text-xs text-fg-secondary font-mono hover:text-fg transition-colors duration-fast rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-muted"
+                    className="text-xs text-fg-secondary font-mono hover:text-fg transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg-muted"
                 >
                     &copy; {new Date().getFullYear()} {DATA.name}
                 </a>

@@ -9,7 +9,7 @@ const ThemeToggle = memo(() => {
         <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="relative p-1.5 rounded-full text-fg-secondary hover:text-fg overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg"
+            className="relative p-1.5 rounded-none text-fg-secondary hover:text-fg overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg"
         >
             {/* Both icons are always mounted; they cross-fade and counter-rotate. */}
             <span className="relative block w-5 h-5">
