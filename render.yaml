@@ -5,6 +5,20 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: ./build
     routes:
+      # Retired routes -> anchors on the single page. Order matters: Render
+      # evaluates routes top-down and the wildcard rewrite must stay last.
+      - type: redirect
+        source: /about
+        destination: /#about
+      - type: redirect
+        source: /projects
+        destination: /#projects
+      - type: redirect
+        source: /skills
+        destination: /#skills
+      - type: redirect
+        source: /experience
+        destination: /#experience
       - type: rewrite
         source: /*
         destination: /index.html
