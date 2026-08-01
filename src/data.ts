@@ -27,7 +27,7 @@ export const DATA: PortfolioData = {
     title: "Full Stack AI Engineer (Product)",
     headline: "Building high-performance, interactive user interfaces for data-intensive applications.",
     bio: "Final-year Computer Science student specializing in Data Science. Passionate about crafting intuitive, accessible, and responsive web experiences.",
-    about: "I'm a Full Stack AI Engineer and a final-year Computer Science (Data Science) student. At Tradl AI I ship production frontends for stock research — high-performance data tables and real-time WebSocket streams on TradingView charts — and build the AI behind them: a financial RAG system with hybrid retrieval, reranking, and agent-based workflows over PDF filings. I work across React, TypeScript, and Python, turning complex financial data into fast, usable interfaces.",
+    about: "I'm a Full Stack AI Engineer and a final-year Computer Science (Data Science) student. At Tradl AI I ship production frontends for stock research, from high-performance data tables to real-time WebSocket streams on TradingView charts, and build the AI behind them: a financial RAG system with hybrid retrieval, reranking, and agent-based workflows over PDF filings. I work across React, TypeScript, and Python, turning complex financial data into fast, usable interfaces.",
     profileImage: "/profile.webp",
     contact: {
         location: "Hyderabad, India",

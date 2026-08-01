@@ -1,4 +1,4 @@
-import { Printer } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { DATA } from '../../data';
 import { HERO_ID, CONTACT_ID } from '../../config/sections';
 import { goToSection } from '../../lib/scroll';
@@ -8,8 +8,8 @@ const LINK_CLASS =
 
 export default function SiteFooter() {
     // pb-28 below lg: the fixed bottom nav pill occupies the viewport-bottom
-    // band on mobile, and without clearance it sits on top of these links —
-    // including the Resume print button, the only print trigger in the UI.
+    // band on mobile, and without clearance it sits on top of these links,
+    // including the Resume PDF link.
     return (
         <footer className="border-t border-line pt-12 pb-28 lg:pb-12 bg-bg-muted print:hidden">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8">
@@ -31,12 +31,17 @@ export default function SiteFooter() {
                     <a href={DATA.contact.linkedin} target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>
                         LinkedIn
                     </a>
-                    {/* Replaces a dead Google Drive placeholder link. The print
-                        stylesheet renders a dedicated A4 resume document. */}
-                    <button type="button" onClick={() => window.print()} className={`${LINK_CLASS} inline-flex items-center gap-1.5`}>
-                        <Printer className="w-4 h-4" aria-hidden="true" />
+                    {/* Opens the actual resume PDF (public/resume.pdf). Ctrl+P
+                        still produces the print-CSS A4 document as a fallback. */}
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${LINK_CLASS} inline-flex items-center gap-1.5`}
+                    >
+                        <FileText className="w-4 h-4" aria-hidden="true" />
                         Resume
-                    </button>
+                    </a>
                     <a
                         href={`#${CONTACT_ID}`}
                         onClick={(event) => {

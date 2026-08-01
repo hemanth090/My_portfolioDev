@@ -48,7 +48,7 @@ export default function ResumeDocument() {
                         </div>
                         <div className="resume-entry-sub">
                             <em>
-                                {edu.degree} &mdash; CGPA: {numberFormatting.format(edu.score)}/10
+                                {edu.degree} - CGPA: {numberFormatting.format(edu.score)}/10
                             </em>
                             <span>{edu.period}</span>
                         </div>
