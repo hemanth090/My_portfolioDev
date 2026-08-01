@@ -204,3 +204,145 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
+/* ===== PRINT: A4 RESUME ===== */
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Force light regardless of the .dark class on <html>. */
+  :root,
+  :root.dark {
+    --color-text-primary: #000;
+    --color-text-secondary: #1a1a1a;
+    --color-text-muted: #333;
+    --color-bg-primary: #fff;
+    --color-border: #c8c8c8;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    letter-spacing: normal;
+  }
+
+  /* The screen app and the printed document are mutually exclusive. */
+  .app-shell {
+    display: none !important;
+  }
+
+  .resume-document {
+    display: block !important;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    color: #000;
+  }
+
+  /* --- header --- */
+  .resume-name {
+    font-family: "Outfit", sans-serif;
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    text-align: center;
+    margin: 0;
+  }
+
+  .resume-title {
+    font-size: 10pt;
+    font-weight: 600;
+    text-align: center;
+    margin: 1.5pt 0 0;
+  }
+
+  .resume-contact {
+    font-size: 8.5pt;
+    text-align: center;
+    margin: 3pt 0 0;
+  }
+
+  .resume-sep {
+    color: #666;
+  }
+
+  .resume-header {
+    margin-bottom: 9pt;
+  }
+
+  /* --- sections --- */
+  .resume-section {
+    margin-bottom: 7pt;
+  }
+
+  .resume-section-title {
+    font-family: "Outfit", sans-serif;
+    font-size: 10.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 0.5pt solid #000;
+    padding-bottom: 1.5pt;
+    margin: 0 0 4pt;
+  }
+
+  /* Never split an entry or a skills/certs block across pages. */
+  .resume-entry,
+  .resume-group {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume-entry {
+    margin-bottom: 5pt;
+  }
+
+  .resume-entry-head,
+  .resume-entry-sub {
+    display: flex;
+    justify-content: space-between;
+    gap: 8pt;
+  }
+
+  .resume-entry-head {
+    font-size: 10pt;
+  }
+
+  .resume-entry-sub {
+    font-size: 9.5pt;
+  }
+
+  .resume-tech {
+    font-size: 9pt;
+    margin: 1pt 0 0;
+  }
+
+  .resume-bullets {
+    list-style: disc;
+    margin: 2pt 0 0;
+    padding-left: 12pt;
+  }
+
+  .resume-bullets li {
+    font-size: 9pt;
+    line-height: 1.35;
+    margin-bottom: 1pt;
+  }
+
+  .resume-skill-row {
+    font-size: 9pt;
+    line-height: 1.4;
+    margin: 0 0 1pt;
+  }
+
+  .resume-cert-date {
+    font-weight: 600;
+  }
+}
