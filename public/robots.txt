@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-portfolio.vercel.app/sitemap.xml
+Sitemap: https://hemanthk.dev/sitemap.xml
