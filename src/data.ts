@@ -13,9 +13,10 @@ export const numberFormatting = new Intl.NumberFormat('en-US', {
  *
  * Experience bullets, project highlights/technologies/dates, skills, education,
  * and certifications are transcribed verbatim from the owner's resume.
- * `headline`, `bio`, `about`, and the project `description` paragraphs are the
- * pre-existing portfolio prose, intentionally unchanged — they render on screen
- * only, never in the printed resume.
+ * `about` is composed strictly from facts in that resume (role, employer,
+ * responsibilities, stack — no claims beyond it). `headline`, `bio`, and the
+ * project `description` paragraphs are pre-existing portfolio prose; all of
+ * these render on screen only, never in the printed resume.
  *
  * Annotated explicitly rather than with `satisfies` so optional fields are
  * guaranteed present on every array element instead of relying on TS
@@ -26,7 +27,7 @@ export const DATA: PortfolioData = {
     title: "Full Stack AI Engineer (Product)",
     headline: "Building high-performance, interactive user interfaces for data-intensive applications.",
     bio: "Final-year Computer Science student specializing in Data Science. Passionate about crafting intuitive, accessible, and responsive web experiences.",
-    about: "I am a Frontend Developer with a strong foundation in Computer Science. My focus is on bridging the gap between complex data and user-friendly interfaces. I specialize in building production-ready applications using React and modern CSS frameworks, ensuring that every pixel serves a purpose and every interaction is smooth.",
+    about: "I'm a Full Stack AI Engineer and a final-year Computer Science (Data Science) student. At Tradl AI I ship production frontends for stock research — high-performance data tables and real-time WebSocket streams on TradingView charts — and build the AI behind them: a financial RAG system with hybrid retrieval, reranking, and agent-based workflows over PDF filings. I work across React, TypeScript, and Python, turning complex financial data into fast, usable interfaces.",
     profileImage: "/profile.webp",
     contact: {
         location: "Hyderabad, India",
