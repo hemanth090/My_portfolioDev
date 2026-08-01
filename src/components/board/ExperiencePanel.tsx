@@ -9,7 +9,7 @@ import Meta from '../ui/Meta';
 export default function ExperiencePanel() {
     return (
         <Card as="section" aria-labelledby="experience-heading" className="flex flex-col min-h-0 lg:overflow-y-auto">
-            <Meta as="h2" id="experience-heading" className="mb-2">
+            <Meta as="h2" id="experience-heading" tone="accent" className="mb-2">
                 Experience
             </Meta>
 
@@ -27,7 +27,7 @@ export default function ExperiencePanel() {
                             href={exp.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-semibold text-fg hover:underline underline-offset-4 decoration-line-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+                            className="font-semibold text-accent hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                         >
                             {exp.company}
                         </a>

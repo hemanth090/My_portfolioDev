@@ -16,6 +16,10 @@ export default {
                     nav: 'var(--color-bg-nav)',
                 },
                 surface: 'var(--color-surface)',
+                accent: {
+                    DEFAULT: 'var(--color-accent)',
+                    on: 'var(--color-on-accent)',
+                },
                 fg: {
                     DEFAULT: 'var(--color-text-primary)',
                     secondary: 'var(--color-text-secondary)',
@@ -28,7 +32,7 @@ export default {
             },
             fontFamily: {
                 sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
-                display: ['Outfit', 'sans-serif'],
+                display: ['Bricolage Grotesque', 'Outfit', 'sans-serif'],
             },
             // Normal modern radii: panels 12px, controls 8px.
             borderRadius: {

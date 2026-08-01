@@ -6,7 +6,7 @@ import Meta from '../ui/Meta';
 export default function CredentialsPanel() {
     return (
         <Card as="section" aria-labelledby="credentials-heading" className="min-h-0 lg:overflow-y-auto">
-            <Meta as="h2" id="credentials-heading" className="mb-2">
+            <Meta as="h2" id="credentials-heading" tone="accent" className="mb-2">
                 Education &amp; Certifications
             </Meta>
 

@@ -7,7 +7,7 @@ import Meta from '../ui/Meta';
 export default function SkillsPanel() {
     return (
         <Card as="section" aria-labelledby="skills-heading" className="min-h-0 lg:overflow-y-auto">
-            <Meta as="h2" id="skills-heading" className="mb-2">
+            <Meta as="h2" id="skills-heading" tone="accent" className="mb-2">
                 Skills
             </Meta>
 

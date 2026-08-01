@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 import ThemeToggle from '../ui/ThemeToggle';
 
 const CONTACT_LINK =
-    'inline-flex items-center gap-1.5 text-xs text-fg-muted hover:text-fg transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm';
+    'inline-flex items-center gap-1.5 text-xs text-fg-muted hover:text-accent transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm';
 
 /**
  * The identity band: who, what, and every way to act - visible without a
@@ -31,7 +31,7 @@ export default function IdentityPanel() {
                         <h1 className="font-display text-xl sm:text-2xl font-bold tracking-[-0.02em] text-fg">
                             {DATA.name}
                         </h1>
-                        <p className="text-sm font-semibold text-fg-secondary">{DATA.title}</p>
+                        <p className="text-sm font-semibold text-accent">{DATA.title}</p>
                     </div>
                     <p className="text-[13px] text-fg-muted leading-snug mt-0.5 max-w-[72ch]">
                         {DATA.headline}

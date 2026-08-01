@@ -6,21 +6,23 @@ interface MetaProps {
     as?: ElementType;
     /** For panel titles: the id that the panel's aria-labelledby points at. */
     id?: string;
+    /** 'accent' marks panel titles - the scarce cobalt moments of the board. */
+    tone?: 'default' | 'accent';
     className?: string;
 }
 
 /**
- * The overline / metadata role: dates, labels, and panel titles.
- *
- * Uses text-fg-secondary, never text-fg-muted — at 11px this role sits below
- * the size where the muted token's contrast margin is comfortable.
+ * The overline / metadata role: dates stay quiet ink; panel titles carry the
+ * accent. Never text-fg-muted - at 11px this role sits below the size where
+ * the muted token's contrast margin is comfortable.
  */
-export default function Meta({ children, as: Tag = 'span', id, className }: MetaProps) {
+export default function Meta({ children, as: Tag = 'span', id, tone = 'default', className }: MetaProps) {
     return (
         <Tag
             id={id}
             className={cn(
-                'text-[11px] font-semibold uppercase tracking-[0.12em] text-fg-secondary',
+                'text-[11px] font-semibold uppercase tracking-[0.12em]',
+                tone === 'accent' ? 'text-accent' : 'text-fg-secondary',
                 className,
             )}
         >

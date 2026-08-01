@@ -3,55 +3,64 @@
 @tailwind utilities;
 
 /* ===== THEME TOKENS =====
-   Blue-on-white identity. The page is tinted blue paper; panels are white
-   surfaces sitting on it (inverted in dark: navy page, lighter navy panels).
+   Warm paper, near-black ink, cobalt as a SCARCE accent. The psychology:
+   warmth reads human, near-black ink reads confident, and one saturated blue
+   used only where you can act (links, buttons, labels) reads decisive - a
+   hue-washed monochrome page is the generated-UI tell this replaces.
    WCAG AA computed against the WORST surface each text token renders on
-   (light #e6eeff: 12.6 / 7.5 / 5.5; dark #13234a: 13.2 / 8.1 / 5.3). */
+   (light #edeae3: 14.6 / 8.6 / 6.4 / accent 6.5; dark #262320: 13.6 / 8.9 /
+   5.0 / accent 7.7). */
 
 :root {
-  --color-bg-primary: #f2f6ff;
-  --color-surface: #ffffff;
-  --color-bg-secondary: #f2f6ff;
-  --color-bg-tertiary: #e6eeff;
-  --color-bg-nav: rgba(255, 255, 255, 0.8);
+  --color-bg-primary: #f3f1ec;
+  --color-surface: #fbfaf7;
+  --color-bg-secondary: #f3f1ec;
+  --color-bg-tertiary: #edeae3;
+  --color-bg-nav: rgba(251, 250, 247, 0.8);
 
-  --color-text-primary: #172554;
-  --color-text-secondary: #1e40af;
-  --color-text-muted: #4a5f8a;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #44403c;
+  --color-text-muted: #57534e;
 
-  --color-border: #c9d7f2;
-  --color-border-hover: #7d99d6;
+  --color-accent: #2044c4;
+  --color-on-accent: #fbfaf7;
 
-  --shadow-1: rgba(23, 37, 84, 0.05);
-  --shadow-2: rgba(23, 37, 84, 0.08);
+  --color-border: #e2ddd2;
+  --color-border-hover: #c2bbaa;
 
-  --scrollbar-track: #e6eeff;
-  --scrollbar-thumb: #b7c9ec;
-  --scrollbar-thumb-hover: #7d99d6;
+  --shadow-1: rgba(28, 25, 23, 0.05);
+  --shadow-2: rgba(28, 25, 23, 0.08);
+
+  --scrollbar-track: #edeae3;
+  --scrollbar-thumb: #d5cfc2;
+  --scrollbar-thumb-hover: #c2bbaa;
 
   color-scheme: light;
 }
 
 :root.dark {
-  --color-bg-primary: #071022;
-  --color-surface: #0c1830;
-  --color-bg-secondary: #0c1830;
-  --color-bg-tertiary: #13234a;
-  --color-bg-nav: rgba(7, 16, 34, 0.8);
+  --color-bg-primary: #141311;
+  --color-surface: #1c1a17;
+  --color-bg-secondary: #1c1a17;
+  --color-bg-tertiary: #262320;
+  --color-bg-nav: rgba(20, 19, 17, 0.8);
 
-  --color-text-primary: #e8eeff;
-  --color-text-secondary: #a9bde8;
-  --color-text-muted: #8398c9;
+  --color-text-primary: #f1efe9;
+  --color-text-secondary: #c9c3b8;
+  --color-text-muted: #9a9184;
 
-  --color-border: #22386b;
-  --color-border-hover: #3d5da8;
+  --color-accent: #8ea6ff;
+  --color-on-accent: #141311;
+
+  --color-border: #34302a;
+  --color-border-hover: #57503f;
 
   --shadow-1: rgba(0, 0, 0, 0.3);
   --shadow-2: rgba(0, 0, 0, 0.45);
 
-  --scrollbar-track: #071022;
-  --scrollbar-thumb: #22386b;
-  --scrollbar-thumb-hover: #3d5da8;
+  --scrollbar-track: #141311;
+  --scrollbar-thumb: #34302a;
+  --scrollbar-thumb-hover: #57503f;
 
   color-scheme: dark;
 }
@@ -107,7 +116,7 @@ body {
   h2,
   h3,
   h4 {
-    font-family: "Outfit", sans-serif;
+    font-family: "Bricolage Grotesque", "Outfit", sans-serif;
   }
 
   /* Light-on-dark renders optically heavier; compensate with tracking. */
@@ -181,7 +190,7 @@ body {
 
   /* --- header --- */
   .resume-name {
-    font-family: "Outfit", sans-serif;
+    font-family: "Bricolage Grotesque", sans-serif;
     font-size: 20pt;
     font-weight: 700;
     letter-spacing: -0.01em;
@@ -217,7 +226,7 @@ body {
   }
 
   .resume-section-title {
-    font-family: "Outfit", sans-serif;
+    font-family: "Bricolage Grotesque", sans-serif;
     font-size: 10.5pt;
     font-weight: 600;
     text-transform: uppercase;
