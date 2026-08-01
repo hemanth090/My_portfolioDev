@@ -36,6 +36,12 @@ export interface Project {
     title: string;
     /** Secondary title fragment, e.g. "Token Efficiency Toolkit". */
     subtitle?: string;
+    /**
+     * Exact heading for the printed A4 resume, copied verbatim from the resume
+     * ("TOON Studio - Token Efficiency Toolkit" has a dash, "KnoRa AI Knowledge
+     * Assistant" does not). Falls back to title when absent.
+     */
+    printTitle?: string;
     date: string;
     description: string;
     highlights: string[];

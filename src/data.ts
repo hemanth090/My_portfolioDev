@@ -11,9 +11,11 @@ export const numberFormatting = new Intl.NumberFormat('en-US', {
 /**
  * Single source of truth for the whole site.
  *
- * Experience, project, skill, education, and certification copy is transcribed
- * verbatim from the owner's resume. `headline`, `bio`, and `about` are the
- * pre-existing portfolio prose and are intentionally unchanged.
+ * Experience bullets, project highlights/technologies/dates, skills, education,
+ * and certifications are transcribed verbatim from the owner's resume.
+ * `headline`, `bio`, `about`, and the project `description` paragraphs are the
+ * pre-existing portfolio prose, intentionally unchanged — they render on screen
+ * only, never in the printed resume.
  *
  * Annotated explicitly rather than with `satisfies` so optional fields are
  * guaranteed present on every array element instead of relying on TS
@@ -56,6 +58,7 @@ export const DATA: PortfolioData = {
         {
             title: "TOON Studio",
             subtitle: "Token Efficiency Toolkit",
+            printTitle: "TOON Studio - Token Efficiency Toolkit",
             date: "Dec 2025",
             description: "A comprehensive analytics platform for tracking token usage. Built with a focus on data visualization and performance, enabling users to monitor API costs through interactive charts.",
             highlights: [
@@ -72,6 +75,7 @@ export const DATA: PortfolioData = {
         {
             title: "KnoRa AI",
             subtitle: "Knowledge Assistant",
+            printTitle: "KnoRa AI Knowledge Assistant",
             date: "Aug 2025",
             description: "A modern conversational interface for RAG systems. Implemented optimistic UI updates, streaming responses, and file drag-and-drop interactions for a seamless document chat experience.",
             highlights: [

@@ -49,7 +49,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                             {project.highlights.map((highlight) => (
                                 <li
                                     key={highlight}
-                                    className="relative pl-4 text-[13px] leading-[1.5] text-fg-muted before:absolute before:left-0 before:top-[0.6em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
+                                    className="relative pl-4 text-[13px] leading-[1.5] text-fg-secondary before:absolute before:left-0 before:top-[0.6em] before:w-1 before:h-1 before:rounded-full before:bg-line-hover"
                                 >
                                     {highlight}
                                 </li>

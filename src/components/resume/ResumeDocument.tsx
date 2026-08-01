@@ -86,10 +86,10 @@ export default function ResumeDocument() {
                 {projects.map((project) => (
                     <div className="resume-entry" key={project.title}>
                         <div className="resume-entry-head">
-                            <strong>
-                                {project.title}
-                                {project.subtitle ? ` - ${project.subtitle}` : ''}
-                            </strong>
+                            {/* printTitle is the resume's exact heading — the
+                                dash/space between title and subtitle differs
+                                per project in the source document. */}
+                            <strong>{project.printTitle ?? project.title}</strong>
                             <span>{project.date}</span>
                         </div>
                         <p className="resume-tech">

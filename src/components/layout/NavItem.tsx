@@ -19,7 +19,6 @@ export default function NavItem({ id, label, icon: Icon, active }: NavItemProps)
         <a
             href={`#${id}`}
             aria-label={label}
-            title={label}
             aria-current={active ? 'true' : undefined}
             onClick={(event) => {
                 // Let modified clicks fall through to the browser.

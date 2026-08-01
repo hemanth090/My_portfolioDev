@@ -35,11 +35,14 @@ html {
   --color-bg-tertiary: #1a1a1a;
   --color-bg-nav: rgba(10, 10, 10, 0.75);
 
-  /* WCAG AA verified against #0a0a0a: 18.1:1 / 8.9:1 / 4.9:1.
-     --color-text-muted only clears AA at >=14px; never use it below that. */
+  /* WCAG AA, computed with the relative-luminance formula against the WORST
+     surface each token renders on (#1a1a1a): 16.1:1 / 6.9:1 / 5.1:1.
+     Muted was #737373 (4.18:1 on #0a0a0a, 3.95:1 on cards — an AA failure
+     the original comment miscalculated as 4.9:1); #8a8a8a clears 4.5:1 on
+     every surface. Keep sub-14px text on --color-text-secondary regardless. */
   --color-text-primary: #f5f5f5;
   --color-text-secondary: #a3a3a3;
-  --color-text-muted: #737373;
+  --color-text-muted: #8a8a8a;
 
   --color-border: #262626;
   --color-border-hover: #525252;
@@ -230,7 +233,10 @@ body {
     background: #fff !important;
     color: #000 !important;
     font-family: "Space Grotesk", system-ui, sans-serif;
-    letter-spacing: normal;
+    /* !important: the screen rule `.dark body { letter-spacing: 0.01em }` has
+       higher specificity (0,1,1) than this `body` (0,0,1); without it a
+       dark-theme print tracks wider and wraps differently than a light one. */
+    letter-spacing: normal !important;
   }
 
   /* The screen app and the printed document are mutually exclusive. */

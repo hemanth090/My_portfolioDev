@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ANCHOR_IDS, HERO_ID, NAV_SECTION_IDS } from './config/sections';
+import { ANCHOR_IDS, CONTACT_ID, HERO_ID } from './config/sections';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import { useAnchorNavigation } from './hooks/useAnchorNavigation';
 import { useHashSync } from './hooks/useHashSync';
@@ -23,7 +23,12 @@ import { goToSection } from './lib/scroll';
 
 export default function App() {
     const endSentinel = useRef<HTMLDivElement>(null);
-    const activeId = useScrollSpy({ sectionIds: NAV_SECTION_IDS, endSentinelRef: endSentinel });
+    // The spy observes every anchor INCLUDING contact, so the URL hash is always
+    // truthful (#contact was previously rewritten to #about because contact was
+    // unrepresentable). The rail has no contact icon, so for highlight purposes
+    // contact maps to its nearest rail ancestor, About.
+    const activeId = useScrollSpy({ sectionIds: ANCHOR_IDS, endSentinelRef: endSentinel });
+    const railActiveId = activeId === CONTACT_ID ? 'about' : activeId;
 
     useAnchorNavigation(ANCHOR_IDS);
     useHashSync(activeId, HERO_ID);
@@ -49,7 +54,7 @@ export default function App() {
                     </a>
                 </div>
 
-                <SideNav activeId={activeId} />
+                <SideNav activeId={railActiveId} />
 
                 <main
                     id="main-content"

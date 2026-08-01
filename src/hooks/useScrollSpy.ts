@@ -26,7 +26,13 @@ interface UseScrollSpyOptions {
 }
 
 export function useScrollSpy({ sectionIds, endSentinelRef }: UseScrollSpyOptions): string {
-    const [bandId, setBandId] = useState<string>(() => sectionIds[0] ?? '');
+    // '' = "not measured yet", NOT the first section. Seeding with a section id
+    // caused two real bugs: the initial hash-sync write fired against a value
+    // the observer never produced (stripping deep-link hashes during the mount
+    // effect flush), and a reload with browser-restored scroll in an unobserved
+    // region reported 'hero' while the viewport showed Credentials. Consumers
+    // must treat '' as "no active section".
+    const [bandId, setBandId] = useState<string>('');
     const [atEnd, setAtEnd] = useState(false);
 
     useEffect(() => {

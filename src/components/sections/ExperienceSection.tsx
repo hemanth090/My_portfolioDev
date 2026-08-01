@@ -45,7 +45,7 @@ export default function ExperienceSection() {
                                     href={exp.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="font-semibold text-fg hover:underline underline-offset-4 decoration-line-hover"
+                                    className="font-semibold text-fg hover:underline underline-offset-4 decoration-line-hover rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                                 >
                                     {exp.company}
                                 </a>
