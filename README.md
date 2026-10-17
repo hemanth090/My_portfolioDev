@@ -1,61 +1,77 @@
-# hemanthk.dev — Portfolio
+# Naveen Hemanth Kokkonda — Portfolio
 
-Single-page portfolio and printable resume for Naveen Hemanth Kokkonda.
+Production-grade single-page portfolio. React 19 · TypeScript · Vite 8 · Tailwind CSS v4.
 
 ## Stack
 
-- **React 19** + **TypeScript 5.9** (strict, `noUnusedLocals`, `verbatimModuleSyntax`)
-- **Vite 6** (output in `build/`)
-- **Tailwind CSS v3** with semantic tokens over CSS custom properties (`src/index.css`)
-- **lucide-react** icons — no router, no animation library
+| Concern | Choice |
+|---|---|
+| UI | React 19 (StrictMode) |
+| Language | TypeScript 6 (strict, project references) |
+| Build | Vite 8 |
+| Styling | Tailwind CSS v4 (`@theme` tokens in `src/index.css`) |
+| Routing | React Router v7 (BrowserRouter) |
+| Tests | Vitest 5 + Testing Library (jsdom) |
+| Lint | oxlint |
 
-## Architecture
-
-One scrolling document. The fixed icon rail is a scroll-spy (IntersectionObserver
-band, `src/hooks/useScrollSpy.ts`) rather than a router: the active item reflects
-what is on screen. Old route URLs (`/projects`, `/skills`, `/experience`, `/about`)
-are 301-redirected by Render (`render.yaml`) and normalised client-side before
-React mounts (`src/lib/legacyRedirect.ts`).
-
-All content lives in one typed object: `src/data.ts` (`PortfolioData` in
-`src/types.ts`). Experience, projects, skills, education, and certifications are
-transcribed verbatim from the resume.
+## Structure
 
 ```
 src/
-  config/sections.ts    nav rail + scroll-spy targets (single source of truth)
-  hooks/                useScrollSpy, useAnchorNavigation, useHashSync, useInView, useTheme
-  lib/                  cn (clsx + tailwind-merge), scroll, legacyRedirect
+  data/        content.ts (all copy, typed), icons.tsx, social-icons.ts
+  lib/         hooks: scroll progress, scroll spy, reveal, clipboard,
+               reduced motion, body-scroll lock, toast context, cn()
   components/
-    layout/             Section, SideNav, NavItem, SkipLink, SiteFooter
-    sections/           Hero, Experience, Projects, Skills, About, Credentials, Contact
-    ui/                 Card, Chip, Meta, Button, IconBox, Reveal, CursorAura, ...
-    resume/             ResumeDocument — print-only A4 resume
+    ui/        Button, Card, Badge, Chip, Kbd, Tip, Logo, Scramble, RichText
+    sections/  Hero, About, Work, Experience, Skills, Education, Contact, Footer
+    Header.tsx, CommandPalette.tsx, Toast.tsx, Progress.tsx, BackToTop.tsx
 ```
 
-## Print / PDF
+## Routing
 
-`Ctrl+P` (or the footer **Resume** button) prints a dedicated one-page A4 resume.
-`ResumeDocument` is always mounted, hidden on screen, and swapped in by the
-`@media print` layer at the bottom of `src/index.css` — the screen app is never
-restyled for print.
+`react-router-dom` v7 (BrowserRouter). The layout (header, footer, progress, back-to-top,
+command palette, toast) lives in `src/routes/Layout.tsx` and renders an `<Outlet />`.
 
-## Develop
+| Route | Renders |
+|---|---|
+| `/` | `routes/Home.tsx` — hero + all sections |
+| `/work/:slug` | `routes/CaseStudy.tsx` — per-project page |
+| `*` | `routes/NotFound.tsx` |
+
+- Per-page `<title>`/OG tags come from `<Seo>` (`src/components/Seo.tsx`) via React 19's
+  native metadata hoisting — no helmet library, and `index.html` intentionally has no title.
+- `ScrollToHash` scrolls to `#hash` on navigation, otherwise resets to the top.
+- Nav links point at `/#section`, so they work from any route.
+
+### SPA fallback is required
+
+Deep links like `/work/articulate` must be rewritten to `index.html` by the host:
+
+- **Netlify** — done, `public/_redirects` contains `/*    /index.html   200`.
+- **Vercel** — add `{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }`.
+- **Others** — same idea; anything not a static asset serves `index.html`.
+- Locally `vite dev` and `vite preview` already do this.
+
+## Design system
+
+Derived from cline.bot: `#FBF8FF` ground, `#F5EEFF` surface, `#17111F` ink,
+brand purple `#7C3AED`, blue→green→pink gradient, square buttons, 4/8/12px radii.
+Type: Geist (body/UI), Geist Mono (bold + labels), Geist Pixel (display headings).
+
+## Commands
 
 ```bash
 npm install
-npm run dev      # local dev server
-npm run build    # tsc -b && vite build  -> build/
-npm run lint     # eslint
+npm run dev        # dev server
+npm run build      # tsc -b && vite build
+npm run preview    # serve dist
+npm test           # vitest run
+npm run lint       # oxlint
+npm run typecheck  # tsc -b
 ```
 
-Design anti-pattern scan (no LLM needed):
+## Notes
 
-```bash
-node .claude/skills/impeccable/scripts/detect.mjs src index.html
-```
-
-## Deploy
-
-Static site on Render (`render.yaml`): `npm install && npm run build`, publish
-`./build`. `public/CNAME` pins the `hemanthk.dev` domain.
+- `CommandPalette` is lazy-loaded (⌘K / Ctrl-K) so it is not in the initial bundle.
+- Every motion path respects `prefers-reduced-motion`.
+- Content lives entirely in `src/data/content.ts` — nothing is hard-coded in components.

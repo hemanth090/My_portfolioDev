@@ -1,17 +1,28 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ThemeProvider } from './context/ThemeContext'
-import { normalizeLegacyPath } from './lib/legacyRedirect'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Layout } from './routes/Layout'
+import { Home } from './routes/Home'
+import { CaseStudy } from './routes/CaseStudy'
+import { NotFound } from './routes/NotFound'
 import './index.css'
-import App from './App.tsx'
 
-// Runs before render: the deep-link hook reads location.hash on mount.
-normalizeLegacyPath()
+// The router (ScrollToHash) owns scroll position.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
-createRoot(document.getElementById('root')!).render(
+const container = document.getElementById('root')
+if (!container) throw new Error('Root element #root not found')
+
+createRoot(container).render(
   <StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="work/:slug" element={<CaseStudy />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 )

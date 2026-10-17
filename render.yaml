@@ -12,10 +12,13 @@ services:
         destination: /#about
       - type: redirect
         source: /projects
-        destination: /#projects
+        destination: /#work
       - type: redirect
         source: /skills
         destination: /#skills
+      - type: redirect
+        source: /contact
+        destination: /#contact
       - type: redirect
         source: /experience
         destination: /#experience

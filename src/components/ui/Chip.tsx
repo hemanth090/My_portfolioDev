@@ -1,25 +1,24 @@
-import type { ElementType, ReactNode } from 'react';
-import { cn } from '../../lib/cn';
+import type { HTMLAttributes } from 'react'
+import { cn } from '../../lib/cn'
 
-interface ChipProps {
-    children: ReactNode;
-    as?: ElementType;
-    /** Board density: compact is the default; 'md' for roomier contexts. */
-    size?: 'sm' | 'md';
-    className?: string;
+export function Chip({ className, children, ...rest }: HTMLAttributes<HTMLLIElement>) {
+  return (
+    <li
+      className={cn(
+        'rounded-sm bg-primary/10 px-2 py-1 font-mono text-xs font-medium text-muted-foreground',
+        className,
+      )}
+      {...rest}
+    >
+      {children}
+    </li>
+  )
 }
 
-/** The single chip recipe. One face for every keyword on the page. */
-export default function Chip({ children, as: Tag = 'span', size = 'sm', className }: ChipProps) {
-    return (
-        <Tag
-            className={cn(
-                'inline-flex items-center rounded-md border border-line bg-bg-muted text-fg-secondary font-medium min-w-0 [overflow-wrap:anywhere]',
-                size === 'sm' ? 'px-2 py-1 text-xs lg:px-1.5 lg:py-0.5 lg:text-[11px]' : 'px-2.5 py-1 text-xs',
-                className,
-            )}
-        >
-            {children}
-        </Tag>
-    );
+export function ChipList({ className, children, ...rest }: HTMLAttributes<HTMLUListElement>) {
+  return (
+    <ul className={cn('flex flex-wrap gap-1', className)} {...rest}>
+      {children}
+    </ul>
+  )
 }
