@@ -1,6 +1,6 @@
 # Naveen Hemanth Kokkonda — Portfolio
 
-Production-grade single-page portfolio. React 19 · TypeScript · Vite 8 · Tailwind CSS v4.
+React 19 · TypeScript · Vite 8 · Tailwind CSS v4 · React Router v7.
 
 ## Stack
 
@@ -9,69 +9,70 @@ Production-grade single-page portfolio. React 19 · TypeScript · Vite 8 · Tail
 | UI | React 19 (StrictMode) |
 | Language | TypeScript 6 (strict, project references) |
 | Build | Vite 8 |
-| Styling | Tailwind CSS v4 (`@theme` tokens in `src/index.css`) |
-| Routing | React Router v7 (BrowserRouter) |
+| Styling | Tailwind CSS v4 — tokens live in `src/index.css` (`@theme`) |
+| Routing | react-router-dom v7 (BrowserRouter) |
 | Tests | Vitest 5 + Testing Library (jsdom) |
-| Lint | oxlint |
+| Lint | oxlint (`npm run lint`) |
 
 ## Structure
 
 ```
 src/
-  data/        content.ts (all copy, typed), icons.tsx, social-icons.ts
-  lib/         hooks: scroll progress, scroll spy, reveal, clipboard,
-               reduced motion, body-scroll lock, toast context, cn()
+  data/        content.ts (all copy, typed) · icons.tsx · social-icons.ts · wolfFrames.ts
+  lib/         cn · useTheme · useScrollProgress · useScrollSpy · useReveal
+               useClipboard · useLockBodyScroll · useReducedMotion · toast
   components/
-    ui/        Button, Card, Badge, Chip, Kbd, Tip, Logo, Scramble, RichText
-    sections/  Hero, About, Work, Experience, Skills, Education, Contact, Footer
-    Header.tsx, CommandPalette.tsx, Toast.tsx, Progress.tsx, BackToTop.tsx
+    ui/        Button · Card · Badge · Chip · Kbd · Tip · Logo · Scramble
+    sections/  Hero · About · Work · Experience · Skills · Education · Contact · Footer
+    Header · CommandPalette · Preloader · Progress · BackToTop · ThemeToggle · Seo
+  routes/      Layout · Home · CaseStudy · NotFound
 ```
 
-## Routing
-
-`react-router-dom` v7 (BrowserRouter). The layout (header, footer, progress, back-to-top,
-command palette, toast) lives in `src/routes/Layout.tsx` and renders an `<Outlet />`.
+## Routes
 
 | Route | Renders |
 |---|---|
-| `/` | `routes/Home.tsx` — hero + all sections |
-| `/work/:slug` | `routes/CaseStudy.tsx` — per-project page |
-| `*` | `routes/NotFound.tsx` |
+| `/` | Home — hero + all sections |
+| `/work/:slug` | Case study (`articulate`, `scout`, `toon-studio`) |
+| `*` | 404, marked `noindex` |
 
-- Per-page `<title>`/OG tags come from `<Seo>` (`src/components/Seo.tsx`) via React 19's
-  native metadata hoisting — no helmet library, and `index.html` intentionally has no title.
-- `ScrollToHash` scrolls to `#hash` on navigation, otherwise resets to the top.
-- Nav links point at `/#section`, so they work from any route.
+Per-page `<title>`, `description`, `canonical` and OG/Twitter tags come from
+`src/components/Seo.tsx` using React 19's native metadata hoisting — no helmet
+library, and `index.html` intentionally ships no title.
 
-### SPA fallback is required
-
-Deep links like `/work/articulate` must be rewritten to `index.html` by the host:
-
-- **Netlify** — done, `public/_redirects` contains `/*    /index.html   200`.
-- **Vercel** — add `{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }`.
-- **Others** — same idea; anything not a static asset serves `index.html`.
-- Locally `vite dev` and `vite preview` already do this.
-
-## Design system
-
-Derived from cline.bot: `#FBF8FF` ground, `#F5EEFF` surface, `#17111F` ink,
-brand purple `#7C3AED`, blue→green→pink gradient, square buttons, 4/8/12px radii.
-Type: Geist (body/UI), Geist Mono (bold + labels), Geist Pixel (display headings).
+`ScrollToHash` owns scroll position: it honours `#anchors`, restores the offset on
+back/forward (`history.scrollRestoration = 'manual'`), and resets instantly on a push.
 
 ## Commands
 
 ```bash
 npm install
 npm run dev        # dev server
-npm run build      # tsc -b && vite build
-npm run preview    # serve dist
+npm run build      # tsc -b && vite build  ->  build/
+npm run preview    # serve build/
 npm test           # vitest run
 npm run lint       # oxlint
 npm run typecheck  # tsc -b
 ```
 
-## Notes
+## Deployment
 
-- `CommandPalette` is lazy-loaded (⌘K / Ctrl-K) so it is not in the initial bundle.
-- Every motion path respects `prefers-reduced-motion`.
-- Content lives entirely in `src/data/content.ts` — nothing is hard-coded in components.
+Deployed on **Render** as a static site, serving **https://hemanthk.dev**.
+
+- `render.yaml` sets `buildCommand: npm install && npm run build` and
+  `staticPublishPath: ./build`, so **`vite.config.ts` must keep `outDir: 'build'`**.
+- The `/* → /index.html` rewrite in `render.yaml` is required: it is what lets
+  deep links such as `/work/articulate` resolve. `public/_redirects` mirrors it for
+  Netlify-style hosts.
+- `public/CNAME` (GitHub Pages) and `public/robots.txt` + `public/sitemap.xml` are
+  kept in sync with the live routes.
+
+## Design system
+
+Violet-mono, sharp edges, no borders on surfaces. Tokens follow cline.bot:
+`#FBF8FF` ground, `#17111F` ink, brand purple `#7C3AED`, blue→green→pink accent
+gradient. Type is Geist (body/UI), Geist Mono (bold/labels) and Geist Pixel
+(display headings). Dark mode overrides the same tokens under `.dark`.
+
+Every motion path respects `prefers-reduced-motion`, and all copy lives in
+`src/data/content.ts` — nothing is hard-coded in components.
