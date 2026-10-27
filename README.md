@@ -20,7 +20,7 @@ npm run start   # serve the built build/ directory locally
 ```
 
 `NEXT_PUBLIC_SITE_URL` can be set to the public origin used in metadata, `sitemap.xml` and
-`robots.txt` (defaults to `https://hemanthk.dev`).
+`robots.txt` (defaults to `https://hemanthk.xyz`).
 
 ## Structure
 
@@ -67,10 +67,10 @@ public/sounds         interface click sound
 
 ## Deployment
 
-Deployed on **Render** as a static site serving **https://hemanthk.dev**.
+Deployed on **Render** as a static site serving **https://hemanthk.xyz**.
 
 - `render.yaml` keeps the Render service name, build command (`npm install && npm run build`)
   and the `build/` publish directory.
 - `next.config.ts` uses `output: "export"`; `npm run build` runs `next build` and copies the
   static export from `out/` to `build/` via `scripts/export-to-build.mjs`.
-- `public/CNAME` (`hemanthk.dev`) and `public/_redirects` are included in the published output.
+- `public/CNAME` (`hemanthk.xyz`) and `public/_redirects` are included in the published output.
