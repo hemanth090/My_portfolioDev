@@ -1,6 +1,5 @@
 "use client";
 
-import { useUiFeedback } from "@/components/ui-feedback";
 import { ME } from "@/lib/config";
 import { cn } from "@/lib/cn";
 import { useState } from "react";
@@ -9,7 +8,6 @@ export function AvatarSwitch() {
   // Start on the real photo (this owner has no illustrated avatar), the switch
   // reveals the generated monogram instead.
   const [showPhoto, setShowPhoto] = useState(true);
-  const { tap } = useUiFeedback();
 
   return (
     <div className="flex w-fit flex-col items-center gap-2">
@@ -46,10 +44,7 @@ export function AvatarSwitch() {
         role="switch"
         aria-checked={showPhoto}
         aria-label={showPhoto ? "Show illustrated avatar" : "Show real photo"}
-        onClick={() => {
-          tap();
-          setShowPhoto((value) => !value);
-        }}
+        onClick={() => setShowPhoto((value) => !value)}
         className={cn(
           "focus-visible:ring-ring/50 relative h-[18px] w-8 shrink-0 cursor-pointer rounded-full border transition-colors outline-none focus-visible:ring-[3px]",
           showPhoto

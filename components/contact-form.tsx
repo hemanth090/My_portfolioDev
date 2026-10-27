@@ -3,7 +3,6 @@
 import { Send } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 
-import { useUiFeedback } from "@/components/ui-feedback";
 import { ME } from "@/lib/config";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,7 +24,6 @@ export function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const feedbackRef = useRef<HTMLParagraphElement | null>(null);
-  const { tap } = useUiFeedback();
 
   // The form sits near the bottom of the page; make sure the status line is
   // actually visible after submitting instead of rendering below the fold.
@@ -99,7 +97,6 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "success" || !isValid}
-          onClick={() => tap()}
           className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-transparent px-4 py-2 text-sm font-semibold whitespace-nowrap shadow-xs transition-opacity hover:opacity-90 disabled:pointer-events-none disabled:opacity-45 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none bg-foreground text-background h-11 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
         >
           <Send aria-hidden />
