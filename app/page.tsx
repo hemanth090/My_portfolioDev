@@ -133,32 +133,28 @@ export default function HomePage() {
         <div className="px-5 py-5 sm:px-6 sm:py-6">
           <ul className="list-disc space-y-2.5 pl-4 text-base leading-relaxed font-normal text-neutral-800 dark:text-neutral-300">
             <li>
-              I&apos;m Hemanth, a software engineer who builds AI products end to
-              end. That means the ingestion and{" "}
-              <b className={BOLD_CLASS}>retrieval</b> layer, the{" "}
-              <b className={BOLD_CLASS}>agent workflows</b>, the APIs, and the
-              interface someone actually uses, not just a model call behind a
-              text box.
+              I&apos;m Hemanth, a software engineer who builds AI products{" "}
+              <b className={BOLD_CLASS}>from start to finish</b>: the search and
+              data pipelines, the AI workflows, the APIs, and the screen people
+              actually use.
             </li>
             <li>
-              At Tradl AI, a live stock-research platform, I virtualized 1,000+
-              ticking rows (40% faster first paint, 60% less memory), built a
-              Claude-style loading animation that cycles playful status words
-              while AI work is in flight, and shipped MarketBuzz, a news page
-              streaming live backend data and RSS feeds. I also built the
-              observability around these services: structured logging, metrics
-              and Amazon CloudWatch alarms. Rebuilding ingestion and{" "}
-              <b className={BOLD_CLASS}>hybrid retrieval</b> took recall from 0.37
-              to 0.61 on a 90-question benchmark.
+              At Tradl AI, a live stock research platform, I made a 1,000+ row
+              table of live data feel fast (40% faster first paint, 60% less
+              memory), shipped MarketBuzz, a news page that streams live data and
+              RSS feeds, and built loading states with playful status words while
+              the AI works. I also rebuilt the search behind financial reports,
+              so it finds the right page far more often: 0.37 to 0.61 on a
+              90-question test.
             </li>
             <li>
-              My own projects follow the same rules: Scout hands low-confidence
-              answers to a human instead of guessing, ragpdf cites the page and
-              refuses to answer when the source is ambiguous, and TOON Studio cut
-              tokens 33-52% with a test suite behind it. I like{" "}
-              <b className={BOLD_CLASS}>boring engineering</b>: typed boundaries,
-              retries, tracing and honest failure modes, because that&apos;s what
-              makes AI useful after the demo.
+              My projects follow the same rule: be honest when the answer isn&apos;t
+              certain. Scout asks a human when confidence is low, ragpdf cites
+              the page it used and refuses when the source is unclear, and TOON
+              Studio cuts prompt size by 33-52%, tests included. I like{" "}
+              <b className={BOLD_CLASS}>boring engineering</b>: clear boundaries,
+              retries, and honest failures, because that&apos;s what makes AI
+              useful after the demo.
             </li>
           </ul>
         </div>
