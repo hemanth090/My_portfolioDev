@@ -25,9 +25,13 @@ npm run start   # serve the built build/ directory locally
 ## Structure
 
 ```
-app/                  routes (/, /projects, /contact), layout, metadata, sitemap/robots
+app/                  routes (/, /story, /projects, /contact), layout, metadata, sitemap/robots
+app/story/story.css   motion-experience styles (plain CSS on the existing tokens)
 components/           layout shell, page sections, interactive UI (clients)
+components/story/     the /story overlay: chapters, motion primitives, chapter rail
+components/hide-on-story.tsx  hides the site navbar/footer on the immersive route
 lib/config.ts         all personal content (profile, about, projects, experience, skills, education)
+lib/story.ts          /story chapter content, derived from the same records as lib/config.ts
 lib/brand-icons.ts    Simple Icons glyph data
 lib/github-contributions.ts  client-side contribution calendar fetch
 scripts/              static-export copy + local static server
@@ -41,12 +45,19 @@ public/sounds         interface click sound
 | Route | Renders |
 |---|---|
 | `/` | Home — hero, about, connect, experience, activity, projects, skills, education, certificates, focus |
+| `/story` | Full-screen motion story of the last four years (scroll-driven chapters, chapter rail, Esc to exit) |
 | `/projects` | All projects with search |
 | `/contact` | Contact routes + message form |
 | `*` | Custom 404 page |
 
 ## Content notes
 
+- **Story** lives at `/story` and opens from the navbar. It is an immersive overlay: the site
+  navbar, footer and bottom fade are hidden while it is open, body scroll is locked, and Escape
+  or the Exit control returns home. Chapters use native scrolling only. Progress, reveals,
+  counters, recall bars, the timeline draw and the project ticker all respect
+  `prefers-reduced-motion`, and the no-JS render is complete. Content is in `lib/story.ts` and
+  derives from the same records as the rest of the site.
 - **Portrait** is the real photo (`public/images/avatar-photo.jpg`), shown by default in the hero
   avatar, the focus-area circle and the footer CTA. The hero avatar switch toggles to a generated
   `NH` monogram. **Project covers** are generated SVG mockups; swap them for real screenshots in

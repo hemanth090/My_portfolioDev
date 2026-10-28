@@ -52,7 +52,7 @@ export const ME = {
   avatar: "/images/avatar-illustration.svg",
   avatarPhoto: "/images/avatar-photo.jpg",
   email: "naveenhemanth4@gmail.com",
-  resumeUrl: "/resume/hemanth-resume.pdf",
+  resumeUrl: "/resume/HemanthsResume01.pdf",
   availability: "Open to new work",
   socials: {
     github: "https://github.com/hemanth090",
@@ -62,12 +62,14 @@ export const ME = {
 } as const;
 
 export const PAGES = [
+  { name: "Story", href: "/story" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ] as const;
 
 export const COMMAND_PAGES = [
   { name: "Home", href: "/" },
+  { name: "Story", href: "/story" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ] as const;

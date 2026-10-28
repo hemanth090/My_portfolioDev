@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
 
+import { HideOnStory } from "@/components/hide-on-story";
 import { Navbar } from "@/components/navbar";
 import { PageFooter } from "@/components/page-footer";
 import { Providers } from "@/components/providers";
@@ -155,13 +156,15 @@ export default function RootLayout({
         />
         <Providers>
           <div className="min-h-dvh">
-            <a
-              href="#main"
-              className="focus:bg-background focus:ring-ring/50 sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-md focus:border focus:px-3 focus:py-2 focus:text-sm focus:ring-[3px]"
-            >
-              Skip to content
-            </a>
-            <Navbar />
+            <HideOnStory>
+              <a
+                href="#main"
+                className="focus:bg-background focus:ring-ring/50 sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-md focus:border focus:px-3 focus:py-2 focus:text-sm focus:ring-[3px]"
+              >
+                Skip to content
+              </a>
+              <Navbar />
+            </HideOnStory>
             <div className="mx-auto w-full px-4 md:max-w-[715px] md:px-0">
               <div className="relative">
                 <div
@@ -174,15 +177,19 @@ export default function RootLayout({
                 />
                 <div id="main" className="relative z-10">
                   {children}
-                  <PageFooter />
+                  <HideOnStory>
+                    <PageFooter />
+                  </HideOnStory>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            aria-hidden
-            className="from-background pointer-events-none fixed inset-x-0 bottom-0 z-40 h-10 bg-linear-to-t to-transparent backdrop-blur-[5px] select-none [mask-image:linear-gradient(to_top,black_10%,transparent)] dark:[mask-image:linear-gradient(to_top,black_20%,transparent)]"
-          />
+          <HideOnStory>
+            <div
+              aria-hidden
+              className="from-background pointer-events-none fixed inset-x-0 bottom-0 z-40 h-10 bg-linear-to-t to-transparent backdrop-blur-[5px] select-none [mask-image:linear-gradient(to_top,black_10%,transparent)] dark:[mask-image:linear-gradient(to_top,black_20%,transparent)]"
+            />
+          </HideOnStory>
         </Providers>
       </body>
     </html>

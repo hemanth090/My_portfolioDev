@@ -5,6 +5,7 @@ import { Command } from "cmdk";
 import {
   ArrowUpRight,
   FileText,
+  Film,
   Folder,
   Home,
   Mail,
@@ -128,6 +129,8 @@ export function CommandMenu({
                   >
                     {page.href === "/" ? (
                       <Home className="text-muted-foreground" />
+                    ) : page.href === "/story" ? (
+                      <Film className="text-muted-foreground" />
                     ) : page.href === "/projects" ? (
                       <Folder className="text-muted-foreground" />
                     ) : (
