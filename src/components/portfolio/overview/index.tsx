@@ -9,9 +9,10 @@ export default function Overview() {
   return (
     <section className="font-geist-sans">
       <p className="text-muted-foreground">
-        I build AI products, mostly search and research tools. I like the
-        unglamorous parts: messy documents, retrieval that actually finds the
-        right page, and answers that admit when they aren&apos;t sure. <br /> <br /> At{" "}
+        I&apos;m a 21-year-old. I build AI products, mostly search and research
+        tools. I like the unglamorous parts: messy documents, retrieval that
+        actually finds the right page, and answers that admit when they
+        aren&apos;t sure. <br /> <br /> At{" "}
         <Link
           href="https://tradl.ai"
           target="_blank"
