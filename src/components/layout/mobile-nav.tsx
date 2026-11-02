@@ -1,0 +1,73 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Cancel01Icon, Menu09Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+
+import { NavItem } from "@/types/nav";
+import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+export default function MobileNav({ items }: { items: NavItem[] }) {
+  const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
+
+  return (
+    <DropdownMenu open={open} onOpenChange={setOpen}>
+      <DropdownMenuTrigger
+        className="group relative inline-flex h-8 w-8 items-center justify-center rounded-md text-foreground hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none sm:hidden"
+        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+      >
+        <HugeiconsIcon
+          icon={Menu09Icon}
+          strokeWidth={2}
+          className="size-4.5 transition-all duration-300 ease-in-out group-data-popup-open:opacity-0 group-data-popup-open:blur-xs"
+        />
+        <HugeiconsIcon
+          icon={Cancel01Icon}
+          strokeWidth={2}
+          className="absolute size-4.5 rotate-90 opacity-0 transition-all duration-300 ease-in-out group-data-popup-open:opacity-100 group-data-popup-open:blur-none"
+        />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="discrete-menu-content w-44">
+        <DropdownMenuGroup>
+          {items.map((item) => {
+            const isActive =
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href));
+
+            return (
+              <DropdownMenuItem
+                key={item.href}
+                className="focus:bg-accent data-highlighted:bg-accent"
+                render={
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "w-full font-geist-pixel-square text-sm font-medium transition-colors",
+                      isActive
+                        ? "text-foreground!"
+                        : "text-muted-foreground! hover:text-foreground!"
+                    )}
+                  />
+                }
+              >
+                {item.title}
+              </DropdownMenuItem>
+            );
+          })}
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}

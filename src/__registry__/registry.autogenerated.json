@@ -1,0 +1,119 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "hemanth",
+  "homepage": "https://hemanthk.xyz/components",
+  "items": [
+    {
+      "name": "utils",
+      "title": "Utility Functions",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:lib",
+      "author": "Naveen"
+    },
+    {
+      "name": "use-copy-to-clipboard",
+      "title": "useCopyToClipboard",
+      "files": [
+        {
+          "path": "src/registry/hooks/use-copy-to-clipboard/use-copy-to-clipboard.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-copy-to-clipboard.ts"
+        }
+      ],
+      "type": "registry:hook",
+      "author": "Naveen"
+    },
+    {
+      "name": "stars-travel",
+      "title": "Stars Travel",
+      "description": "A motion-driven SVG background with an animated 'infinite travel' effect.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://hemanthk.xyz/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/stars-travel/stars-travel.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "https://hemanthk.xyz/components/stars-travel",
+      "type": "registry:component",
+      "author": "Naveen"
+    },
+    {
+      "name": "perspective-tilt",
+      "title": "Perspective Tilt",
+      "description": "A 3D card with perspective tilt and blur transitions.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://hemanthk.xyz/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/perspective-tilt/perspective-tilt.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "https://hemanthk.xyz/components/perspective-tilt",
+      "type": "registry:component",
+      "author": "Naveen"
+    },
+    {
+      "name": "copy-button",
+      "title": "Copy Button",
+      "description": "A copy button with direction-aware icon transitions.",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://hemanthk.xyz/r/use-copy-to-clipboard.json",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/copy-button/copy-button.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "https://hemanthk.xyz/components/copy-button",
+      "type": "registry:component",
+      "author": "Naveen"
+    },
+    {
+      "name": "blur-shimmer-text",
+      "title": "Blur Shimmer Text",
+      "description": "A text component that loops phrases with a horizontal blur shimmer.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://hemanthk.xyz/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/blur-shimmer-text/blur-shimmer-text.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "docs": "https://hemanthk.xyz/components/blur-shimmer-text",
+      "type": "registry:component",
+      "author": "Naveen"
+    }
+  ]
+}

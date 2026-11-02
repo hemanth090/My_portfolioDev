@@ -1,0 +1,37 @@
+import type { CollectionItem } from "@/features/portfolio/types/collection";
+
+import CollectionCard from "./collection-card";
+
+interface CollectionSectionProps {
+  title: string;
+  items: CollectionItem[];
+  children?: React.ReactNode;
+  emptyMsg?: string;
+}
+
+export default function CollectionSection({
+  title,
+  items,
+  children,
+  emptyMsg,
+}: CollectionSectionProps) {
+  const isEmpty = items.length === 0;
+
+  return (
+    <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-4">
+        <h2 className="font-geist-sans text-lg">{title}</h2>
+        {children}
+      </div>
+      <div className="flex flex-col gap-5">
+        {isEmpty ? (
+          <p className="font-geist-mono text-sm text-muted-foreground/60">
+            {emptyMsg || "Nothing here yet."}
+          </p>
+        ) : (
+          items.map((item) => <CollectionCard key={item.id} item={item} />)
+        )}
+      </div>
+    </div>
+  );
+}

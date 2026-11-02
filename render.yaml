@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: naveen-portfolio
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    routes:
+      # Retired legacy portfolio routes -> current pages
+      - type: redirect
+        source: /about
+        destination: /#about
+      - type: redirect
+        source: /skills
+        destination: /#stack
+      - type: redirect
+        source: /experience
+        destination: /#experience
+      - type: redirect
+        source: /story
+        destination: /projects
+      - type: redirect
+        source: /story/*
+        destination: /projects
+      - type: redirect
+        source: /blog
+        destination: /projects
+      - type: redirect
+        source: /blog/*
+        destination: /projects
+      - type: redirect
+        source: /collection
+        destination: /credentials
+      - type: redirect
+        source: /collection/*
+        destination: /credentials
+      # Normalise slashless pages to the static export
+      - type: redirect
+        source: /projects
+        destination: /projects/
+      - type: redirect
+        source: /contact
+        destination: /contact/

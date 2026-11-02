@@ -1,0 +1,80 @@
+import {
+  GithubIcon,
+  GoogleDocIcon,
+  Linkedin01Icon,
+  Mail01Icon,
+  NewTwitterIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+
+const CONNECT_LINKS = [
+  {
+    id: "email",
+    icon: Mail01Icon,
+    title: "Email",
+    url: "mailto:naveenhemanth4@gmail.com",
+  },
+  {
+    id: "twitter",
+    icon: NewTwitterIcon,
+    title: "Twitter",
+    url: "https://x.com/HemanthKokkonda",
+  },
+  {
+    id: "github",
+    icon: GithubIcon,
+    title: "GitHub",
+    url: "https://github.com/hemanth090",
+  },
+  {
+    id: "linkedin",
+    icon: Linkedin01Icon,
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/hemanthkokkonda",
+  },
+  {
+    id: "resume",
+    icon: GoogleDocIcon,
+    title: "Resume",
+    url: "/resume-hemanth.pdf",
+  },
+] as const;
+
+export default function Connect() {
+  return (
+    <section
+      id="connect"
+      className="mt-15 scroll-mt-20 space-y-5"
+      aria-labelledby="connect-heading"
+    >
+      <header>
+        <h2
+          id="connect-heading"
+          className="font-geist-pixel-square text-muted-foreground"
+        >
+          Connect with me
+        </h2>
+      </header>
+      <ul className="flex flex-wrap gap-3 select-none">
+        {CONNECT_LINKS.map((link) => (
+          <li key={link.id}>
+            <a
+              href={link.url}
+              {...(link.url.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="flex items-center gap-2 rounded-lg bg-muted px-2 py-1 font-geist-mono text-muted-foreground shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] ring-1 ring-border/80 transition-colors duration-300 hover:bg-muted/80 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)]"
+            >
+              <HugeiconsIcon
+                icon={link.icon}
+                strokeWidth={2}
+                className="size-4"
+              />
+              <span className="text-sm">{link.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
