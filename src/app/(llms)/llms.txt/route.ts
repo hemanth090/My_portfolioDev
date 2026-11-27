@@ -30,8 +30,7 @@ ${EXPERIENCES.map((item) =>
   item.positions
     .map((position) => {
       const skills = position.skills?.join(", ") || "N/A";
-      const description = position.description?.join("\n") || "N/A";
-      return `### ${position.title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}\n\n${description}`;
+      return `### ${position.title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}`;
     })
     .join("\n\n")
 ).join("\n\n")}

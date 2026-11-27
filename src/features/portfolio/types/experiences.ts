@@ -6,9 +6,7 @@ export type ExperiencePosition = {
     end?: string;
   };
   employmentType?: string;
-  description?: string[];
   skills?: string[];
-  isExpanded?: boolean;
 };
 
 export type Experience = {

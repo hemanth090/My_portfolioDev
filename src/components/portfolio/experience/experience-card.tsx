@@ -2,19 +2,10 @@
 
 import * as React from "react";
 import Image from "next/image";
-import {
-  ArrowDown01Icon,
-  ArrowUp01Icon,
-  LinkCircle02Icon,
-} from "@hugeicons/core-free-icons";
+import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 
 import { cn } from "@/lib/utils";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
@@ -84,94 +75,56 @@ function CurrentEmployerBadge() {
 }
 
 function PositionContent({ position }: PositionContentProps) {
-  const hasDescription =
-    Array.isArray(position.description) && position.description.length > 0;
   const hasSkills =
     Array.isArray(position.skills) && position.skills.length > 0;
-
-  const [open, setOpen] = React.useState(position.isExpanded ?? false);
 
   const { start, end } = position.employmentPeriod;
 
   return (
-    <Collapsible open={open} onOpenChange={setOpen} disabled={!hasDescription}>
-      <div className="relative">
-        <CollapsibleTrigger
-          className={cn(
-            "relative block w-full rounded-md text-left outline-none select-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-            "data-disabled:before:content-none"
-          )}
+    <div className="relative">
+      <div className="relative z-10 mb-1 flex min-w-0 items-center gap-3">
+        <h4
+          className="min-w-0 flex-1 text-base font-medium text-foreground"
+          itemProp="jobTitle"
         >
-          <div className="relative z-10 mb-1 flex min-w-0 items-center gap-3">
-            <h4
-              className="min-w-0 flex-1 text-base font-medium text-foreground"
-              itemProp="jobTitle"
-            >
-              {position.title}
-            </h4>
-            {hasDescription && (
-              <span
-                className="flex shrink-0 items-center text-muted-foreground [&_svg]:size-4"
-                aria-hidden
-              >
-                <HugeiconsIcon
-                  icon={open ? ArrowUp01Icon : ArrowDown01Icon}
-                  strokeWidth={2}
-                />
-              </span>
-            )}
-          </div>
-          <div className="relative z-10 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            {position.employmentType && (
-              <>
-                <span>{position.employmentType}</span>
-                <div className="flex items-center">
-                  <Separator orientation="vertical" className="h-4" />
-                </div>
-              </>
-            )}
-            <time dateTime={buildDateTimeAttr(start)} itemProp="startDate">
-              {formatEmploymentPeriod(start, end)}
-            </time>
-          </div>
-        </CollapsibleTrigger>
-        <CollapsibleContent
-          keepMounted
-          className="h-(--collapsible-panel-height) overflow-hidden duration-300 data-ending-style:h-0 data-ending-style:animate-fade-out data-starting-style:h-0 data-starting-style:animate-fade-in motion-reduce:animate-none motion-reduce:transition-none"
-        >
-          {hasDescription && (
-            <div className="pt-4" itemProp="description">
-              <ul className="ml-4 list-disc space-y-2 text-sm leading-relaxed text-muted-foreground">
-                {position.description!.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {hasSkills && (
-            <ul
-              className="not-prose flex flex-wrap gap-2 pt-4 px-1"
-              aria-label="Skills and technologies used"
-            >
-              {position.skills!.map((skill) => (
-                <li key={skill}>
-                  <span
-                    className={cn(
-                      "inline-flex items-center rounded-md px-2 py-0.5 font-geist-mono text-xs",
-                      "bg-muted text-muted-foreground ring-1 ring-border/80 shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)]",
-                      "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
-                    )}
-                    itemProp="skills"
-                  >
-                    {skill}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </CollapsibleContent>
+          {position.title}
+        </h4>
       </div>
-    </Collapsible>
+      <div className="relative z-10 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+        {position.employmentType && (
+          <>
+            <span>{position.employmentType}</span>
+            <div className="flex items-center">
+              <Separator orientation="vertical" className="h-4" />
+            </div>
+          </>
+        )}
+        <time dateTime={buildDateTimeAttr(start)} itemProp="startDate">
+          {formatEmploymentPeriod(start, end)}
+        </time>
+      </div>
+      {hasSkills && (
+        <ul
+          className="not-prose flex flex-wrap gap-2 pt-4 px-1"
+          aria-label="Skills and technologies used"
+        >
+          {position.skills!.map((skill) => (
+            <li key={skill}>
+              <span
+                className={cn(
+                  "inline-flex items-center rounded-md px-2 py-0.5 font-geist-mono text-xs",
+                  "bg-muted text-muted-foreground ring-1 ring-border/80 shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)]",
+                  "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
+                )}
+                itemProp="skills"
+              >
+                {skill}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
