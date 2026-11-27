@@ -55,7 +55,7 @@ export default function TechStack() {
       <header>
         <h2
           id="tech-stack-heading"
-          className="font-geist-pixel-square text-muted-foreground"
+          className="font-sans tracking-[-0.04em] text-muted-foreground"
         >
           Tech Stack
         </h2>

@@ -33,7 +33,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <div className="flex flex-col gap-2 px-3 py-2">
           <h3
-            className="truncate font-geist-sans text-sm font-medium text-foreground"
+            className="truncate font-sans text-sm font-normal tracking-[-0.04em] text-foreground"
             itemProp="name"
           >
             {project.title}

@@ -21,13 +21,13 @@ export default function ProjectsPage() {
       <header className="flex flex-col gap-3">
         <h1
           id="projects-page-heading"
-          className="font-geist-pixel-square text-xl"
+          className="font-sans tracking-[-0.04em] text-xl"
         >
           Projects
         </h1>
-        <p className="font-geist-sans text-muted-foreground">
-          Five systems: open data for agents, research reading, shared agent
-          memory, an autonomous research agent, and a live view of the work.
+        <p className="font-sans text-muted-foreground">
+          Four systems: open data for agents, research reading, shared agent
+          memory, and an autonomous research agent.
         </p>
       </header>
       <h2 className="sr-only">Selected projects</h2>

@@ -16,14 +16,14 @@ export default function ProfileHeader() {
           className="rounded-full object-cover ring-1 ring-accent select-none dark:ring-0"
         />
         <div>
-          <h1 className="font-geist-sans text-lg font-medium">
+          <h1 className="font-sans text-lg font-normal tracking-[-0.04em]">
             Naveen Hemanth
           </h1>
           <BlurShimmerText
             texts={["AI Engineer", "Full-Stack", "Open to work"]}
             blur={4}
             interval={2}
-            className="font-geist-pixel-square text-muted-foreground"
+            className="font-sans tracking-[-0.04em] text-muted-foreground"
           />
         </div>
       </div>

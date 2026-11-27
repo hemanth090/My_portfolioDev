@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Inter_Tight } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
-import { GeistPixelSquare } from "geist/font/pixel/square";
 
 import "@/styles/globals.css";
 
 import { defaultWebsiteMetadata } from "@/config/metadata";
 import { Providers } from "@/components/providers";
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-inter-tight",
+  display: "swap",
+});
 
 export const metadata: Metadata = defaultWebsiteMetadata;
 
@@ -18,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} antialiased selection:bg-foreground selection:text-primary-foreground`}
+        className={`${interTight.variable} ${GeistMono.variable} antialiased selection:bg-foreground selection:text-primary-foreground`}
       >
         <Providers>
           <div className="container mx-auto md:max-w-161">{children}</div>

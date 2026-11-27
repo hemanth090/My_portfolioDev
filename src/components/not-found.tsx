@@ -16,7 +16,7 @@ export default function NotFound({ className }: { className?: string }) {
       )}
     >
       <div className="flex flex-col items-center gap-1">
-        <h1 className="font-geist-pixel-square text-8xl">404</h1>
+        <h1 className="font-sans text-8xl font-normal tracking-[-0.04em]">404</h1>
         <p className="font-geist-sans text-lg font-medium">Page Not Found</p>
       </div>
       <Link

@@ -22,7 +22,7 @@ export default function Projects() {
       <header>
         <h2
           id="projects-heading"
-          className="font-geist-pixel-square text-muted-foreground"
+          className="font-sans tracking-[-0.04em] text-muted-foreground"
         >
           Projects
         </h2>

@@ -37,13 +37,4 @@ export const PROJECTS: Project[] = [
     link: "https://github.com/hemanth090/Scout",
     githubRepo: "hemanth090/Scout",
   },
-  {
-    id: "agent-cam",
-    title: "AgentCam",
-    coverImage: "/images/project-covers/agent-cam.webp",
-    description:
-      "A local dashboard that mirrors your OpenCode agent's file, command, and plan.",
-    link: "https://github.com/hemanth090/agent-cam",
-    githubRepo: "hemanth090/agent-cam",
-  },
 ];

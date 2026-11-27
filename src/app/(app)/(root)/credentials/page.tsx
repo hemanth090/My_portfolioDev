@@ -23,10 +23,10 @@ export default function CredentialsPage() {
   return (
     <section className="space-y-12 pt-8" aria-labelledby="credentials-heading">
       <header className="flex flex-col gap-3">
-        <h1 id="credentials-heading" className="font-geist-pixel-square text-xl">
+        <h1 id="credentials-heading" className="font-sans tracking-[-0.04em] text-xl">
           Credentials
         </h1>
-        <p className="font-geist-sans text-muted-foreground">
+        <p className="font-sans text-muted-foreground">
           The certifications, education, and milestones behind the work.
         </p>
       </header>

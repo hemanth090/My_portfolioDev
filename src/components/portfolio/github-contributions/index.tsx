@@ -16,7 +16,7 @@ export default function GitHubContributions() {
       <header>
         <h2
           id="github-contributions-heading"
-          className="font-geist-pixel-square text-muted-foreground"
+          className="font-sans tracking-[-0.04em] text-muted-foreground"
         >
           GitHub Contributions
         </h2>

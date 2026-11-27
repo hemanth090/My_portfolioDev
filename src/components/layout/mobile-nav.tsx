@@ -54,7 +54,7 @@ export default function MobileNav({ items }: { items: NavItem[] }) {
                     onClick={() => setOpen(false)}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "w-full font-geist-pixel-square text-sm font-medium transition-colors",
+                      "w-full font-sans text-sm font-normal tracking-[-0.04em] transition-colors",
                       isActive
                         ? "text-foreground!"
                         : "text-muted-foreground! hover:text-foreground!"

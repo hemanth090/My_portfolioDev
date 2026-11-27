@@ -20,11 +20,11 @@ export default function CTA() {
           <div className="flex flex-col gap-3">
             <h2
               id="cta-heading"
-              className="font-geist-pixel-square text-3xl tracking-tight"
+              className="font-sans text-3xl font-normal tracking-[-0.04em]"
             >
               Let&apos;s talk
             </h2>
-            <p className="font-geist-sans text-sm text-muted-foreground sm:text-base">
+            <p className="font-sans text-sm text-muted-foreground sm:text-base">
               What&apos;s the best way to start? <br /> A quick note about
               what you&apos;re building and see if we click.
             </p>
@@ -33,7 +33,7 @@ export default function CTA() {
             href="mailto:naveenhemanth4@gmail.com?subject=Let%27s%20talk"
             className={cn(
               buttonVariants({ variant: "default" }),
-              "mx-auto w-fit bg-foreground font-geist-sans transition-colors hover:bg-foreground/90! active:scale-98"
+              "mx-auto w-fit bg-foreground font-sans font-normal tracking-[-0.04em] transition-colors hover:bg-foreground/90! active:scale-98"
             )}
           >
             Send an email

@@ -12,7 +12,7 @@ export default function Experience() {
       <header>
         <h2
           id="experience-heading"
-          className="font-geist-pixel-square text-muted-foreground"
+          className="font-sans tracking-[-0.04em] text-muted-foreground"
         >
           Experience
         </h2>
