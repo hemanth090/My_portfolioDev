@@ -6,8 +6,8 @@ import { ProjectGrid } from "@/components/portfolio/projects";
 export const metadata: Metadata = generateWebsiteMetadata({
   title: "Projects",
   description:
-    "AI systems by Naveen Hemanth: retrieval, research agents, and developer tooling.",
-  keywords: ["Naveen projects", "AI projects", "retrieval", "agents"],
+    "AI systems by Naveen Hemanth: open data, retrieval, agent memory, and developer tooling.",
+  keywords: ["Naveen projects", "AI projects", "open data", "retrieval", "agent memory"],
   image: "/images/opengraph-image.png",
   url: "/projects",
 });
@@ -26,8 +26,8 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="font-geist-sans text-muted-foreground">
-          Three AI systems: research retrieval, an autonomous agent, and a live
-          view of the work.
+          Five systems: open data for agents, research reading, shared agent
+          memory, an autonomous research agent, and a live view of the work.
         </p>
       </header>
       <h2 className="sr-only">Selected projects</h2>
