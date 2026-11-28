@@ -8,7 +8,6 @@ import { PROFILE } from "@/content/profile";
 
 export const metadata = {
   title: "Contact",
-  description: "Get in touch with Naveen Hemanth.",
 };
 
 export default function ContactPage() {

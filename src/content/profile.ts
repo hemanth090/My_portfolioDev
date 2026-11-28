@@ -9,7 +9,6 @@ export const PROFILE = {
   website: "https://hemanthk.xyz",
   avatar: "/images/avatar.jpg",
   avatarStylized: "/images/avatar-stylized.png",
-  ogImage: "/images/opengraph-image-v2.png",
   resumeUrl: "/resume-hemanth.pdf",
   github: "https://github.com/hemanth090",
   linkedin: "https://www.linkedin.com/in/hemanthkokkonda",
@@ -21,9 +20,6 @@ export const PROFILE = {
 export const SITE = {
   name: "Naveen",
   title: "Naveen - AI Engineer",
-  description:
-    "Naveen Hemanth is an AI Engineer and Product Builder based in Hyderabad, working across AI, backend, and full-stack development.",
-  ogImage: "/images/opengraph-image-v2.png",
   url: "https://hemanthk.xyz",
   keywords: [
     "Naveen",
