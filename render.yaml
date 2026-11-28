@@ -5,7 +5,7 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: ./build
     routes:
-      # Retired legacy portfolio routes -> current pages
+      # Retired legacy portfolio routes -> current sections/pages
       - type: redirect
         source: /about
         destination: /#about
@@ -17,22 +17,22 @@ services:
         destination: /#experience
       - type: redirect
         source: /story
-        destination: /projects
+        destination: /projects/
       - type: redirect
         source: /story/*
-        destination: /projects
+        destination: /projects/
       - type: redirect
         source: /blog
-        destination: /projects
+        destination: /projects/
       - type: redirect
         source: /blog/*
-        destination: /projects
+        destination: /projects/
       - type: redirect
         source: /collection
-        destination: /credentials
+        destination: /#credentials
       - type: redirect
         source: /collection/*
-        destination: /credentials
+        destination: /#credentials
       # Normalise slashless pages to the static export
       - type: redirect
         source: /projects

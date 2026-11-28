@@ -1,17 +1,12 @@
 import type { MetadataRoute } from "next";
 
+import { SITE } from "@/content/profile";
+
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://hemanthk.xyz";
-
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    rules: { userAgent: "*", allow: "/" },
+    sitemap: `${SITE.url}/sitemap.xml`,
   };
 }

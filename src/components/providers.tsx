@@ -1,28 +1,23 @@
 "use client";
 
-import { AppProgressProvider } from "@bprogress/next";
-import { MotionConfig } from "motion/react";
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import { ThemeProvider } from "next-themes";
 
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { KeyboardShortcuts } from "@/components/keyboard-shortcuts";
-import ThemeProvider from "@/components/theme-provider";
+import { SoundProvider } from "@/components/sound-provider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider>
-      <AppProgressProvider
-        color="var(--foreground)"
-        height="2px"
-        delay={500}
-        options={{ showSpinner: false }}
-      >
-        <Toaster position="top-center" />
-        <TooltipProvider>
-          <MotionConfig reducedMotion="user">{children}</MotionConfig>
-        </TooltipProvider>
-        <KeyboardShortcuts />
-      </AppProgressProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+      disableTransitionOnChange={false}
+    >
+      <SoundProvider>
+        <TooltipPrimitive.Provider delayDuration={0}>
+          {children}
+        </TooltipPrimitive.Provider>
+      </SoundProvider>
     </ThemeProvider>
   );
 }

@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   devIndicators: false,
-  reactStrictMode: true,
-  poweredByHeader: false,
 };
 
 export default nextConfig;

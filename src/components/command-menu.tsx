@@ -1,411 +1,227 @@
 "use client";
 
-import * as React from "react";
-import { useRouter } from "@bprogress/next/app";
+import * as Dialog from "@radix-ui/react-dialog";
+import { Command } from "cmdk";
 import {
-  ArrowMoveDownLeftIcon,
-  ArrowUpDownIcon,
-  Cancel01Icon,
-  CollectionsBookmarkIcon,
-  ComputerIcon,
-  File02Icon,
-  Folder01Icon,
-  GithubIcon,
-  Globe02Icon,
-  Home03Icon,
-  Linkedin01Icon,
-  MoonIcon,
-  NewTwitterIcon,
-  Search01Icon,
-  Sun01Icon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
-import { useCommandState } from "cmdk";
+  ArrowUpRight,
+  FileText,
+  Folder,
+  Home,
+  Mail,
+  Moon,
+  Search,
+  Send,
+  Sun,
+  Volume2,
+  VolumeX,
+  X,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useHotkeys } from "react-hotkeys-hook";
+import { useCallback } from "react";
 
+import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { useSound } from "@/components/sound-provider";
+import { PROJECTS } from "@/content/projects";
+import { PROFILE } from "@/content/profile";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-import {
-  Command,
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandShortcut,
-} from "./ui/command";
-import { InputGroupButton } from "./ui/input-group";
-import { Kbd, KbdGroup } from "./ui/kbd";
-import { Separator } from "./ui/separator";
 
-type CommandLinkItem = {
-  title: string;
-  href: string;
-  icon?: IconSvgElement | React.ReactNode;
-  shortcut?: string;
-  keywords?: string[];
-  openInNewTab?: boolean;
-};
-
-const MENU_LINKS: CommandLinkItem[] = [
-  {
-    title: "Home",
-    href: "/",
-    icon: Home03Icon,
-    shortcut: "GH",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-    icon: Folder01Icon,
-    shortcut: "GP",
-  },
-  {
-    title: "Credentials",
-    href: "/credentials",
-    icon: CollectionsBookmarkIcon,
-    shortcut: "GC",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
-    icon: Globe02Icon,
-    shortcut: "GT",
-  },
+const PAGES = [
+  { name: "Home", href: "/", icon: Home },
+  { name: "Projects", href: "/projects", icon: Folder },
+  { name: "Contact", href: "/contact", icon: Send },
 ];
 
-const SOCIAL_LINK_ITEMS: CommandLinkItem[] = [
-  {
-    title: "X",
-    href: "https://x.com/HemanthKokkonda",
-    icon: NewTwitterIcon,
-    openInNewTab: true,
-  },
-  {
-    title: "GitHub",
-    href: "https://github.com/hemanth090",
-    icon: GithubIcon,
-    openInNewTab: true,
-  },
-  {
-    title: "LinkedIn",
-    href: "https://www.linkedin.com/in/hemanthkokkonda",
-    icon: Linkedin01Icon,
-    openInNewTab: true,
-  },
+const LINKS = [
+  { name: "GitHub", href: PROFILE.github, icon: GitHubIcon },
+  { name: "LinkedIn", href: PROFILE.linkedin, icon: LinkedInIcon },
+  { name: "Resume", href: PROFILE.resumeUrl, icon: FileText },
+  { name: "Email", href: `mailto:${PROFILE.email}`, icon: Mail },
 ];
 
-const OTHER_LINK_ITEMS: CommandLinkItem[] = [
-  {
-    title: "llms.txt",
-    href: "/llms.txt",
-    icon: File02Icon,
-    openInNewTab: true,
-  },
-];
-
-export function CommandMenu() {
-  const router = useRouter();
-  const [open, setOpen] = React.useState(false);
-
-  const { setTheme } = useTheme();
-
-  const handleOpenLink = React.useCallback(
-    (href: string, openInNewTab = false) => {
-      setOpen(false);
-
-      if (openInNewTab) {
-        window.open(href, "_blank", "noopener");
-      } else {
-        router.push(href);
-      }
-    },
-    [router]
-  );
-
-  const createThemeHandler = React.useCallback(
-    (theme: "light" | "dark" | "system") => () => {
-      setOpen(false);
-      setTheme(theme);
-    },
-    [setTheme]
-  );
-
-  useHotkeys(
-    "mod+k",
-    (e) => {
-      e.preventDefault();
-      setOpen((open) => !open);
-    },
-    { enableOnFormTags: true }
-  );
-
-  useHotkeys(
-    "slash",
-    (e) => {
-      e.preventDefault();
-      setOpen((open) => !open);
-    },
-    { enableOnFormTags: false }
-  );
-
-  return (
-    <>
-      <Button
-        variant="secondary"
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        aria-label="Search the site"
-        className={cn(
-          "mr-3 h-8 gap-1.5 rounded-full border border-input bg-background px-2.5 text-muted-foreground shadow-xs select-none hover:bg-background hover:ring-2 hover:ring-ring/20 dark:bg-input/30 dark:hover:bg-input/30",
-          "relative before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:shadow-[0_1px_--theme(--color-black/4%)] dark:before:shadow-[0_-1px_--theme(--color-white/6%)]"
-        )}
-        onClick={() => {
-          setOpen(true);
-        }}
-      >
-        <HugeiconsIcon icon={Search01Icon} aria-hidden />
-        <span className="font-geist-sans text-sm/4 font-medium sm:hidden">
-          Search…
-        </span>
-        <KbdGroup className="hidden sm:in-[.os-macos_&]:flex">
-          <Kbd className="w-5 min-w-5">⌘</Kbd>
-          <Kbd className="w-5 min-w-5 font-geist-sans">K</Kbd>
-        </KbdGroup>
-        <KbdGroup className="hidden sm:not-[.os-macos_&]:flex">
-          <Kbd className="font-geist-sans">Ctrl</Kbd>
-          <Kbd className="w-5 min-w-5 font-geist-sans">K</Kbd>
-        </KbdGroup>
-      </Button>
-      <CommandDialog
-        open={open}
-        onOpenChange={setOpen}
-        className="font-geist-sans"
-      >
-        <Command>
-          <CommandMenuInput setOpen={setOpen} />
-          <CommandMenuList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandLinkGroup
-              heading="Menu"
-              links={MENU_LINKS}
-              onLinkSelect={handleOpenLink}
-            />
-            <CommandLinkGroup
-              heading="Social Links"
-              links={SOCIAL_LINK_ITEMS}
-              onLinkSelect={handleOpenLink}
-            />
-            <CommandGroup heading="Theme">
-              <CommandItem
-                value="light"
-                keywords={["theme"]}
-                onSelect={createThemeHandler("light")}
-              >
-                <HugeiconsIcon
-                  icon={Sun01Icon}
-                  strokeWidth={2}
-                  className="text-muted-foreground group-data-selected/command-item:text-muted-foreground!"
-                />
-                Light
-              </CommandItem>
-              <CommandItem
-                value="dark"
-                keywords={["theme"]}
-                onSelect={createThemeHandler("dark")}
-              >
-                <HugeiconsIcon
-                  icon={MoonIcon}
-                  strokeWidth={2}
-                  className="text-muted-foreground group-data-selected/command-item:text-muted-foreground!"
-                />
-                Dark
-              </CommandItem>
-              <CommandItem
-                value="system"
-                keywords={["theme"]}
-                onSelect={createThemeHandler("system")}
-              >
-                <HugeiconsIcon
-                  icon={ComputerIcon}
-                  strokeWidth={2}
-                  className="text-muted-foreground group-data-selected/command-item:text-muted-foreground!"
-                />
-                System
-              </CommandItem>
-            </CommandGroup>
-            <CommandLinkGroup
-              heading="Other"
-              links={OTHER_LINK_ITEMS}
-              onLinkSelect={handleOpenLink}
-            />
-          </CommandMenuList>
-          <CommandMenuFooter />
-        </Command>
-      </CommandDialog>
-    </>
-  );
-}
-
-function CommandMenuList({
-  children,
-  className,
-  ...props
-}: React.ComponentProps<typeof CommandList>) {
-  const search = useCommandState((state) => state.search);
-  const hasSearch = !!search;
-
-  return (
-    <CommandList
-      className={cn(
-        className,
-        !hasSearch && "supports-timeline-scroll:scroll-fade-effect-y"
-      )}
-      {...props}
-    >
-      {children}
-    </CommandList>
-  );
-}
-
-function CommandMenuInput({ setOpen }: { setOpen: (open: boolean) => void }) {
-  return (
-    <CommandInput aria-label="Search commands" placeholder="Type a command or search…">
-      <InputGroupButton
-        size="icon-xs"
-        variant="ghost"
-        onClick={() => setOpen(false)}
-      >
-        <HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} />
-        <span className="sr-only">Close</span>
-      </InputGroupButton>
-    </CommandInput>
-  );
-}
-
-function CommandLinkGroup({
-  heading,
-  links,
-  fallbackIcon,
-  onLinkSelect,
+export function CommandMenu({
+  open,
+  onOpenChange,
 }: {
-  heading: string;
-  links: CommandLinkItem[];
-  fallbackIcon?: IconSvgElement | React.ReactNode;
-  onLinkSelect: (href: string, openInNewTab?: boolean) => void;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }) {
-  return (
-    <CommandGroup heading={heading}>
-      {links.map((link) => {
-        const Icon = link?.icon ?? fallbackIcon;
+  const router = useRouter();
+  const { resolvedTheme, setTheme } = useTheme();
+  const { soundEnabled, toggleSound } = useSound();
+  const isDark = resolvedTheme === "dark";
 
-        return (
-          <CommandItem
-            key={link.href}
-            value={link.href.toLowerCase()}
-            keywords={[link.title, ...(link.keywords ?? [])]}
-            onSelect={() => onLinkSelect(link.href, link.openInNewTab)}
-          >
-            {Icon ? (
-              React.isValidElement(Icon) ? (
-                Icon
-              ) : (
-                <HugeiconsIcon
-                  icon={Icon as IconSvgElement}
-                  strokeWidth={2}
-                  className="text-muted-foreground group-data-selected/command-item:text-muted-foreground!"
-                />
-              )
-            ) : null}
-            <p className="line-clamp-1">{link.title}</p>
-            {link.shortcut && (
-              <CommandShortcut className="font-sans tracking-widest">
-                {link.shortcut}
-              </CommandShortcut>
-            )}
-          </CommandItem>
-        );
-      })}
-    </CommandGroup>
-  );
-}
-
-type CommandKind = "command" | "page" | "link";
-
-type CommandMetaMap = Map<
-  string,
-  {
-    commandKind: CommandKind;
-  }
->;
-
-function buildCommandMetaMap() {
-  const commandMetaMap: CommandMetaMap = new Map();
-
-  commandMetaMap.set("light", { commandKind: "command" });
-  commandMetaMap.set("dark", { commandKind: "command" });
-  commandMetaMap.set("system", { commandKind: "command" });
-
-  MENU_LINKS.forEach((link) => {
-    commandMetaMap.set(link.href.toLowerCase(), { commandKind: "page" });
-  });
-
-  SOCIAL_LINK_ITEMS.forEach((item) => {
-    commandMetaMap.set(item.href.toLowerCase(), {
-      commandKind: "link",
-    });
-  });
-
-  return commandMetaMap;
-}
-
-const COMMAND_META_MAP = buildCommandMetaMap();
-
-const ENTER_ACTION_LABELS: Record<CommandKind, string> = {
-  command: "Run Command",
-  page: "Go to Page",
-  link: "Open Link",
-};
-
-function CommandMenuFooter() {
-  const selectedCommandKind = useCommandState(
-    (state) => COMMAND_META_MAP.get(state.value)?.commandKind ?? "page"
+  const run = useCallback(
+    (action: () => void) => {
+      onOpenChange(false);
+      action();
+    },
+    [onOpenChange]
   );
 
   return (
-    <>
-      <div className="flex h-10" />
-      <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-end rounded-b-2xl border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <div className="flex shrink-0 items-center gap-2">
-          <span className="font-geist-sans text-muted-foreground">
-            Navigate
-          </span>
-          <Kbd className="font-geist-sans">
-            <HugeiconsIcon icon={ArrowUpDownIcon} />
-          </Kbd>
-          <div className="flex items-center justify-center">
-            <Separator
-              orientation="vertical"
-              className="data-[orientation=vertical]:h-4"
-            />
-          </div>
-          <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
-          <Kbd>
-            <HugeiconsIcon icon={ArrowMoveDownLeftIcon} />
-          </Kbd>
-          <div className="flex items-center justify-center">
-            <Separator
-              orientation="vertical"
-              className="data-[orientation=vertical]:h-4"
-            />
-          </div>
-          <span className="font-geist-sans text-muted-foreground">Exit</span>
-          <Kbd className="font-geist-sans">Esc</Kbd>
-        </div>
-      </div>
-    </>
+    <Dialog.Root open={open} onOpenChange={onOpenChange}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50" />
+        <Dialog.Content
+          className={cn(
+            "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",
+            "bg-popover border-border/80 gap-0 overflow-hidden p-0 shadow-2xl ring-1 ring-black/5 dark:ring-white/10"
+          )}
+        >
+          <Dialog.Title className="sr-only">Command menu</Dialog.Title>
+          <Dialog.Description className="sr-only">
+            Jump to a page, open a link, or change a setting.
+          </Dialog.Description>
+
+          <Command className="bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md">
+            <div className="flex h-12 items-center gap-2 border-b px-3">
+              <Search className="size-4 shrink-0 opacity-50" aria-hidden />
+              <Command.Input
+                autoFocus
+                placeholder="Jump to a page or link…"
+                className="placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+              />
+            </div>
+
+            <Command.List
+              data-lenis-prevent
+              className="command-list-height scroll-py-1 overflow-x-hidden overflow-y-auto overscroll-contain"
+            >
+              <Command.Empty className="flex h-full items-center justify-center text-sm">
+                Nothing matches that.
+              </Command.Empty>
+
+              <Command.Group
+                heading="Pages"
+                className="text-foreground [&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium"
+              >
+                {PAGES.map((page) => {
+                  const Icon = page.icon;
+                  return (
+                    <Command.Item
+                      key={page.href}
+                      value={`page ${page.name}`}
+                      onSelect={() => run(() => router.push(page.href))}
+                      className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                    >
+                      <Icon className="text-muted-foreground" />
+                      {page.name}
+                    </Command.Item>
+                  );
+                })}
+              </Command.Group>
+
+              <Command.Separator className="bg-border -mx-1 h-px" />
+
+              <Command.Group
+                heading="Projects"
+                className="text-foreground [&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium"
+              >
+                {PROJECTS.map((project) => (
+                  <Command.Item
+                    key={project.slug}
+                    value={`project ${project.title} ${project.technologies
+                      .map((tech) => tech.name)
+                      .join(" ")}`}
+                    onSelect={() =>
+                      run(() => {
+                        const url =
+                          project.links.website ?? project.links.github;
+                        if (url) {
+                          window.open(url, "_blank", "noopener,noreferrer");
+                        }
+                      })
+                    }
+                    className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                  >
+                    <ArrowUpRight className="text-muted-foreground" />
+                    {project.title}
+                    <span className="text-muted-foreground ml-auto text-xs">
+                      {project.subheading}
+                    </span>
+                  </Command.Item>
+                ))}
+              </Command.Group>
+
+              <Command.Separator className="bg-border -mx-1 h-px" />
+
+              <Command.Group
+                heading="Links"
+                className="text-foreground [&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium"
+              >
+                {LINKS.map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <Command.Item
+                      key={link.name}
+                      value={`link ${link.name}`}
+                      onSelect={() =>
+                        run(() =>
+                          window.open(
+                            link.href,
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        )
+                      }
+                      className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                    >
+                      <Icon className="text-muted-foreground" />
+                      {link.name}
+                    </Command.Item>
+                  );
+                })}
+              </Command.Group>
+
+              <Command.Separator className="bg-border -mx-1 h-px" />
+
+              <Command.Group
+                heading="Settings"
+                className="text-foreground [&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium"
+              >
+                <Command.Item
+                  value="setting theme appearance dark light"
+                  onSelect={() =>
+                    run(() => setTheme(isDark ? "light" : "dark"))
+                  }
+                  className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                >
+                  {isDark ? (
+                    <Sun className="text-muted-foreground" />
+                  ) : (
+                    <Moon className="text-muted-foreground" />
+                  )}
+                  Switch to {isDark ? "light" : "dark"} theme
+                  <span className="text-muted-foreground ml-auto text-xs tracking-widest">
+                    D
+                  </span>
+                </Command.Item>
+
+                <Command.Item
+                  value="setting sound audio feedback"
+                  onSelect={() => run(() => toggleSound())}
+                  className="data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                >
+                  {soundEnabled ? (
+                    <Volume2 className="text-muted-foreground" />
+                  ) : (
+                    <VolumeX className="text-muted-foreground" />
+                  )}
+                  {soundEnabled
+                    ? "Turn off interface sound"
+                    : "Turn on interface sound"}
+                </Command.Item>
+              </Command.Group>
+            </Command.List>
+          </Command>
+
+          <Dialog.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+            <X />
+            <span className="sr-only">Close</span>
+          </Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
-

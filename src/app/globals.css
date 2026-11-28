@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/fonts/Geist-var.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('/fonts/Satoshi-Variable.woff2?v=2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/PixelifySans-1.woff2') format('woff2');
+  unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
+}
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/PixelifySans-2.woff2') format('woff2');
+  unicode-range: u+0100-02ba, u+02bd-02c5, u+02c7-02cc, u+02ce-02d7,
+    u+02dd-02ff, u+0304, u+0308, u+0329, u+1d00-1dbf, u+1e00-1e9f,
+    u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c4, u+2113, u+2c60-2c7f,
+    u+a720-a7ff;
+}
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/PixelifySans-3.woff2') format('woff2');
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da,
+    u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+20ac, u+2122, u+2191,
+    u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+
+@font-face {
+  font-family: 'Pixelify Sans Fallback';
+  src: local('Arial');
+  ascent-override: 81.7%;
+  descent-override: 24.87%;
+  line-gap-override: 0%;
+  size-adjust: 112.61%;
+}
+
+:root {
+  --font-geist-sans: 'Geist';
+  --font-geist-mono: 'Geist';
+  --font-heading: 'Satoshi';
+  --font-pixelify: 'Pixelify Sans', 'Pixelify Sans Fallback', sans-serif;
+  --default-font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --default-mono-font-family: 'Geist', ui-monospace, SFMono-Regular,
+    Roboto Mono, Menlo, Monaco, 'Liberation Mono', 'DejaVu Sans Mono',
+    'Courier New', monospace;
+}
+
+html,
+body,
+.font-sans,
+.font-mono {
+  font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading,
+[cmdk-group-heading] {
+  font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-pixel {
+  font-family: 'Pixelify Sans', 'Pixelify Sans Fallback', sans-serif;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.theme-icon-dark {
+  display: none;
+}
+
+.dark .theme-icon-dark {
+  display: block;
+}
+
+.dark .theme-icon-light {
+  display: none;
+}
+
+/* shadcn card surface tokens used by the Credentials cards. */
+.bg-card {
+  background-color: var(--card);
+}
+
+.text-card-foreground {
+  color: var(--card-foreground);
+}
+
+/* Reserve the command-palette results area so filtering does not resize/recenter the dialog. */
+.command-list-height {
+  height: min(65vh, 26rem);
+  flex-shrink: 0;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* Match the loaded contribution graph area (100px graph + 8px gap + 17px labels). */
+.activity-graph-placeholder {
+  height: 125px;
+}
+
+/* Reserve the mobile status line so submitting the contact form cannot grow the form. */
+.contact-status-row {
+  min-height: 36px;
+}
+
+/* Four contact links on desktop, two on mobile. */
+.contact-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* The hero dot field's blended artwork layer. */
+.hero-dot-field {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-dot-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  opacity: 0.48;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: multiply;
+  filter: saturate(1.2) contrast(1.05);
+  transform: translate3d(0, 0, 0) scale(1.04);
+  animation: hero-dot-drift 16s ease-in-out infinite;
+  transition:
+    opacity 0.45s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 68%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, black 0%, black 68%, transparent 100%);
+}
+
+.dark .hero-dot-image {
+  mix-blend-mode: screen;
+  opacity: 0.34;
+}
+
+.hero-dot-field[data-hover="true"] .hero-dot-image {
+  opacity: 0.78;
+  transform: translate3d(var(--hero-x, 0px), var(--hero-y, 0px), 0)
+    scale(1.08);
+  animation-play-state: paused;
+}
+
+.dark .hero-dot-field[data-hover="true"] .hero-dot-image {
+  opacity: 0.62;
+}
+
+@keyframes hero-dot-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.04);
+  }
+  50% {
+    transform: translate3d(-8px, 4px, 0) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-dot-image {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .contact-links-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Keep the contact textarea at its designed height instead of growing with content. */
+.contact-message-height {
+  height: 128px;
+}
+
+@media (min-width: 640px) {
+  .contact-status-row {
+    min-height: 16px;
+  }
+}
+
+/* Match the 1200x630 project covers exactly so thumbnails are not cropped. */
+.aspect-project {
+  aspect-ratio: 1200 / 630;
+}
+
+/* Keep the contribution graph crisp and horizontally scrollable on small screens. */
+.contribution-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.contribution-scroll::-webkit-scrollbar {
+  display: none;
+}
